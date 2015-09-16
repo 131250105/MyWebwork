@@ -6,7 +6,6 @@
  * Time: 下午13:11
  */
 ?>
-
 <nav class="navbar navbar-inverse navbar-fixed-top" id="nav_top">
     <div class="navbar-header">
         <a class="navbar-brand" href="test.php">MywebWork</a>
