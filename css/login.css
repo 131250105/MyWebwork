@@ -1,0 +1,116 @@
+.login-page {
+  background: white;
+}
+.login-content {
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  -moz-transition: all 550ms ease-in-out;
+  -o-transition: all 550ms ease-in-out;
+  -webkit-transition: all 550ms ease-in-out;
+  transition: all 550ms ease-in-out;
+}
+.login-form {
+  position: relative;
+  padding-top: 60px;
+  padding-left: 850px;
+  margin: 200px;
+  -moz-transition: all 550ms ease-in-out;
+  -o-transition: all 550ms ease-in-out;
+  -webkit-transition: all 550ms ease-in-out;
+  transition: all 550ms ease-in-out;
+}
+.form-group {
+  margin-bottom: 20px;
+  -moz-transition: all 550ms ease-in-out;
+  -o-transition: all 550ms ease-in-out;
+  -webkit-transition: all 550ms ease-in-out;
+  transition: all 550ms ease-in-out;
+}
+.input-group {
+  background: white;
+  border: 1px solid #373e4a;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+/*
+.login-page .login-form .form-group .input-group.validate-has-error {
+  border-color: #ec5956;
+  border-color: rgba(236, 89, 86, 0.5);
+}
+.login-page .login-form .form-group .input-group.validate-has-error .error {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -8px;
+  font-size: 10px;
+}
+*/
+.input-group-addon{
+  position: relative;
+  background: transparent;
+  border: 0;
+}
+.input-group-addon:after {
+  position: absolute;
+  display: block;
+  content: '';
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #454a54;
+  -webkit-transform: scaleY(.56);
+  -moz-transform: scaleY(.56);
+  -o-transform: scaleY(.56);
+  -ms-transform: scaleY(.56);
+  transform: scaleY(.56);
+}
+.form-control {
+  color: black;
+  background: transparent;
+  border: 0;
+}
+.form-control:focus {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+
+.btn-login {
+  border: 1px solid #454a54;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 14px;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.btn-login i {
+  float: right;
+}
+
+.btn-login:hover,
+.btn-login:active {
+  background: green;
+}
+
+
+
+
+
