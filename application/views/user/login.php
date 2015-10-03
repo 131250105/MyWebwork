@@ -12,17 +12,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome!</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel='stylesheet' href='css/jquery-ui.css'>
-    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
-    <link rel="stylesheet" href="css/login.css" media="screen" type="text/css" />
-    <link href="css/commonHeader.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel='stylesheet' href='../../css/jquery-ui.css'>
+    <link rel='stylesheet prefetch' href='../../css/bootstrap.min.css'>
+    <link rel="stylesheet" href="../../css/login.css" media="screen" type="text/css" />
+    <link href="../../css/commonHeader.css" rel="stylesheet" type="text/css">
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
 </head>
 
 <body class="login-page">
-<?php include("commonHeader.php"); ?>
+<?php
+include("commonHeader.php");
+?>
+
 <div class="login-form">
     <div class="login-content">
         <!--
@@ -32,7 +35,7 @@
         </div>
         -->
         <center>
-            <form action="welcome.php" method="post" role="form" id="form_login" >
+            <form method="post" role="form" id="form_login" action="../../../logincontroller.php" >
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -50,7 +53,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-login">
+                    <button type="submit" class="btn btn-primary btn-block btn-login"  >
                         <i class="fa fa-sign-in"></i>
                         登陆
                     </button>

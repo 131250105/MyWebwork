@@ -4,24 +4,20 @@
 * User: apple
 * Date: 2015/9/14
 */
-header('charset: utf-8;');
-include("db/database.php");
-        $check=false;
-        $db=database::getInstance();
-        $sql="select * from user where username = '".$_POST["username"]."' and "."password = '"
-            .$_POST["password"]."'";
-        $db->connect();
-        $result=$db->query($sql);
-        while($row = $result->fetch_row()){
-                $check=true;
-                $username=$row[1];
-                $userid=$row[0];
-            }
-        if($check){
-            echo "welcome ".$username;
-            echo "</br>";
-            echo "Your userid is ".$userid;
-        }else{
-            echo "wrong username or password";
-        }
-        $db->close();
+?>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel='stylesheet' href='css/jquery-ui.css'>
+    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/login.css" media="screen" type="text/css" />
+    <link href="css/commonHeader.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <?php include("commonHeader.php"); ?>
+</body>
+</html>
