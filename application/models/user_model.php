@@ -8,10 +8,22 @@
  */
 class User_model extends CI_Model
 {
-    public function getUserByUsername($username){
+    public function getUserByUserId($userId){
+        $res = $this->db->from('user')
+            ->where('userid',$userId)
+            ->get();
+        return $res->result();
+    }
+
+    public function login($username ,$password){
         $res = $this->db->from('user')
             ->where('username',$username)
             ->get();
-        return $res->result();
+        foreach($res->result() as $item){
+            if($item->password ==$password)
+                return TRUE;
+            else
+                return FALSE;
+        }
     }
 }

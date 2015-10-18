@@ -35,7 +35,7 @@ include("commonHeader.php");
         </div>
         -->
         <center>
-            <form method="post" role="form" id="form_login" action="../../../logincontroller.php" >
+            <form method="post" role="form" id="form_login" action="<?php echo site_url("user/login");?>" >
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">

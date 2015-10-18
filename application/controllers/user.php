@@ -13,16 +13,17 @@ class user extends CI_Controller
 //    $autoload['libraries']=array('database');
 //    $this->load->database();
     public function test(){
-        $sql ='select * from user';
-        $result = $this->db->query($sql);
-        $users =$result->result();
-        $data =array('userlists'=>$users);
-        $this->load->view("user/test",$data);
-
-        $res=$this->db->get('user');
-        foreach($res->result() as $item){
-            echo $item->username;
-        }
+//        $sql ='select * from user';
+//        $result = $this->db->query($sql);
+//        $users =$result->result();
+//        $data =array('userlists'=>$users);
+//        $this->load->view("user/test",$data);
+//
+//        $res=$this->db->get('user');
+//        foreach($res->result() as $item){
+//            echo $item->username;
+//        }
+        $this->load->view("user/login");
     }
 
     public function register(){
@@ -36,7 +37,12 @@ class user extends CI_Controller
 
     public function login(){
         $this->load->model("User_model");
-        $list = $this->User_model->getUserByUsername('aaa78912');
-        $this->load->view("user/login",array('list'=>$list));
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        if($this->User_model->login($username ,$password)) {
+            $this->load->view("user/login", array('username' => $username));
+        }
+        else
+            $this->load->view("user/test");
     }
 }

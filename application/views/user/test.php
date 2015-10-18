@@ -13,9 +13,7 @@
     <title>Welcome!</title>
 </head>
 <body>
-    <?php foreach($userlists as $row){
-        echo $row->userid;
-    } ?>
+<?php echo 'wrong username '?>
 </body>
 </html>
 
