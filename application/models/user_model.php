@@ -6,6 +6,7 @@
  * Date: 2015/10/3
  * Time: 上午10:53
  */
+include("bean/userbean.php");
 class User_model extends CI_Model
 {
     public function getUserByUserId($userId){
@@ -25,5 +26,15 @@ class User_model extends CI_Model
             else
                 return FALSE;
         }
+    }
+
+    public function insertuser($username ,$password ,$nickname ,$usertype){
+        $data =array(
+            'username' =>$username,
+            'password' =>$password,
+            'usertype' =>$usertype,
+            'nickname' =>$nickname,
+        );
+        return $this->db->insert("user",$data);
     }
 }

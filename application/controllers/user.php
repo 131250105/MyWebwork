@@ -12,6 +12,7 @@ class user extends CI_Controller
 //    comfig/autoload.php
 //    $autoload['libraries']=array('database');
 //    $this->load->database();
+
     public function test(){
 //        $sql ='select * from user';
 //        $result = $this->db->query($sql);
@@ -26,23 +27,34 @@ class user extends CI_Controller
         $this->load->view("user/login");
     }
 
+    /*
+     * 正式代码开始
+     */
     public function register(){
-        $data =array(
-            'username'=> 'aaa78912',
-            'password'=>'123456',
-            'usertype'=>'doctor',
-        );
-        $this->db->insert("user",$data);
+        $this->load->model("User_model");
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $nickname = $this->input->post('nickname');
+        $usertype = $this->input->post('usertype');
+        $userId =$this->User_model->insertuser($username,$password,
+            $nickname,$usertype);
+        if($userId != -1){
+            session_start();
+            $_SESSION['userId']=$userId;
+        }else{
+            echo "注册失败，用户名已存在";
+        }
     }
+
 
     public function login(){
         $this->load->model("User_model");
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         if($this->User_model->login($username ,$password)) {
-            $this->load->view("user/login", array('username' => $username));
+            $this->load->view("user/index", array('username' => $username));
         }
         else
-            $this->load->view("user/test");
+            echo "wrong";
     }
 }
