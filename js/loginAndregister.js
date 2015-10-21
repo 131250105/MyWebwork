@@ -29,6 +29,8 @@ function login(){
                 $('#emptyLoginTip_id').hide();
                 $('#emptyLoginTip_password').hide();
                 $('#errorLoginTip').show();
+            }else{
+                window.location.href="user/index";
             }
         }
     });
