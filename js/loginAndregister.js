@@ -4,6 +4,18 @@
 function login(){
     var username =document.getElementById("username").value;
     var password =document.getElementById("password").value;
+    if(username==""){
+        $('#emptyLoginTip_id').show();
+        $('#emptyLoginTip_password').hide();
+        $('#errorLoginTip').hide();
+        return false;
+    }
+    if(password==""){
+        $('#emptyLoginTip_id').hide();
+        $('#emptyLoginTip_password').show();
+        $('#errorLoginTip').hide();
+        return false;
+    }
     $.ajax({
         url: "user/login",
         type: "POST",
@@ -13,7 +25,10 @@ function login(){
         },
         success: function(data,status){//如果调用php成功
             if(data=="wrong"){
-                alert(data);//解码，显示汉字
+                //alert(data);//解码，显示汉字
+                $('#emptyLoginTip_id').hide();
+                $('#emptyLoginTip_password').hide();
+                $('#errorLoginTip').show();
             }
         }
     });

@@ -1,0 +1,9 @@
+.logo {
+    position: relative;
+    display: block;
+    padding: 0px;
+}
+
+.logo:hover {
+    background-color: black;
+}
