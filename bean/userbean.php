@@ -7,16 +7,12 @@
  */
 class userbean
 {
+    private $userId;
     private $username;//email注册
     private $password;
+    private $usertype;
     private $nickname;
 
-    public function __construct($username,$password,$nickname)
-    {
-        $this->username=$username;
-        $this->password=$password;
-        $this->nickname=$nickname;
-    }
 
     public function getusername(){
         return $this->username;
@@ -40,5 +36,26 @@ class userbean
 
     public function setnickname($nickname){
         $this->nickname=$nickname;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    public function getUsertype()
+    {
+        return $this->usertype;
+    }
+
+
+    public function setUsertype($usertype)
+    {
+        $this->usertype = $usertype;
     }
 }

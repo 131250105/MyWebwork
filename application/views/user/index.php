@@ -5,3 +5,5 @@
  * Date: 2015/10/18
  * Time: 下午13:58
  */
+include_once("bean/userbean.php");
+echo "welcome to your index ".$user->getusername();

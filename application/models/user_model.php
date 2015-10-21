@@ -6,14 +6,21 @@
  * Date: 2015/10/3
  * Time: 上午10:53
  */
-include("bean/userbean.php");
+include_once("bean/userbean.php");
 class User_model extends CI_Model
 {
     public function getUserByUserId($userId){
         $res = $this->db->from('user')
-            ->where('userid',$userId)
+            ->where('userId',$userId)
             ->get();
-        return $res->result();
+        $userinfo =new userbean();
+        foreach($res->result() as $item){
+            $userinfo->setUserId($item->userId);
+            $userinfo->setusername($item->username);
+            $userinfo->setnickname($item->nickname);
+            $userinfo->setUsertype($item->usertype);
+        }
+        return $userinfo;
     }
 
     public function login($username ,$password){
@@ -22,9 +29,9 @@ class User_model extends CI_Model
             ->get();
         foreach($res->result() as $item){
             if($item->password ==$password)
-                return TRUE;
+                return $item->userId;
             else
-                return FALSE;
+                return -1;
         }
     }
 
