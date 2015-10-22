@@ -120,6 +120,7 @@
                     <button type="button" class="btn btn-primary" onclick="login()" style="width: 330px;margin-left: -70px;">登录</button>
                 </div>
             </div>
+            </form>
 
 
 
