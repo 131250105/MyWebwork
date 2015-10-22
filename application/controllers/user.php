@@ -40,18 +40,30 @@ class user extends CI_Controller
      */
     public function register(){
         $this->load->model("User_model");
-        $username = $this->input->post('username');
+        $email = $this->input->post('email');
         $password = $this->input->post('password');
-        $nickname = $this->input->post('nickname');
+        $username = $this->input->post('username');
         $usertype = $this->input->post('usertype');
-        $userId =$this->User_model->insertuser($username,$password,
-            $nickname,$usertype);
-        if($userId != -1){
-            session_start();
-            $_SESSION['userId']=$userId;
-        }else{
-            echo "注册失败，用户名已存在";
+        $usersex  = $this->input->post('usersex');
+        $userphoto ="";
+        if($usersex=="男"){
+            $userphoto =base_url("images/user_defaultHead_male.jpg");
         }
+        else{
+            $userphoto =base_url("images/user_defaultHead_female.jpg");
+        }
+        $lastid =$this->db->insert_id();
+        $userId =$this->User_model->insertuser($email,$password,
+            $username,$usertype,$usersex,$userphoto);
+        if($lastid!=$this->db->insert_id()){
+            session_start();
+            $_SESSION['userId']=$this->db->insert_id();
+            echo "success";
+        }
+        else{
+            echo "fail";
+        }
+
     }
 
 

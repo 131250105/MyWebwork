@@ -58,20 +58,23 @@ function register(){
     var password =document.getElementById("registerpassword").value;
     var username =document.getElementById("username").value;
     var usertype =document.getElementById("usertype").value;
-    alert(email);
-    alert(password);
-    alert(username);
-    alert(usertype);
+    var usersex =document.getElementById("usersex").value;
     $.ajax({
         url: "user/register",
         type: "POST",
-        data:{email:email,password:password,username:username,usertype:usertype},
+        data:{email:email,password:password,username:username,usertype:usertype,usersex:usersex},
         error: function(){
             alert('服务器忙请稍后再试');
             return false;
         },
         success: function(data,status) {
-
+            if(data=="success") {
+                alert("注册成功!");
+                window.location.href = "user/index";
+                return true;
+            }else{
+                alert("邮箱已被注册，请尝试更换邮箱");
+            }
         }
     });
 }

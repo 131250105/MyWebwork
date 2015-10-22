@@ -36,17 +36,17 @@ include_once('commerHeader.php');
                 <div class="col-xs-6 col-sm-4.8"
                      style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
                     <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>"
+                    <img src="<?php echo $user->getPhoto();?>"
                          class="img-responsive"  alt="Cinque Terre">
                     <p style="visibility: hidden">位置调整</p>
                     </div>
                 <div class="col-xs-6 col-sm-7.2"
                      style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
                     <p style="visibility: hidden">位置调整</p>
-                    <p>昵称：</p>
-                    <p>性别：</p>
+                    <p>昵称：<?php echo $user->getusername();?></p>
+                    <p>性别：<?php echo $user->getSex();?></p>
                     <p>学校：</p>
-                    <p>地址：</p>
+                    <p>地址：<?php echo $user->getAddress();?></p>
                     <button type="button" class="btn btn-primary">
                         编辑资料
                     </button>

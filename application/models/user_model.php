@@ -17,8 +17,14 @@ class User_model extends CI_Model
         foreach($res->result() as $item){
             $userinfo->setUserId($item->userId);
             $userinfo->setusername($item->username);
-            $userinfo->setnickname($item->nickname);
+            $userinfo->setEmail($item->email);
             $userinfo->setUsertype($item->usertype);
+            $userinfo->setAddress($item->address);
+            $userinfo->setIsbanned($item->isbanned);
+            $userinfo->setIsonline($item->isonline);
+            $userinfo->setPhoto($item->photo);
+            $userinfo->setQq($item->qq);
+            $userinfo->setSex($item->sex);
         }
         return $userinfo;
     }
@@ -34,12 +40,15 @@ class User_model extends CI_Model
         return -1;
     }
 
-    public function insertuser($username ,$password ,$nickname ,$usertype){
+    public function insertuser($email ,$password ,$username ,$usertype
+    ,$usersex,$userphoto){
         $data =array(
-            'username' =>$username,
+            'email' =>$email,
             'password' =>$password,
             'usertype' =>$usertype,
-            'nickname' =>$nickname,
+            'username' =>$username,
+            'sex' =>$usersex,
+            'photo' =>$userphoto,
         );
         return $this->db->insert("user",$data);
     }

@@ -8,11 +8,16 @@
 class userbean
 {
     private $userId;
-    private $username;//email注册
+    private $email;
+    private $username;
     private $password;
     private $usertype;
-    private $nickname;
-
+    private $address;
+    private $isonline;
+    private $isbanned;
+    private $photo;
+    private $qq;
+    private $sex;
 
     public function getusername(){
         return $this->username;
@@ -22,9 +27,7 @@ class userbean
         return $this->password;
     }
 
-    public function getnickname(){
-        return $this->nickname;
-    }
+
 
     public function setusername($username){
         $this->username = $username;
@@ -34,9 +37,6 @@ class userbean
         $this->password =$password;
     }
 
-    public function setnickname($nickname){
-        $this->nickname=$nickname;
-    }
 
     public function getUserId()
     {
@@ -57,5 +57,83 @@ class userbean
     public function setUsertype($usertype)
     {
         $this->usertype = $usertype;
+    }
+
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    public function getIsbanned()
+    {
+        return $this->isbanned;
+    }
+
+
+    public function setIsbanned($isbanned)
+    {
+        $this->isbanned = $isbanned;
+    }
+
+    public function getIsonline()
+    {
+        return $this->isonline;
+    }
+
+
+    public function setIsonline($isonline)
+    {
+        $this->isonline = $isonline;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    public function getQq()
+    {
+        return $this->qq;
+    }
+
+
+    public function setQq($qq)
+    {
+        $this->qq = $qq;
+    }
+
+    public function getSex()
+    {
+        return $this->sex;
+    }
+
+
+    public function setSex($sex)
+    {
+        $this->sex = $sex;
     }
 }
