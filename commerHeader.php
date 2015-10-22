@@ -141,16 +141,16 @@
             </div>
 
             <form class="form-horizontal" role="form"  style="padding:30px 50px;width:500px">
-            <div class="form-group">
+            <div class="form-group" id="registeremailForm">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="registeremail"
-                           placeholder="邮箱">
+                           onchange="checkId()" placeholder="邮箱">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="registerpasswordForm">
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="registerpassword"
-                           placeholder="密码">
+                          onchange="checkPassword()" placeholder="密码">
                 </div>
             </div>
             <div class="form-group">
@@ -188,6 +188,26 @@
     <!-- /.modal -->
 </div>
 
+<script type="text/javascript">
+function checkId()
+{
+    var str=document.getElementById( "registeremail" ).value;
+    var   sReg   =   /[_a-zA-Z\d\-\.]+@[_a-zA-Z\d\-]+(\.[_a-zA-Z\d\-]+)+$/;
+    if   (!sReg.test(str)){document.getElementById( "registeremailForm" ).className = "form-group has-error";}
+    else {document.getElementById( "registeremailForm" ).className = "form-group has-success";}
+}
+function checkPassword()
+{
+    var str=document.getElementById( "registerpassword" ).value;
+    if(str.length<6){document.getElementById( "registerpasswordForm" ).className = "form-group has-error";}
+    else {document.getElementById( "registerpasswordForm" ).className = "form-group has-success";}
+}
+function checkOthers()
+{
+    document.getElementById( "tt" ).className = "form-group has-error";
+    document.getElementById( "tt" ).className = "form-group has-success";
+}
+</script>
 
 
 </body>
