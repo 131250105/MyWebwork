@@ -17,7 +17,7 @@
     <!-- [endif]-->
 </head>
 <body>
-<?php include ('header.php');?>
+<?php include_once ('commerHeader.php');?>
 
 </body>
 </html>

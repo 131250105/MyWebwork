@@ -10,17 +10,19 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
-
+    <title>test</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
     <!-- [endif]-->
+    <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
+    <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
+    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
 </head>
 <body>
 
 <ul class="nav nav-pills"
     style="padding: 5px; background-color: black; position: fixed; width: 100%">
-    <li><a href="#" style="padding: 0px;background-color: black;"><img src="images/logo.png" alt="First slide"
+    <li><a href="#" style="padding: 0px;background-color: black;"><img src = "<?php echo base_url('images/logo.png');?>" alt="First slide"
                                                                        class="img-rounded" width="300" height="40"
                                                                        style="margin-right: 100px"></a></li>
     <li class="active"><a href="#">Home</a></li>
@@ -40,7 +42,7 @@
     <li><a href="#">PHP</a></li>
     <div align="right">
         <a data-toggle="collapse" data-parent="#accordion" href="#demo">
-            <img src="images/logo.png" alt="First slide" class="img-circle"
+            <img src="<?php echo base_url('images/logo.png');?>" alt="First slide" class="img-circle"
                  width="40" height="40" style="margin-right: 100px">
         </a>
         <a data-toggle="modal" data-target="#submitNewNicknameDiv"
@@ -101,7 +103,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="password"
+                    <input type="password" class="form-control" id="password"
                            placeholder="密码">
                 </div>
             </div>
@@ -118,7 +120,7 @@
                     <button type="button" class="btn btn-primary" onclick="login()" style="width: 330px;margin-left: -70px;">登录</button>
                 </div>
             </div>
-            </form>
+
 
 
         </div>
@@ -136,7 +138,8 @@
                         aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">账号注册</h4>
             </div>
-            <form class="form-horizontal" role="form"  style="padding:30px 50px;width:500px" ">
+
+            <form class="form-horizontal" role="form"  style="padding:30px 50px;width:500px">
             <div class="form-group">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="username"
@@ -145,19 +148,19 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="password"
+                    <input type="password" class="form-control" id="password"
                            placeholder="密码">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="password"
+                    <input type="text" class="form-control" id="nickname"
                            placeholder="昵称">
                 </div>
             </div>
             <div class="form-group">
                 <label for="name" style=" margin-left: 16px;">用户类型</label>
-                <select class="form-control" style=" width: 327px; margin-left: 16px;">
+                <select class="form-control" style=" width: 327px; margin-left: 16px;" id =usertype>
                     <option>普通用户</option>
                     <option>健康教练</option>
                     <option>医生</option>
@@ -165,7 +168,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10" align="left">
-                    <button type="button" class="btn btn-primary" onclick="login()" style="width: 330px;margin-left: -70px;">注册</button>
+                    <button type="button" class="btn btn-primary" onclick="register()" style="width: 330px;margin-left: -70px;">注册</button>
                 </div>
             </div>
             </form>
@@ -178,8 +181,6 @@
 </div>
 
 
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/loginAndregister.js"></script>
+
 </body>
 </html>

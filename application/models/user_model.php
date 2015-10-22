@@ -30,9 +30,8 @@ class User_model extends CI_Model
         foreach($res->result() as $item){
             if($item->password ==$password)
                 return $item->userId;
-            else
-                return -1;
         }
+        return -1;
     }
 
     public function insertuser($username ,$password ,$nickname ,$usertype){

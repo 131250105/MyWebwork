@@ -22,6 +22,7 @@ function login(){
         data:{username:username,password:password},
         error: function(){
             alert('服务器忙请稍后再试');
+            return false;
         },
         success: function(data,status){//如果调用php成功
             if(data=="wrong"){
@@ -29,9 +30,16 @@ function login(){
                 $('#emptyLoginTip_id').hide();
                 $('#emptyLoginTip_password').hide();
                 $('#errorLoginTip').show();
+                return true;
             }else{
                 window.location.href="user/index";
+                return true;
             }
         }
     });
+}
+
+
+function register(){
+    alert("zhucela");
 }

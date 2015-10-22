@@ -6,4 +6,5 @@
  * Time: 下午13:58
  */
 include_once("bean/userbean.php");
-echo "welcome to your index ".$user->getusername();
+include_once('commerHeader.php');
+//echo "welcome to your index ".$user->getusername();
