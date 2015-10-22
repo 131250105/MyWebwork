@@ -97,13 +97,13 @@
             <form class="form-horizontal" role="form"  style="padding:30px 50px;width:500px" ">
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username"
-                           placeholder="用户名">
+                    <input type="text" class="form-control" id="email"
+                           placeholder="邮箱">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password"
+                    <input type="password" class="form-control" id="loginpassword"
                            placeholder="密码">
                 </div>
             </div>
@@ -143,19 +143,19 @@
             <form class="form-horizontal" role="form"  style="padding:30px 50px;width:500px">
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username"
-                           placeholder="用户名">
+                    <input type="text" class="form-control" id="registeremail"
+                           placeholder="邮箱">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password"
+                    <input type="password" class="form-control" id="registerpassword"
                            placeholder="密码">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nickname"
+                    <input type="text" class="form-control" id="username"
                            placeholder="昵称">
                 </div>
             </div>

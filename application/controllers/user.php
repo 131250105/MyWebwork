@@ -57,9 +57,9 @@ class user extends CI_Controller
 
     public function login(){
         $this->load->model("User_model");
-        $username = $this->input->post('username');
+        $email = $this->input->post('email');
         $password = $this->input->post('password');
-        $userId =$this->User_model->login($username ,$password);
+        $userId =$this->User_model->login($email ,$password);
         if($userId != -1) {
             session_start();
             $_SESSION['userId']=$userId;

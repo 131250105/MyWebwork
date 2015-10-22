@@ -23,9 +23,9 @@ class User_model extends CI_Model
         return $userinfo;
     }
 
-    public function login($username ,$password){
+    public function login($email ,$password){
         $res = $this->db->from('user')
-            ->where('username',$username)
+            ->where('email',$email)
             ->get();
         foreach($res->result() as $item){
             if($item->password ==$password)
