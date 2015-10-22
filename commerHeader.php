@@ -159,6 +159,13 @@
                            placeholder="昵称">
                 </div>
             </div>
+                <div class="form-group">
+                    <label for="name" style=" margin-left: 16px;">性别</label>
+                    <select class="form-control" style=" width: 327px; margin-left: 16px;" id =usersex>
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
             <div class="form-group">
                 <label for="name" style=" margin-left: 16px;">用户类型</label>
                 <select class="form-control" style=" width: 327px; margin-left: 16px;" id =usertype>
