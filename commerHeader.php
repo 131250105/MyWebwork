@@ -17,9 +17,9 @@
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/md5.js');?>"></script>
 </head>
 <body>
-
 <ul class="nav nav-pills"
     style="padding: 5px; background-color: black; position: fixed; width: 100%">
     <li><a href="#" style="padding: 0px;background-color: black;"><img src = "<?php echo base_url('images/logo.png');?>" alt="First slide"
@@ -41,14 +41,22 @@
         </ul></li>
     <li><a href="#">PHP</a></li>
     <div align="right">
-        <a data-toggle="collapse" data-parent="#accordion" href="#demo">
-            <img src="<?php echo base_url('images/logo.png');?>" alt="First slide" class="img-circle"
+        <?php
+        if(isset($_SESSION['userId']) && isset($_SESSION['userphoto'])) {
+        echo '<a data-toggle="collapse" data-parent="#accordion" href="#demo">'.
+            '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
                  width="40" height="40" style="margin-right: 100px">
-        </a>
-        <a data-toggle="modal" data-target="#submitNewNicknameDiv"
+        </a>';}
+
+        else{
+            echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
            style="margin-right: 80px"	data-backdrop="static">登录</a>
         <a data-toggle="modal" data-target="#registerNewNicknameDiv"
-           style="margin-right: 80px"	data-backdrop="static">注册</a>
+           style="margin-right: 80px"	data-backdrop="static">注册</a>';
+        }   ?>
+
+
+
         <div id="demo" class="collapse"
              style="position: absolute; margin-left: 1100px; margin-top: 6px; background-color: white">
             <table class="table" border="0">
@@ -110,7 +118,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-3"  style="margin-left: 0px;">
                     <div class="checkbox"  style="float:left">
-                        <label> <input type="checkbox"> 记住我
+                        <label> <input type="checkbox" id="remember"> 记住我
                         </label>
                     </div>
                 </div>

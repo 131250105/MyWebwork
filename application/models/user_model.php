@@ -29,6 +29,25 @@ class User_model extends CI_Model
         return $userinfo;
     }
 
+    public function getuserbyemail($email){
+        $res = $this->db->from('user')
+            ->where('email',$email)
+            ->get();
+        $userinfo =new userbean();
+        foreach($res->result() as $item){
+            $userinfo->setUserId($item->userId);
+            $userinfo->setusername($item->username);
+            $userinfo->setEmail($item->email);
+            $userinfo->setUsertype($item->usertype);
+            $userinfo->setAddress($item->address);
+            $userinfo->setIsbanned($item->isbanned);
+            $userinfo->setIsonline($item->isonline);
+            $userinfo->setPhoto($item->photo);
+            $userinfo->setQq($item->qq);
+            $userinfo->setSex($item->sex);
+        }
+        return $userinfo;
+    }
     public function login($email ,$password){
         $res = $this->db->from('user')
             ->where('email',$email)

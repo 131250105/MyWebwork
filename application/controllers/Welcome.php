@@ -20,6 +20,21 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		if(empty($_COOKIE['email'])||empty($_COOKIE['password'])){
+
+		}
+		else{
+			$email = $_COOKIE['email'];
+			$password =$_COOKIE['password'];
+			$this->load->model("User_model");
+			$userinfo =$this->User_model->getuserbyemail($email);
+			if($userinfo->getpassword() ==$password)
+			{
+				session_start();
+				$_SESSION['userId'] =$userinfo->getUserId();
+				$_SESSION['userphoto'] =$userinfo->getPhoto();
+			}
+		}
 		$this->load->view('welcome/index');
 	}
 }

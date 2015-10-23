@@ -71,6 +71,11 @@ class user extends CI_Controller
         $this->load->model("User_model");
         $email = $this->input->post('email');
         $password = $this->input->post('password');
+        $remember =$this->input->post('remember');
+        if($remember==true){
+            setcookie("email",$email,time()+3600*24*365);
+            setcookie("password",$password,time()+3600*24*365);
+        }
         $userId =$this->User_model->login($email ,$password);
         if($userId != -1) {
             session_start();
@@ -100,6 +105,7 @@ class user extends CI_Controller
         session_start();
         $userId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
+        $_SESSION['userphoto']=$userinfo->getPhoto();
         $this->load->view("user/index", array('user' => $userinfo));
     }
 

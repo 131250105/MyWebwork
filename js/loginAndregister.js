@@ -3,7 +3,9 @@
  */
 function login(){
     var email =document.getElementById("email").value;
-    var password =document.getElementById("loginpassword").value;
+    var password =hex_md5(document.getElementById("loginpassword").value);
+    var remember =document.getElementById("remember").checked;
+    alert(remember);
     /*
     输入判断开始
      */
@@ -29,7 +31,7 @@ function login(){
     $.ajax({
         url: "user/login",
         type: "POST",
-        data:{email:email,password:password},
+        data:{email:email,password:password,remember:remember},
         error: function(){
             alert('服务器忙请稍后再试');
             return false;
@@ -55,10 +57,11 @@ function login(){
 
 function register(){
     var email =document.getElementById("registeremail").value;
-    var password =document.getElementById("registerpassword").value;
+    var password =hex_md5(document.getElementById("registerpassword").value);
     var username =document.getElementById("username").value;
     var usertype =document.getElementById("usertype").value;
     var usersex =document.getElementById("usersex").value;
+
     $.ajax({
         url: "user/register",
         type: "POST",
