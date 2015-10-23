@@ -112,4 +112,10 @@ class user extends CI_Controller
     /*
      * 主页相关结束
      */
+
+
+    public function edit(){
+
+        $this->load->view("user/edit");
+    }
 }
