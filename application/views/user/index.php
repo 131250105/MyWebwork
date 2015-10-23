@@ -18,6 +18,18 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+
+            src: url('<?php echo base_url('fonts/glyphicons-halflings-regular.eot');?>');
+            src: url('<?php echo base_url('fonts/glyphicons-halflings-regular.eot?#iefix');?>') format('embedded-opentype'),
+            url('<?php echo base_url('fonts/glyphicons-halflings-regular.woff');?>') format('woff'),
+            url('<?php echo base_url('fonts/glyphicons-halflings-regular.ttf');?>') format('truetype'),
+            url('<?php echo base_url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular');?>') format('svg');
+        }
+    </style>
+
 </head>
 <body>
 
@@ -48,7 +60,7 @@ include_once('commerHeader.php');
                     <p>学校：</p>
                     <p>地址：<?php echo $user->getAddress();?></p>
                     <button type="button" class="btn btn-primary">
-                        编辑资料
+                        <span class="glyphicon glyphicon-user"></span></span>编辑资料
                     </button>
                     <p style="visibility: hidden">位置调整</p>
                     <!--glyphicon glyphicon-leaf
