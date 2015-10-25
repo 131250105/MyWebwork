@@ -19,5 +19,28 @@
 <body>
 <?php include_once ('commerHeader.php');?>
 
+
+<img src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="100%" height="50%">
+
+<div class="container">
+    <div class="row" >
+        <div class="col-xs-4 col-sm-4">
+        </div>
+        <div class="col-xs-4 col-sm-4">
+        </div>
+        <div class="col-xs-4 col-sm-4">
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#commonHeaderContainer').marginBottom="0px";
+
+    });
+</script>
+
+
 </body>
 </html>
