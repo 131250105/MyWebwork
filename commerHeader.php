@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">MyHealth</a>
+        <a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>">MyHealth</a>
     </div>
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav">
@@ -65,7 +65,7 @@
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li>
                 <?php
-                if(isset($_SESSION['userId']) && isset($_SESSION['userphoto'])) {
+                if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
                     echo '<a data-toggle="collapse" data-parent="#accordion" href="#demo">'.
                     '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
                         width="40" height="40" style="padding: 0px"></a></li>';
@@ -86,27 +86,14 @@
             <table class="table" border="0">
                 <tbody>
                 <tr>
-                    <td><a><button type="button" class="btn btn-primary">点此让土豪变成傻逼</button></a></td>
+                    <td><a href ="<?php echo site_url("user/index"); ?>"><button type="button" class="btn btn-primary" >个人中心</button></a></td>
                 </tr>
                 <tr>
                     <td><a><div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-primary active"> <input
-                                        type="radio" name="options" id="state1"> 单身
-                                </label> <label class="btn btn-primary"> <input type="radio"
-                                                                                name="options" id="state2"> 热恋中
-                                </label> <label class="btn btn-primary"> <input type="radio"
-                                                                                name="options" id="state3"> 已结婚
+                                        type="radio" name="options" id="state1"> 注销登陆
                                 </label>
                             </div></a></td>
-                </tr>
-                <tr>
-                    <td><a>3</a></td>
-                </tr>
-                <tr>
-                    <td><a>4</a></td>
-                </tr>
-                <tr>
-                    <td><a>5</a></td>
                 </tr>
                 </tbody>
             </table>
