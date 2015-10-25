@@ -52,17 +52,17 @@ include_once('commerHeader.php');
                 <div class="col-xs-6 col-sm-4.8"
                      style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
                     <p style="visibility: hidden">位置调整</p>
-                    <img src="暂时"
+                    <img src="<?php echo $user->getPhoto();?>"
                          class="img-responsive"  alt="Cinque Terre">
                     <p style="visibility: hidden">位置调整</p>
                 </div>
                 <div class="col-xs-6 col-sm-7.2"
                      style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
                     <p style="visibility: hidden">位置调整</p>
-                    <p>昵称：暂时</p>
-                    <p>性别：暂时</p>
+                    <p>昵称：<?php echo $user->getusername();?></p>
+                    <p>性别：<?php echo $user->getSex();?></p>
                     <p>学校：</p>
-                    <p>地址：暂时</p>
+                    <p>地址：<?php echo $user->getAddress();?></p>
                     <button type="button" class="btn btn-primary">
                         <span class="glyphicon glyphicon-user"></span></span>编辑资料
                     </button>
@@ -98,7 +98,7 @@ include_once('commerHeader.php');
                             <ul class="da-thumbs" id="da-thumbs" style="float: left;">
                                 <li>
                                     <a href="javascript:void(0)"> <img
-                                            src="<?php echo base_url('images/test.jpg');?>" class="img-responsive"
+                                            src="<?php echo $user->getPhoto();?>" class="img-responsive"
                                             alt="Cinque Terre" width="110" />
                                         <div style="display: block;">
 										<span data-toggle="modal" data-target="#submitNewAcatarDiv" data-backdrop="static"
@@ -114,7 +114,7 @@ include_once('commerHeader.php');
                     <td>昵称</td>
                     <td>
                         <div class="col-xs-6 col-sm-9">
-                            <input type="text" class="form-control" placeholder="昵称">
+                            <input type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
                         </div>
                     </td>
                 </tr>
@@ -184,15 +184,15 @@ include_once('commerHeader.php');
                 </div>
 
                 <div class="cropped" style="float: left;margin-left: 20px" id="head1">
-                    <img src="<?php echo base_url('images/test.jpg');?>" width="125" height="140" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                    <img src="<?php echo $user->getPhoto();?>" width="125" height="140" id="head1"  style="margin-left:110px;margin-top:30px"/>
                 </div>
                 <br/>
                 <div class="cropped2" style="float: left;margin-left: 20px;margin-top: 15px" id="head2">
-                    <img src="<?php echo base_url('images/test.jpg');?>" width="98" height="110" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                    <img src="<?php echo $user->getPhoto();?>" width="98" height="110" id="head1"  style="margin-left:110px;margin-top:30px"/>
                 </div>
                 <br/>
                 <div class="cropped3" style="float: left;margin-left: 20px;margin-top: 15px" id="head3">
-                    <img src="<?php echo base_url('images/test.jpg');?>" width="62" height="70" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                    <img src="<?php echo $user->getPhoto();?>" width="62" height="70" id="head1"  style="margin-left:110px;margin-top:30px"/>
                 </div>
                 <br/>
                 <div class="action">
@@ -225,7 +225,7 @@ include_once('commerHeader.php');
         var options = {
             thumbBox : '.thumbBox',
             spinner : '.spinner',
-            imgSrc : '<?php echo base_url('images/test.jpg');?>'
+            imgSrc : '<?php echo $user->getPhoto()?>'
         }
         var cropper = $('.imageBox').cropbox(options);
         $('#file').on('change', function() {

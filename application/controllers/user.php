@@ -56,8 +56,9 @@ class user extends CI_Controller
         $userId =$this->User_model->insertuser($email,$password,
             $username,$usertype,$usersex,$userphoto);
         if($lastid!=$this->db->insert_id()){
-            session_start();
             $_SESSION['userId']=$this->db->insert_id();
+            $userinfo =$this->User_model->getUserByUserId($this->db->insert_id());
+            $_SESSION['userphoto']=$userinfo->getPhoto();
             echo "success";
         }
         else{
@@ -78,8 +79,9 @@ class user extends CI_Controller
         }
         $userId =$this->User_model->login($email ,$password);
         if($userId != -1) {
-            session_start();
+            $userinfo =$this->User_model->getUserByUserId($userId);
             $_SESSION['userId']=$userId;
+            $_SESSION['userphoto']=$userinfo->getPhoto();
             echo "success";
         }
         else
@@ -88,8 +90,8 @@ class user extends CI_Controller
 
 
     public function logout(){
-        session_start();
-        unset($_SESSION['views']);
+        unset($_SESSION['userphoto']);
+        unset($_SESSION['userId']);
         $this->load->view("welcome/index");
     }
 
@@ -102,10 +104,8 @@ class user extends CI_Controller
      */
     public function index(){
         $this->load->model("User_model");
-        session_start();
         $userId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
-        $_SESSION['userphoto']=$userinfo->getPhoto();
         $this->load->view("user/index", array('user' => $userinfo));
     }
 
@@ -115,7 +115,9 @@ class user extends CI_Controller
 
 
     public function edit(){
-
-        $this->load->view("user/edit");
+        $this->load->model("User_model");
+        $userId =$_SESSION['userId'];
+        $userinfo =$this->User_model->getUserByUserId($userId);
+        $this->load->view("user/edit",array('user'=>$userinfo));
     }
 }

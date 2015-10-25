@@ -5,7 +5,6 @@ function login(){
     var email =document.getElementById("email").value;
     var password =hex_md5(document.getElementById("loginpassword").value);
     var remember =document.getElementById("remember").checked;
-    alert(remember);
     /*
     输入判断开始
      */

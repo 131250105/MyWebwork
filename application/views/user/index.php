@@ -59,9 +59,9 @@ include_once('commerHeader.php');
                     <p>性别：<?php echo $user->getSex();?></p>
                     <p>学校：</p>
                     <p>地址：<?php echo $user->getAddress();?></p>
-                    <button type="button" class="btn btn-primary">
+                    <a href ="<?php echo site_url("user/edit");?>"><button type="button" class="btn btn-primary">
                         <span class="glyphicon glyphicon-user"></span></span>编辑资料
-                    </button>
+                    </button></a>
                     <p style="visibility: hidden">位置调整</p>
                     <!--glyphicon glyphicon-leaf
                     glyphicon glyphicon-wrench
