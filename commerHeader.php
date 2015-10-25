@@ -35,23 +35,9 @@
         <ul class="nav navbar-nav">
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li class="active"><a href="#">活动</a></li>
-            <li><a href="#">建议</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    霸王 <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">jmeter</a></li>
-                    <li><a href="#">EJB</a></li>
-                    <li><a href="#">Jasper Report</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">分离的链接</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">另一个分离的链接</a></li>
-                </ul>
-            </li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
+            <li class="active"><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
+            <li class="active"><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
+            <li class="active"><a href="<?php echo site_url("topic/userindex")?>">话题专区</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li>
@@ -66,7 +52,7 @@
             <li>
                 <?php
                 if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
-                    echo '<a data-toggle="collapse" data-parent="#accordion" href="#demo">'.
+                    echo '<a style="padding: 5px" data-toggle="collapse" data-parent="#accordion" href="#demo">'.
                     '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
                         width="40" height="40" style="padding: 0px"></a></li>';
                 }
