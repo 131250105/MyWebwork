@@ -20,7 +20,7 @@
     <script src=" <?php echo base_url('js/md5.js');?>"></script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="padding:5px">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="padding:5px">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
                 data-target="#example-navbar-collapse">
@@ -35,17 +35,21 @@
         <ul class="nav navbar-nav">
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li class="active"><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
+            <li class="active" id="a" value="saf"><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
             <li class="active"><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
             <li class="active"><a href="<?php echo site_url("topic/userindex")?>">话题专区</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li>
             <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
+                <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
                 </div>
-                <button type="submit" class="btn btn-default">提交</button>
             </form>
             </li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
