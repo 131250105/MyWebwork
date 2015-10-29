@@ -35,61 +35,141 @@ include_once('commerHeader.php');
     </style>
 
 </head>
-<body>
+<body style="background-color:#f3f3f3">
 
 
-<div class="container">
+<div class="container" style="background-color:white">
     <div class="row" >
-        <div class="col-xs-6 col-sm-3"style="background-color: #dedef8;
-         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;visibility: hidden">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="row" >
-        <div class="col-xs-6 col-sm-3"
-             style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <div class="col-xs-3 col-sm-3"
+             style="background-color:#f3f3f3;padding-right: 50px;">
             <div class="row" >
-                <div class="col-xs-6 col-sm-4.8"
-                     style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-                    <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo $user->getPhoto();?>"
-                         class="img-responsive"  alt="Cinque Terre">
-                    <p style="visibility: hidden">位置调整</p>
-                </div>
-                <div class="col-xs-6 col-sm-7.2"
-                     style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-                    <p style="visibility: hidden">位置调整</p>
-                    <p>昵称：<?php echo $user->getusername();?></p>
-                    <p>性别：<?php echo $user->getSex();?></p>
-                    <p>学校：</p>
-                    <p>地址：<?php echo $user->getAddress();?></p>
-                    <button type="button" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-user"></span></span>编辑资料
-                    </button>
-                    <p style="visibility: hidden">位置调整</p>
-                    <!--glyphicon glyphicon-leaf
-                    glyphicon glyphicon-wrench
-                    glyphicon glyphicon-pushpin-->
+                <div class="col-xs-12 col-sm-12"
+                     style="">
+                    <p style="line-height: 2;font-size: xx-large;font-family:'华文中宋';">个人设置</p>
                 </div>
             </div>
             <div class="row" >
                 <p style="visibility: hidden">位置调整</p>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">SVN</a></li>
-                    <li><a href="#">iOS</a></li>
-                    <li><a href="#">VB.Net</a></li>
-                    <li><a href="#">Java</a></li>
-                    <li><a href="#">PHP</a></li>
+                    <li class="active" style="line-height: 2;padding-left: 10px;">
+                        <a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;基本信息</a></li>
+                    <li style="line-height: 2;padding-left: 10px;">
+                        <a href="#"><span class="glyphicon glyphicon-headphones"></span>&nbsp;&nbsp;&nbsp;我的配件</a></li>
+                    <li style="line-height: 2;padding-left: 10px;">
+                        <a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;账户安全</a></li>
                 </ul>
                 <p style="visibility: hidden">位置调整</p>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-9"
-             style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <div class="col-xs-9 col-sm-9"
+             style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
             <p style="visibility: hidden">位置调整</p>
-            <table class="table table-striped">
-                <caption>编辑资料</caption>
+            <ul class="nav nav-tabs" style="padding-left: 20px;">
+                <li class="active" id="data"><a href="javascript:void (0);">&nbsp;&nbsp;个人资料&nbsp;&nbsp;</a></li>
+                <li id="avatar"><a href="javascript:void (0);">&nbsp;&nbsp;头像设置&nbsp;&nbsp;</a></li>
+            </ul>
+            <table class="table table-striped" id="dataTab">
+                <tbody>
+                <tr>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">昵称</td>
+                    <td style="border:0px">
+                        <div class="col-xs-6 col-sm-9">
+                            <input type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">性别</td>
+                    <td style="border:0px">
+                        <div class="col-xs-6 col-sm-9">
+                            <select class="form-control" id =usersex>
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">生日</td>
+                    <td style="border:0px">
+                        <div class="col-xs-6 col-sm-9">
+                            <select class="form-control" id =birth_y>
+                                <option>1990</option>
+                                <option>1991</option>
+                                <option>1992</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                                <option>1995</option>
+                                <option>1996</option>
+                                <option>1997</option>
+                                <option>1998</option>
+                                <option>1999</option>
+                                <option>2000</option>
+                            </select>
+                            <select class="form-control" id =birth_m>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                            <select class="form-control" id =birth_d>
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">所在地</td>
+                    <td style="border:0px">
+                        <div class="col-xs-6 col-sm-9">
+                            <select class="form-control" id =location_province>
+                                <option>江苏</option>
+                                <option>河北</option>
+                                <option>湖南</option>
+                            </select>
+                            <select class="form-control" id =location_city>
+                                <option>南京</option>
+                                <option>无锡</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">兴趣</td>
+                    <td style="border:0px">
+                        <div class="col-xs-6 col-sm-9">
+                            <select class="form-control" id =hobby>
+                                <option>跑步</option>
+                                <option>网球</option>
+                                <option>滑板</option>
+                                <option>篮球</option>
+                                <option>排球</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">跑步宣言</td>
+                    <td style="border:0px">
+                        <div class="col-xs-6 col-sm-9">
+                            <input type="text" class="form-control" placeholder="昵称">
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-striped"id="avatarTab" style="display:none">
+                <caption>编辑资料2</caption>
                 <tbody>
                 <tr>
                     <td width="15%">头像</td>
@@ -107,50 +187,7 @@ include_once('commerHeader.php');
                                     </a>
                                 </li>
                             </ul>
-                        <div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>昵称</td>
-                    <td>
-                        <div class="col-xs-6 col-sm-9">
-                            <input type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>性别</td>
-                    <td>
-                        <div class="col-xs-6 col-sm-9">
-                            <select class="form-control" id =usersex>
-                                <option>男</option>
-                                <option>女</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>QQ</td>
-                    <td>
-                        <div class="col-xs-6 col-sm-9">
-                            <input type="text" class="form-control" placeholder="昵称">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>手机号</td>
-                    <td>
-                        <div class="col-xs-6 col-sm-9">
-                            <input type="text" class="form-control" placeholder="昵称">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>地址</td>
-                    <td>
-                        <div class="col-xs-6 col-sm-9">
-                            <input type="text" class="form-control" placeholder="昵称">
-                        </div>
+                            <div>
                     </td>
                 </tr>
                 </tbody>
@@ -252,6 +289,20 @@ include_once('commerHeader.php');
         $('#btnZoomOut').on('click', function() {
             cropper.zoomOut();
         })
+    });
+
+    $('#data').on('click', function() {
+        this.className="active";
+        document.getElementById('avatar').className="";
+        document.getElementById('dataTab').style.display="";
+        document.getElementById('avatarTab').style.display="none";
+    });
+
+    $('#avatar').on('click', function() {
+        this.className="active";
+        document.getElementById('data').className="";
+        document.getElementById('avatarTab').style.display="";
+        document.getElementById('dataTab').style.display="none";
     });
 </script>
 
