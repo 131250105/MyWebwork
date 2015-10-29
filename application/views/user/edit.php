@@ -192,6 +192,8 @@ include_once('commerHeader.php');
                 </tr>
                 </tbody>
             </table>
+
+            <button type="button" class="btn btn-primary" id="save">保存</button>
         </div>
     </div>
 </div>
