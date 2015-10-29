@@ -18,7 +18,7 @@ include_once('commerHeader.php');
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
-    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/editor.js');?>"></script>
 
     <script type="text/javascript" src=" <?php echo base_url('js/cropbox.js');?>"></script>
     <script type="text/javascript" src=" <?php echo base_url('js/mouseHover.js');?>"></script>
@@ -75,7 +75,7 @@ include_once('commerHeader.php');
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">昵称</td>
                     <td style="border:0px" colspan="3">
-                            <input type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
+                            <input id= "username" type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
                     </td>
                 </tr>
                 <tr>
@@ -156,19 +156,17 @@ include_once('commerHeader.php');
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">跑步宣言</td>
+                    <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px " >跑步宣言</td>
                     <td style="border:0px" colspan="3">
-                        <form role="form">
                             <div class="form-group">
-                                <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+                                <textarea class="form-control" rows="3" style="resize: none;" id="declaration"></textarea>
                             </div>
-                        </form>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4" style="">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-primary" id="save">保存</button>
+                            <button type="button" class="btn btn-primary" id="save" onclick="editordata()">保存</button>
                         </div>
                     </td>
                 </tr>

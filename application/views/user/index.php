@@ -54,7 +54,7 @@ include_once('commerHeader.php');
                     <p style="font-family: '微软雅黑';">昵称：<?php echo $user->getusername();?></p>
                     <p style="font-family: '微软雅黑';">性别：<?php echo $user->getSex();?></p>
                     <p style="font-family: '微软雅黑';">年龄：</p>
-                    <p style="font-family: '微软雅黑';">所在地：<?php echo $user->getAddress();?></p>
+                    <p style="font-family: '微软雅黑';">所在地：<?php echo $user->getProvince().$user->getCity();?></p>
                     <p style="visibility: hidden">位置调整</p>
                     <!--glyphicon glyphicon-leaf
                     glyphicon glyphicon-wrench

@@ -19,12 +19,17 @@ class User_model extends CI_Model
             $userinfo->setusername($item->username);
             $userinfo->setEmail($item->email);
             $userinfo->setUsertype($item->usertype);
-            $userinfo->setAddress($item->address);
+            $userinfo->setProvince($item->province);
+            $userinfo->setCity($item->city);
+            $userinfo->setBirthyear($item->birthyear);
+            $userinfo->setBirthmonth($item->birthmonth);
+            $userinfo->setBirthday($item->birthday);
             $userinfo->setIsbanned($item->isbanned);
             $userinfo->setIsonline($item->isonline);
             $userinfo->setPhoto($item->photo);
-            $userinfo->setQq($item->qq);
             $userinfo->setSex($item->sex);
+            $userinfo->setHobby($item->hobby);
+            $userinfo->setDeclaration($item->declaration);
         }
         return $userinfo;
     }
@@ -39,12 +44,17 @@ class User_model extends CI_Model
             $userinfo->setusername($item->username);
             $userinfo->setEmail($item->email);
             $userinfo->setUsertype($item->usertype);
-            $userinfo->setAddress($item->address);
+            $userinfo->setProvince($item->province);
+            $userinfo->setCity($item->city);
+            $userinfo->setBirthyear($item->birthyear);
+            $userinfo->setBirthmonth($item->birthmonth);
+            $userinfo->setBirthday($item->birthday);
             $userinfo->setIsbanned($item->isbanned);
             $userinfo->setIsonline($item->isonline);
             $userinfo->setPhoto($item->photo);
-            $userinfo->setQq($item->qq);
             $userinfo->setSex($item->sex);
+            $userinfo->setHobby($item->hobby);
+            $userinfo->setDeclaration($item->declaration);
         }
         return $userinfo;
     }

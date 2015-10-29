@@ -12,12 +12,17 @@ class userbean
     private $username;
     private $password;
     private $usertype;
-    private $address;
+    private $province;
+    private $city;
+    private $birthyear;
+    private $birthmonth;
+    private $birthday;
     private $isonline;
     private $isbanned;
     private $photo;
-    private $qq;
     private $sex;
+    private $hobby;
+    private $declaration;
 
     public function getusername(){
         return $this->username;
@@ -71,16 +76,10 @@ class userbean
         $this->email = $email;
     }
 
-    public function getAddress()
-    {
-        return $this->address;
-    }
 
 
-    public function setAddress($address)
-    {
-        $this->address = $address;
-    }
+
+
 
     public function getIsbanned()
     {
@@ -115,16 +114,6 @@ class userbean
         $this->photo = $photo;
     }
 
-    public function getQq()
-    {
-        return $this->qq;
-    }
-
-
-    public function setQq($qq)
-    {
-        $this->qq = $qq;
-    }
 
     public function getSex()
     {
@@ -135,5 +124,87 @@ class userbean
     public function setSex($sex)
     {
         $this->sex = $sex;
+    }
+
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+
+    public function setProvince($province)
+    {
+        $this->province = $province;
+    }
+
+
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+
+    public function getBirthyear()
+    {
+        return $this->birthyear;
+    }
+
+
+    public function setBirthyear($birthyear)
+    {
+        $this->birthyear = $birthyear;
+    }
+
+
+    public function getBirthmonth()
+    {
+        return $this->birthmonth;
+    }
+
+    public function setBirthmonth($birthmonth)
+    {
+        $this->birthmonth = $birthmonth;
+    }
+
+
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    }
+
+
+    public function getHobby()
+    {
+        return $this->hobby;
+    }
+
+
+    public function setHobby($hobby)
+    {
+        $this->hobby = $hobby;
+    }
+
+
+    public function getDeclaration()
+    {
+        return $this->declaration;
+    }
+
+
+    public function setDeclaration($declaration)
+    {
+        $this->declaration = $declaration;
     }
 }
