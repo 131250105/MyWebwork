@@ -84,12 +84,6 @@ include_once('commerHeader.php');
                         </tr>
                         </tbody>
                     </table>
-                    <p style="visibility: hidden">位置调整</p>
-                    <img  style="visibility: hidden" src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="80%">
-                    <img  style="visibility: hidden" src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="80%">
-                    <img  style="visibility: hidden" src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="80%">
-                    <img  style="visibility: hidden" src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="80%">
-                    <img  style="visibility: hidden" src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="80%">
                 </div>
             </div>
         </div>
