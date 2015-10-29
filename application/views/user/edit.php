@@ -68,31 +68,28 @@ include_once('commerHeader.php');
                 <li class="active" id="data"><a href="javascript:void (0);">&nbsp;&nbsp;个人资料&nbsp;&nbsp;</a></li>
                 <li id="avatar"><a href="javascript:void (0);">&nbsp;&nbsp;头像设置&nbsp;&nbsp;</a></li>
             </ul>
+
             <table class="table table-striped" id="dataTab">
+                <caption style="visibility: hidden">编辑资料</caption>
                 <tbody>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">昵称</td>
-                    <td style="border:0px">
-                        <div class="col-xs-6 col-sm-9">
+                    <td style="border:0px" colspan="3">
                             <input type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">性别</td>
-                    <td style="border:0px">
-                        <div class="col-xs-6 col-sm-9">
+                    <td style="border:0px" colspan="3">
                             <select class="form-control" id =usersex>
                                 <option>男</option>
                                 <option>女</option>
                             </select>
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">生日</td>
                     <td style="border:0px">
-                        <div class="col-xs-6 col-sm-9">
                             <select class="form-control" id =birth_y>
                                 <option>1990</option>
                                 <option>1991</option>
@@ -106,6 +103,8 @@ include_once('commerHeader.php');
                                 <option>1999</option>
                                 <option>2000</option>
                             </select>
+                    </td>
+                    <td style="border:0px">
                             <select class="form-control" id =birth_m>
                                 <option>1</option>
                                 <option>2</option>
@@ -120,33 +119,33 @@ include_once('commerHeader.php');
                                 <option>11</option>
                                 <option>12</option>
                             </select>
+                    </td>
+                    <td style="border:0px">
                             <select class="form-control" id =birth_d>
                                 <option>男</option>
                                 <option>女</option>
                             </select>
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">所在地</td>
                     <td style="border:0px">
-                        <div class="col-xs-6 col-sm-9">
                             <select class="form-control" id =location_province>
                                 <option>江苏</option>
                                 <option>河北</option>
                                 <option>湖南</option>
                             </select>
+                    </td>
+                    <td style="border:0px">
                             <select class="form-control" id =location_city>
                                 <option>南京</option>
                                 <option>无锡</option>
                             </select>
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">兴趣</td>
-                    <td style="border:0px">
-                        <div class="col-xs-6 col-sm-9">
+                    <td style="border:0px" colspan="3">
                             <select class="form-control" id =hobby>
                                 <option>跑步</option>
                                 <option>网球</option>
@@ -154,19 +153,28 @@ include_once('commerHeader.php');
                                 <option>篮球</option>
                                 <option>排球</option>
                             </select>
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">跑步宣言</td>
-                    <td style="border:0px">
-                        <div class="col-xs-6 col-sm-9">
-                            <input type="text" class="form-control" placeholder="昵称">
+                    <td style="border:0px" colspan="3">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td  colspan="4" style="">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-primary" id="save">保存</button>
                         </div>
                     </td>
                 </tr>
                 </tbody>
             </table>
+
 
             <table class="table table-striped"id="avatarTab" style="display:none">
                 <caption>编辑资料2</caption>
@@ -190,10 +198,59 @@ include_once('commerHeader.php');
                             <div>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        请在下方上传新的头像
+                    </td>
+                    <td>
+                        下方是您的头像预览
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        <div class="imageBox" style="float: left;">
+                            <div class="thumbBox"></div>
+                            <div class="spinner" style="display: none">Loading...</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cropped" style="float: left;margin-left: 20px" id="head1">
+                            <img src="<?php echo $user->getPhoto();?>" width="125" height="140" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cropped2" style="float: left;margin-left: 20px;margin-top: 15px" id="head2">
+                            <img src="<?php echo $user->getPhoto();?>" width="98" height="110" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="action">
+                            <a href="javascript:;" class="pic_cut">
+                                <input type="file" id="file" style="float:left; width: 180px">
+                                更换图片
+                            </a>
+                            <input type="button" id="btnCrop" value="Crop"
+                                   style="float: right"  class="btn btn-primary" >
+                            <input type="button" id="btnZoomIn"  class="btn btn-primary"
+                                   value="+" style="float: right">
+                            <input type="button" id="btnZoomOut"  class="btn btn-primary"
+                                   value="-" style="float: right"  >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary">确认修改</button>
+                        </div>
+                    </td>
+                </tr>
                 </tbody>
             </table>
 
-            <button type="button" class="btn btn-primary" id="save">保存</button>
         </div>
     </div>
 </div>
@@ -217,10 +274,7 @@ include_once('commerHeader.php');
             </div>
 
             <div class="form-group" style="padding:50px 80px;height: 480px;">
-                <div class="imageBox" style="float: left;">
-                    <div class="thumbBox"></div>
-                    <div class="spinner" style="display: none">Loading...</div>
-                </div>
+
 
                 <div class="cropped" style="float: left;margin-left: 20px" id="head1">
                     <img src="<?php echo $user->getPhoto();?>" width="125" height="140" id="head1"  style="margin-left:110px;margin-top:30px"/>

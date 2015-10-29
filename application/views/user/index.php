@@ -51,10 +51,10 @@ include_once('commerHeader.php');
                 <div class="col-xs-6 col-sm-7.2"
                      style="">
                     <p style="visibility: hidden">位置调整</p>
-                    <p>昵称：<?php echo $user->getusername();?></p>
-                    <p>性别：<?php echo $user->getSex();?></p>
-                    <p>学校：</p>
-                    <p>地址：<?php echo $user->getAddress();?></p>
+                    <p style="font-family: '微软雅黑';">昵称：<?php echo $user->getusername();?></p>
+                    <p style="font-family: '微软雅黑';">性别：<?php echo $user->getSex();?></p>
+                    <p style="font-family: '微软雅黑';">年龄：</p>
+                    <p style="font-family: '微软雅黑';">所在地：<?php echo $user->getAddress();?></p>
                     <p style="visibility: hidden">位置调整</p>
                     <!--glyphicon glyphicon-leaf
                     glyphicon glyphicon-wrench
@@ -73,12 +73,13 @@ include_once('commerHeader.php');
                 <div class="col-xs-12 col-sm-12"
                      style="">
                     <p style="visibility: hidden">位置调整</p>
-                    <table class="table table-striped">
+                    <table class="table">
                         <caption style="line-height: 2;">活动推荐</caption>
                         <tbody>
                         <tr>
-                            <td style="text-align: center">
-                                <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="80%" align="center">
+                            <td style="text-align: center;padding:30px;background-color:#f3f3f3">
+                                <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="100%" align="center">
+                                <label style="padding-top:10px;">鼓楼多人越野活动</label>
                             </td>
                         </tr>
                         </tbody>
