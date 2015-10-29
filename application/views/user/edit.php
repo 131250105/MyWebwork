@@ -164,9 +164,10 @@ include_once('commerHeader.php');
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="">
+                    <td colspan="4" style="padding:20px">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-primary" id="save" onclick="editordata()">保存</button>
+                            <button type="reset" class="btn btn-default" id="reset" style="padding-left:30px;padding-right:30px">重置</button>
+                            <button type="button" class="btn btn-primary" id="save" onclick="editordata()"  style="padding-left:30px;padding-right:30px">保存</button>
                         </div>
                     </td>
                 </tr>
