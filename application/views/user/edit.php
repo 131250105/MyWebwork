@@ -38,7 +38,7 @@ include_once('commerHeader.php');
 <body style="background-color:#f3f3f3">
 
 
-<div class="container" style="background-color:white">
+<div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
              style="background-color:#f3f3f3;padding-right: 50px;">
@@ -62,7 +62,7 @@ include_once('commerHeader.php');
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
-             style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
             <p style="visibility: hidden">位置调整</p>
             <ul class="nav nav-tabs" style="padding-left: 20px;">
                 <li class="active" id="data"><a href="javascript:void (0);">&nbsp;&nbsp;个人资料&nbsp;&nbsp;</a></li>
@@ -166,7 +166,7 @@ include_once('commerHeader.php');
                     </td>
                 </tr>
                 <tr>
-                    <td  colspan="4" style="">
+                    <td colspan="4" style="">
                         <div class="pull-right">
                             <button type="button" class="btn btn-primary" id="save">保存</button>
                         </div>
@@ -176,74 +176,54 @@ include_once('commerHeader.php');
             </table>
 
 
-            <table class="table table-striped"id="avatarTab" style="display:none">
-                <caption>编辑资料2</caption>
+            <table class="table table-striped" id="avatarTab" style="display:none">
+                <caption style="visibility: hidden;">编辑资料2</caption>
                 <tbody>
                 <tr>
-                    <td width="15%">头像</td>
-                    <td>
-                        <div class="col-xs-6 col-sm-9">
-                            <ul class="da-thumbs" id="da-thumbs" style="float: left;">
-                                <li>
-                                    <a href="javascript:void(0)"> <img
-                                            src="<?php echo $user->getPhoto();?>" class="img-responsive"
-                                            alt="Cinque Terre" width="110" />
-                                        <div style="display: block;">
-										<span data-toggle="modal" data-target="#submitNewAcatarDiv" data-backdrop="static"
-                                              style="font-size: 20px;margin-top: 40px;text-align: center;">更换头像</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    <td style="border:0px;padding: 20px;font-family: '幼圆';font-size: large;line-height: 2;" colspan="2">
                         请在下方上传新的头像
                     </td>
-                    <td>
+                    <td style="border:0px;padding: 20px;font-family: '幼圆';font-size: large;line-height: 2;">
                         下方是您的头像预览
                     </td>
                 </tr>
                 <tr>
-                    <td rowspan="2">
+                    <td rowspan="2" colspan="2" style="border:0px;padding: 20px;">
                         <div class="imageBox" style="float: left;">
                             <div class="thumbBox"></div>
                             <div class="spinner" style="display: none">Loading...</div>
                         </div>
                     </td>
-                    <td>
-                        <div class="cropped" style="float: left;margin-left: 20px" id="head1">
-                            <img src="<?php echo $user->getPhoto();?>" width="125" height="140" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                    <td style="border:0px;padding: 20px;">
+                        <div class="cropped" style="" id="head1">
+                            <img src="<?php echo $user->getPhoto();?>"/>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="cropped2" style="float: left;margin-left: 20px;margin-top: 15px" id="head2">
-                            <img src="<?php echo $user->getPhoto();?>" width="98" height="110" id="head1"  style="margin-left:110px;margin-top:30px"/>
+                    <td style="border:0px;padding: 20px;">
+                        <div class="cropped2" style="" id="head2">
+                            <img src="<?php echo $user->getPhoto();?>" class="img-circle"/>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="action">
-                            <a href="javascript:;" class="pic_cut">
-                                <input type="file" id="file" style="float:left; width: 180px">
+                    <td style="padding: 20px;">
+                        <a href="javascript:;" class="pic_cut">
+                            <input type="file" id="file" style="float:left; width: 180px">
                                 更换图片
-                            </a>
-                            <input type="button" id="btnCrop" value="Crop"
-                                   style="float: right"  class="btn btn-primary" >
-                            <input type="button" id="btnZoomIn"  class="btn btn-primary"
-                                   value="+" style="float: right">
-                            <input type="button" id="btnZoomOut"  class="btn btn-primary"
-                                   value="-" style="float: right"  >
-                        </div>
+                        </a>
                     </td>
-                    <td>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <td style="padding: 20px;padding-right: 0px;">
+                        <input type="button" id="btnZoomIn"  class="btn btn-primary"
+                               value="+">
+                        <input type="button" id="btnZoomOut"  class="btn btn-primary"
+                               value="-">
+                        <input type="button" id="btnCrop" value="剪裁图片"
+                               class="btn btn-primary" >
+                    </td>
+                    <td style="padding: 20px;">
+                        <div class="pull-right">
                             <button type="button" class="btn btn-primary">确认修改</button>
                         </div>
                     </td>
@@ -263,54 +243,6 @@ include_once('commerHeader.php');
     });
 </script>
 
-<div class="modal fade" id="submitNewAcatarDiv" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width: 800px">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">上传新的头像</h4>
-            </div>
-
-            <div class="form-group" style="padding:50px 80px;height: 480px;">
-
-
-                <div class="cropped" style="float: left;margin-left: 20px" id="head1">
-                    <img src="<?php echo $user->getPhoto();?>" width="125" height="140" id="head1"  style="margin-left:110px;margin-top:30px"/>
-                </div>
-                <br/>
-                <div class="cropped2" style="float: left;margin-left: 20px;margin-top: 15px" id="head2">
-                    <img src="<?php echo $user->getPhoto();?>" width="98" height="110" id="head1"  style="margin-left:110px;margin-top:30px"/>
-                </div>
-                <br/>
-                <div class="cropped3" style="float: left;margin-left: 20px;margin-top: 15px" id="head3">
-                    <img src="<?php echo $user->getPhoto();?>" width="62" height="70" id="head1"  style="margin-left:110px;margin-top:30px"/>
-                </div>
-                <br/>
-                <div class="action">
-                    <a href="javascript:;" class="pic_cut">
-                        <input type="file" id="file" style="float:left; width: 180px">
-                        更换图片
-                    </a>
-                    <input type="button" id="btnCrop" value="Crop"
-                           style="float: right"  class="btn btn-primary" >
-                    <input type="button" id="btnZoomIn"  class="btn btn-primary"
-                           value="+" style="float: right">
-                    <input type="button" id="btnZoomOut"  class="btn btn-primary"
-                           value="-" style="float: right"  >
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary">确认修改</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal -->
-</div>
 
 
 <script type="text/javascript">
@@ -334,10 +266,8 @@ include_once('commerHeader.php');
             var img = cropper.getDataURL();
             $('#head1').empty();
             $('#head2').empty();
-            $('#head3').empty();
-            $('#head1').append('<img src="'+img+'" width="125" height="140" id="head1"  style="margin-left:110;margin-top:30"/>');
-            $('#head2').append('<img src="'+img+'" width="98" height="110" id="head1"  style="margin-left:110;margin-top:30"/>');
-            $('#head3').append('<img src="'+img+'" width="62" height="70" id="head1"  style="margin-left:110;margin-top:30"/>');
+            $('#head1').append('<img src="'+img+'" id="head1"/>');
+            $('#head2').append('<img src="'+img+'" id="head2" class="img-circle"/>');
         })
         $('#btnZoomIn').on('click', function() {
             cropper.zoomIn();
