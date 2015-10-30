@@ -35,9 +35,9 @@
         <ul class="nav navbar-nav">
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li class="active" id="a" value="saf"><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
-            <li class="active"><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
-            <li class="active"><a href="<?php echo site_url("topic/userindex")?>">话题专区</a></li>
+            <li id="a" value="saf"><a href="<?php echo site_url("topic/userindex")?>">运动管理</a></li>
+            <li><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
+            <li><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li>

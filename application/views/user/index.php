@@ -182,15 +182,42 @@ include_once('commerHeader.php');
                         <div class="col-xs-11 col-sm-11"
                              style="">
                             <div class="row">
-                                咕咚小编
+                                <p>小编</p>
                             </div>
                             <div class="row">
-                                如果你要避免膝关节磨损，但还想减脂，战绳（Battle ropes）就是最佳选择！它长期被用于NBA、MLB、NFL、综合格斗MMA等训练中，这项训练能训练到的不单只是增加肌肉力量，同时也会训练到核心肌群、稳定性、协调性、心肺适能、爆发力和耐力！感兴趣的咚友不妨试试，据说练过的都会爱上哦~最后，感谢@集美健身教练阿贵 友情赞助的帅图，有健身方面的疑问大家可以找他哟！
+                                <p>万众瞩目的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
                             </div>
                             <div class="row">
-                                2015-10-29 <span style="float:right">赞</span>
+                                2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
                             </div>
-
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="col-xs-1 col-sm-1"
+                             style="">
+                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                        </div>
+                        <div class="col-xs-11 col-sm-11"
+                             style="">
+                            <div class="row">
+                                <p>小编</p>
+                            </div>
+                            <div class="row">
+                                <p>鼓楼篮球对抗赛将于期末考试结束后不就开始，你们准备好了没？</p>
+                            </div>
+                            <div class="row">
+                                2015-10-27 14:10<a style="float:right">赞(<span>18</span>)</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="col-xs-12 col-sm-12"
+                             style="">
+                            <button type="button" class="btn btn-primary btn-block">更多话题</button>
                         </div>
                     </td>
                 </tr>
