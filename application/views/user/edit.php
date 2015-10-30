@@ -71,6 +71,7 @@ include_once('commerHeader.php');
 
             <table class="table table-striped" id="dataTab">
                 <caption style="visibility: hidden">编辑资料</caption>
+                <form>
                 <tbody>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">昵称</td>
@@ -172,6 +173,7 @@ include_once('commerHeader.php');
                     </td>
                 </tr>
                 </tbody>
+                </form>
             </table>
 
 
