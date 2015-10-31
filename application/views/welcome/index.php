@@ -36,8 +36,9 @@
 
 <script type="text/javascript">
     $(window).load(function() {
-        $('#commonHeaderContainer').marginBottom="0px";
-
+        document.getElementById('commonHeaderContainer').style.marginBottom="0px";
+        document.getElementById('commonHeaderContainer').className="navbar navbar-inverse navbar-fixed-top";
+        document.getElementById('dropDownMenu').style.position="fixed";
     });
 </script>
 

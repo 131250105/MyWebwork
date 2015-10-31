@@ -85,56 +85,56 @@ include_once('commerHeader.php');
                      style="">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
+                        <li><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
                         <li><a href="<?php echo site_url("activity/search")?>">活动搜索</a></li>
-                        <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
+                        <li class="active"><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
                         <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
                         <li><a href="<?php echo site_url("activity/collected")?>">我收藏的活动</a></li>
                     </ul>
-                <p style="visibility: hidden">位置调整</p>
+                    <p style="visibility: hidden">位置调整</p>
                 </div>
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
              style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
-            <table class="table table-hover">
-                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">活动一览</caption>
-                <thead style="text-align:center">
-                <tr>
-                    <th>标题/图片</th>
-                    <th style="vertical-align:middle;text-align: center">参与人数</th>
-                    <th style="vertical-align:middle;text-align: center">活动类型</th>
-                    <th style="vertical-align:middle;text-align: center">距开始还有</th>
-                    <th style="vertical-align:middle;text-align: center">备注</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td style="vertical-align:middle">
-                        <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                             width="100px" >
-                        <a id="test">鼓楼多人越野活动</a>
-                    </td>
-                    <td style="vertical-align:middle;text-align: center">0/40</td>
-                    <td style="vertical-align:middle;text-align: center">跑步</td>
-                    <td style="vertical-align:middle;text-align: center">约2个月</td>
-                    <td style="vertical-align:middle;text-align: center">无</td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:middle">
-                        <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                             width="100px" >
-                        鼓楼篮球对抗赛
-                    </td>
-                    <td style="vertical-align:middle;text-align: center">0/12</td>
-                    <td style="vertical-align:middle;text-align: center">篮球</td>
-                    <td style="vertical-align:middle;text-align: center">约1个月</td>
-                    <td style="vertical-align:middle;text-align: center">无</td>
-                </tr>
-                </tbody>
-            </table>
+        <table class="table table-hover">
+            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">我参与的活动</caption>
+            <thead style="text-align:center">
+            <tr>
+                <th>标题/图片</th>
+                <th style="vertical-align:middle;text-align: center">参与人数</th>
+                <th style="vertical-align:middle;text-align: center">活动类型</th>
+                <th style="vertical-align:middle;text-align: center">距开始还有</th>
+                <th style="vertical-align:middle;text-align: center">备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="vertical-align:middle">
+                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
+                         width="100px" >
+                    <a id="test">鼓楼多人越野活动</a>
+                </td>
+                <td style="vertical-align:middle;text-align: center">0/40</td>
+                <td style="vertical-align:middle;text-align: center">跑步</td>
+                <td style="vertical-align:middle;text-align: center">约2个月</td>
+                <td style="vertical-align:middle;text-align: center">无</td>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle">
+                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
+                         width="100px" >
+                    鼓楼篮球对抗赛
+                </td>
+                <td style="vertical-align:middle;text-align: center">0/12</td>
+                <td style="vertical-align:middle;text-align: center">篮球</td>
+                <td style="vertical-align:middle;text-align: center">约1个月</td>
+                <td style="vertical-align:middle;text-align: center">无</td>
+            </tr>
+            </tbody>
+        </table>
 
-            <div align="center">
+        <div align="center">
             <ul class="pagination">
                 <li><a href="#">&laquo;</a></li>
                 <li><a href="#">1</a></li>
@@ -144,9 +144,9 @@ include_once('commerHeader.php');
                 <li><a href="#">5</a></li>
                 <li><a href="#">&raquo;</a></li>
             </ul><br>
-            </div>
         </div>
     </div>
+</div>
 </div>
 
 </body>

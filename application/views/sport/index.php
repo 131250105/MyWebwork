@@ -14,10 +14,13 @@ include_once('commerHeader.php');
     <title>test</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/default.css');?>" rel="stylesheet" type="text/css" />
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src="<?php echo base_url('js/raphael.js');?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('js/init.js');?>" type="text/javascript"></script>
 
     <style type="text/css">
         @font-face {
@@ -51,103 +54,207 @@ include_once('commerHeader.php');
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
-             style="">
-            <div class="row">
-                <div class="col-xs-6 col-sm-4.8"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-7.2"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <p style="font-family: '微软雅黑';">昵称：</p>
-                    <p style="font-family: '微软雅黑';">性别：</p>
-                    <p style="font-family: '微软雅黑';">年龄：</p>
-                    <p style="font-family: '微软雅黑';">所在地：</p>
-                    <p style="visibility: hidden">位置调整</p>
-                    <!--glyphicon glyphicon-leaf
-                    glyphicon glyphicon-wrench
-                    glyphicon glyphicon-pushpin-->
-                </div>
-            </div>
-            <div class="row">
+             style="padding-right: 50px;">
+            <div class="row" >
                 <div class="col-xs-12 col-sm-12"
                      style="">
-                    <button type="button" class="btn btn-primary btn-block">
-                        <span class="glyphicon glyphicon-flag"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发起活动
-                    </button>
-                    <p style="visibility: hidden">位置调整</p>
+                    <p style="line-height: 2;font-size: xx-large;font-family:'华文中宋';">运动管理</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">活动一览</a></li>
-                        <li><a href="#">活动搜索</a></li>
-                        <li><a href="#">我参与的活动</a></li>
-                        <li><a href="#">我发布的活动</a></li>
-                        <li><a href="#">我收藏的活动</a></li>
-                    </ul>
-                    <p style="visibility: hidden">位置调整</p>
-                </div>
+            <div class="row" >
+                <p style="visibility: hidden">位置调整</p>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active" style="line-height: 2;padding-left: 10px;">
+                        <a href="<?php echo site_url("sport/userindex")?>"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;我的运动</a></li>
+                    <li style="line-height: 2;padding-left: 10px;">
+                        <a href="<?php echo site_url("sport/administration")?>"><span class="glyphicon glyphicon-headphones"></span>&nbsp;&nbsp;&nbsp;身体管理</a></li>
+                    <li style="line-height: 2;padding-left: 10px;">
+                        <a href="<?php echo site_url("sport/track")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健身追踪器</a></li>
+                    <li style="line-height: 2;padding-left: 10px;">
+                        <a href="<?php echo site_url("sport/sleepAnalysis")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;睡眠分析</a></li>
+                    <li style="line-height: 2;padding-left: 10px;">
+                        <a href="<?php echo site_url("sport/ride")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健康骑行</a></li>
+                </ul>
+                <p style="visibility: hidden">位置调整</p>
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
              style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
-        <table class="table table-hover">
-            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">活动一览</caption>
-            <thead style="text-align:center">
-            <tr>
-                <th>标题/图片</th>
-                <th style="vertical-align:middle;text-align: center">参与人数</th>
-                <th style="vertical-align:middle;text-align: center">活动类型</th>
-                <th style="vertical-align:middle;text-align: center">距开始还有</th>
-                <th style="vertical-align:middle;text-align: center">备注</th>
-            </tr>
-            </thead>
+        <table class="table table-responsive">
+            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">你本周的健康状况</caption>
             <tbody>
             <tr>
-                <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    <a id="test">鼓楼多人越野活动</a>
+                <td style="vertical-align:middle" colspan="5">
+                    <div id="content" style="position: relative;top: 0px;left: 0px;
+                    margin: 0px 0 0 0px;width:100%;height: 100%;">
+                        <div class="col-xs-6 col-sm-6">
+                            <div class="legend" style="width: 50%;">
+                                <h1>Legend:</h1>
+                                <div class="skills">
+                                    <ul>
+                                        <li class="jq">运动目标完成</li>
+                                        <li class="css">健康BMI</li>
+                                        <li class="html">健康睡眠</li>
+                                       <!-- <li class="php">PHP</li>
+                                        <li class="sql">MySQL</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6">
+                            <div id="diagram"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="get">
+                            <div class="arc">
+                                <span class="text">运动目标完成</span>
+                                <input type="hidden" class="percent" value="80" />
+                                <input type="hidden" class="color" value="#97BE0D" />
+                            </div>
+                            <div class="arc">
+                                <span class="text">健康BMI(20.8)</span>
+                                <input type="hidden" class="percent" value="43" />
+                                <input type="hidden" class="color" value="#D84F5F" />
+                            </div>
+                            <div class="arc">
+                                <span class="text">健康睡眠</span>
+                                <input type="hidden" class="percent" value="71" />
+                                <input type="hidden" class="color" value="#88B8E6" />
+                            </div>
+                        </div>
+                    </div>
                 </td>
-                <td style="vertical-align:middle;text-align: center">0/40</td>
-                <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">约2个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
-            </tr>
-            <tr>
-                <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    鼓楼篮球对抗赛
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/12</td>
-                <td style="vertical-align:middle;text-align: center">篮球</td>
-                <td style="vertical-align:middle;text-align: center">约1个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
             </tr>
             </tbody>
         </table>
 
-        <div align="center">
-            <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul><br>
+        <table class="table table-responsive">
+            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">你注册以来的运动总量</caption>
+            <tbody>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-fire" style="font-size:x-large"></span></th>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-road" style="font-size:x-large"></span></th>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-flag" style="font-size:x-large"></span></th>
+            <tr>
+                <td style="text-align:center;vertical-align:middle" width="33%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">共燃烧</p>
+                        <h2 class="timer count-title" id="count-number" data-to="1000" data-speed="1500"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">大卡</p>
+                    </div>
+                </td>
+                <td style="text-align:center;vertical-align:middle" width="33%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">共行走</p>
+                        <h2 class="timer count-title" id="count-number" data-to="450" data-speed="1500"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">公里</p>
+                    </div>
+                </td>
+                <td style="text-align:center;vertical-align:middle" width="33%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">已运动</p>
+                        <h2 class="timer count-title" id="count-number" data-to="120" data-speed="1500"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">天</p>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-responsive">
+            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">这些运动量可以</caption>
+            <tbody>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-repeat" style="font-size:x-large"></span></th>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-glass" style="font-size:x-large"></span></th>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-tint" style="font-size:x-large"></span></th>
+            <th style="text-align:center;vertical-align:middle"><span class="glyphicon glyphicon-star" style="font-size:x-large"></span></th>
+            <tr>
+                <td style="text-align:center;vertical-align:middle" width="25%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">绕环形跑道</p>
+                        <h2 class="timer count-title" id="count-number" data-to="1000" data-speed="1125"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">圈</p>
+                    </div>
+                </td>
+                <td style="text-align:center;vertical-align:middle" width="25%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">消耗肥肉</p>
+                        <h2 class="timer count-title" id="count-number" data-to="450" data-speed="128"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">公斤</p>
+                    </div>
+                </td>
+                <td style="text-align:center;vertical-align:middle" width="25%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">省93#汽油</p>
+                        <h2 class="timer count-title" id="count-number" data-to="120" data-speed="233"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">升</p>
+                    </div>
+                </td>
+                <td style="text-align:center;vertical-align:middle" width="25%">
+                    <div class="counter col_fourth" style="float: none;">
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">60W灯泡亮</p>
+                        <h2 class="timer count-title" id="count-number" data-to="120" data-speed="417"></h2>
+                        <p class="count-text " style="font-family: '微软雅黑';font-size: large;">小时</p>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="col-xs-6 col-sm-6"
+             style="">
+            <table class="table table-responsive" width="50%">
+                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">全网排名</caption>
+                <tbody>
+                <tr>
+                    <td style="vertical-align:middle;text-align: center">1</td>
+                    <td style="vertical-align:middle">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>"
+                             class="img-rounded" width="100px" >
+                        小编
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:middle;text-align: center">2</td>
+                    <td style="vertical-align:middle">
+                        <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>"
+                             class="img-rounded" width="100px">
+                        围观群众
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
+
+        <div class="col-xs-6 col-sm-6"
+             style="">
+            <table class="table table-responsive" width="50%">
+                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">朋友圈排名</caption>
+                <tbody>
+                <tr>
+                    <td style="vertical-align:middle;text-align: center">1</td>
+                    <td style="vertical-align:middle">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>"
+                             class="img-rounded" width="100px" >
+                        小编
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:middle;text-align: center">2</td>
+                    <td style="vertical-align:middle">
+                        <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>"
+                             class="img-rounded" width="100px">
+                        围观群众
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>
-</div>
+
+<script src=" <?php echo base_url('js/countToNumFun.js');?>"></script>
 
 </body>
 

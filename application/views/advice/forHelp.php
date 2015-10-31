@@ -6,6 +6,7 @@
  * Time: 下午19:02
  */
 include_once("bean/userbean.php");
+include_once('commerHeader.php');
 ?>
 <html lang="zh-CN">
 <head>
@@ -13,13 +14,10 @@ include_once("bean/userbean.php");
     <title>test</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url('css/header.css');?>" media="screen" type="text/css" />
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
-    <script src=" <?php echo base_url('js/md5.js');?>"></script>
-    <script src="<?php echo base_url('js/header.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -40,7 +38,7 @@ include_once("bean/userbean.php");
 
 </head>
 <body style="background-color:#f3f3f3">
-<?php include_once ('commerHeader.php');?>
+
 
 <div class="container">
     <div class="row" >
@@ -88,62 +86,6 @@ include_once("bean/userbean.php");
                     <div style="padding:30px;vertical-align: middle;font-family:'微软雅黑'">
                         你看见了最新的版块公告
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <p style="visibility: hidden">位置调整</p>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12" style="background-color:white;
-                box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
-                border-radius: 15px;">
-                    <table class="table table-hover">
-                        <caption style="padding-left:20px;padding-top:20px;font-family: '华文中宋';font-size: medium;line-height: 2;">子版块</caption>
-                        <tbody>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                                     width="60px" >
-                                <a href="<?php echo site_url("advice/forHelp")?>" style="padding-left:15px">求助版块</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">0/3</td>
-                            <td style="vertical-align:middle;text-align: left">
-                                <p>
-                                    游戏界面bug<br>
-                                    16 小时前 夜念心寒伤
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                                     width="60px" >
-                                <a href="<?php echo site_url("advice/doctor")?>" style="padding-left:15px">医生来了</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">12/20</td>
-                            <td style="vertical-align:middle;text-align: left">
-                                <p>
-                                    游戏界面bug<br>
-                                    16 小时前 夜念心寒伤
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:middle;width:70%">
-                                <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                                     width="60px" >
-                                <a href="<?php echo site_url("advice/coach")?>" style="padding-left:15px">教练，我想...</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">12/20</td>
-                            <td style="vertical-align:middle;text-align: left">
-                                <p>
-                                    游戏界面bug<br>
-                                    16 小时前 夜念心寒伤
-                                </p>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
             <div class="row">
