@@ -68,23 +68,29 @@ include_once('commerHeader.php');
                 <li class="active" id="data"><a href="javascript:void (0);">&nbsp;&nbsp;个人资料&nbsp;&nbsp;</a></li>
                 <li id="avatar"><a href="javascript:void (0);">&nbsp;&nbsp;头像设置&nbsp;&nbsp;</a></li>
             </ul>
-
+            <form>
             <table class="table table-striped" id="dataTab">
                 <caption style="visibility: hidden">编辑资料</caption>
-                <form>
+
                 <tbody>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">昵称</td>
                     <td style="border:0px" colspan="3">
-                            <input id= "username" type="text" class="form-control" placeholder="昵称" value="<?php echo $user->getusername();?>">
+                        <textarea class="form-control" rows="1" style="resize: none;" id="nickname" placeholder="昵称"><?php echo $user->getusername();?></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">性别</td>
                     <td style="border:0px" colspan="3">
                             <select class="form-control" id =usersex>
-                                <option>男</option>
-                                <option>女</option>
+                                <?php if($user->getSex()=="男"){
+                                    echo "<option>男</option>";
+                                    echo "<option>女</option>";
+                                }else{
+                                    echo "<option>女</option>";
+                                    echo "<option>男</option>";
+                                }
+                                ?>
                             </select>
                     </td>
                 </tr>
@@ -92,21 +98,26 @@ include_once('commerHeader.php');
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">生日</td>
                     <td style="border:0px">
                             <select class="form-control" id =birth_y>
-                                <option>1990</option>
-                                <option>1991</option>
-                                <option>1992</option>
-                                <option>1993</option>
-                                <option>1994</option>
-                                <option>1995</option>
-                                <option>1996</option>
-                                <option>1997</option>
-                                <option>1998</option>
-                                <option>1999</option>
-                                <option>2000</option>
+                                <?php if(!is_null($user->getBirthyear())){
+                                    echo "<option>".$user->getBirthyear()."</option>";
+                                }
+                                ?>
                             </select>
                     </td>
                     <td style="border:0px">
-                            <select class="form-control" id =birth_m>
+                            <select class="form-control" id =birth_m onchange="changemonth()">
+                                <?php if(!is_null($user->getBirthmonth())){
+                                    echo "<option>".$user->getBirthmonth()."</option>";
+                                }
+                                ?>
+                            </select>
+                    </td>
+                    <td style="border:0px">
+                            <select class="form-control" id =birth_d>
+                                <?php if(!is_null($user->getBirthday())){
+                                    echo "<option>".$user->getBirthday()."</option>";
+                                }
+                                ?>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -121,26 +132,31 @@ include_once('commerHeader.php');
                                 <option>12</option>
                             </select>
                     </td>
-                    <td style="border:0px">
-                            <select class="form-control" id =birth_d>
-                                <option>男</option>
-                                <option>女</option>
-                            </select>
-                    </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">所在地</td>
                     <td style="border:0px">
                             <select class="form-control" id =location_province>
-                                <option>江苏</option>
-                                <option>河北</option>
-                                <option>湖南</option>
+                                <?php
+                                if(is_null($user->getProvince())) {
+                                    echo "<option > 请选择省份</option >";
+                                }
+                                else {
+                                    echo "<option >$user->getProvince()</option >";
+                                }
+                                ?>
                             </select>
                     </td>
                     <td style="border:0px">
                             <select class="form-control" id =location_city>
-                                <option>南京</option>
-                                <option>无锡</option>
+                                <?php
+                                if(is_null($user->getCity())) {
+                                    echo "<option >请选择城市</option >";
+                                }
+                                else {
+                                    echo "<option >$user->getCity()</option>";
+                                }
+                                ?>
                             </select>
                     </td>
                 </tr>
@@ -168,14 +184,14 @@ include_once('commerHeader.php');
                     <td colspan="4" style="padding:20px">
                         <div class="pull-right">
                             <button type="reset" class="btn btn-default" id="reset" style="padding-left:30px;padding-right:30px">重置</button>
-                            <button type="button" class="btn btn-primary" id="save" onclick="editordata()"  style="padding-left:30px;padding-right:30px">保存</button>
+                            <button type="button" class="btn btn-primary" id="save" onclick="editordata('<?php  echo site_url("user/submitedit")?>')"  style="padding-left:30px;padding-right:30px">保存</button>
                         </div>
                     </td>
                 </tr>
                 </tbody>
-                </form>
-            </table>
 
+            </table>
+            </form>
 
             <table class="table table-striped" id="avatarTab" style="display:none">
                 <caption style="visibility: hidden;">编辑资料2</caption>
@@ -284,19 +300,78 @@ include_once('commerHeader.php');
             cropper.zoomOut();
         })
 
+        /*
+        初始化一些东西
+         */
+        var year =document.getElementById("birth_y");
+        var month =document.getElementById("birth_m");
+        /*
+        初始化年
+         */
+        if(year.length!=0) {
+            var yearoption = year.options[0];
+            var yearvalue = year.options[0].value;
+            for (var i = 1950; i < 2016; i++) {
+                if (yearvalue == i) {
+                    var option = new Option(i, i);
+                    option.selected = true;
+                    year.add(option);
+                    year.remove(yearoption);
+                }else {
+                    var option = new Option(i, i);
+                    year.add(option);
+                }
+            }
+        }
+        else{
+            for (var i = 1950; i < 2016; i++) {
+                var option = new Option(i, i);
+                year.add(option);
+            }
+        }
+
+        /*
+        初始化月
+         */
+        if(month.length!=0) {
+            var monthoption = month.options[0];
+            var monthvalue = month.options[0].value;
+            for (var i = 1; i < 13; i++) {
+                if (monthvalue == i) {
+                    var option = new Option(i, i);
+                    option.selected = true;
+                    month.add(option);
+                    month.remove(monthoption);
+                }else {
+                    var option = new Option(i, i);
+                    month.add(option);
+                }
+            }
+        }
+        else{
+            for (var i = 1; i < 13; i++) {
+                var option = new Option(i, i);
+                month.add(option);
+            }
+        }
+
+
+
+
         $.ajax({
             url: "<?php echo site_url("user/getprovince")?>",
             type: "POST",
             data:{},
             error: function(XMLHttpRequest, textStatus, errorThrown){
-//                alert('服务器忙请稍后再试');
-//                alert(XMLHttpRequest.status);
-//                alert(XMLHttpRequest.readyState);
-//                alert(textStatus);
+                alert('服务器忙请稍后再试');
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
                 return false;
             },
             success: function(data,status) {
-               
+                var obj = eval('(' + data + ')');
+                //alert(obj[0]);
             }
         });
 
@@ -315,6 +390,14 @@ include_once('commerHeader.php');
         document.getElementById('avatarTab').style.display="";
         document.getElementById('dataTab').style.display="none";
     });
+
+
+    function changemonth(){
+        var month =document.getElementById("birth_m");
+        var day =document.getElementById("birth_d");
+        var monthvalue=month.options[month.options.selectedIndex].value;
+
+    }
 </script>
 
 

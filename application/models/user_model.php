@@ -59,6 +59,10 @@ class User_model extends CI_Model
         return $userinfo;
     }
 
+    public function update($userid,$data){
+        $this->db->update('user',$data,array('userId'=>$userid));
+    }
+
     public function login($email ,$password){
         $res = $this->db->from('user')
             ->where('email',$email)

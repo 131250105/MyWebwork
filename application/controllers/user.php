@@ -120,6 +120,31 @@ class user extends CI_Controller
         $this->load->view("user/edit",array('user'=>$userinfo));
     }
 
+    public function submitedit(){
+        $this->load->model("User_model");
+        $username = $this->input->post('username');
+        $usersex = $this->input->post('usersex');
+        $birthyear = $this->input->post('birthyear');
+        $birthmonth = $this->input->post('birthmonth');
+        $birthday = $this->input->post('birthday');
+        $province = $this->input->post('province');
+        $city = $this->input->post('city');
+        $hobby = $this->input->post('hobby');
+        $declaration = $this->input->post('declaration');
+        $data =array(
+            'username' => $username,
+            'sex'  => $usersex,
+            'birthyear'=> $birthyear,
+            'birthmonth' => $birthmonth,
+            'birthday' => $birthday,
+            'province' => $province,
+            'city' => $city,
+            'hobby' =>$hobby,
+            'declaration' =>$declaration,
+        );
+        $userid =$_SESSION['userId'];
+        $this->User_model->update($userid,$data);
+    }
 
     /*
      * 省市相关
@@ -127,6 +152,8 @@ class user extends CI_Controller
     public function getprovince(){
         $this->load->model("User_model");
         $allprovince =$this->User_model->getprovince();
-        echo $allprovince;
+        $json=json_encode($allprovince);
+        $result=preg_replace("#\\\u([0-9a-f]+)#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))", $json);
+        echo $result;
     }
 }

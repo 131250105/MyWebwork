@@ -75,7 +75,7 @@ include_once('commerHeader.php');
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
                      style="">
-                    <button type="button" class="btn btn-primary btn-block">
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.open('<?php echo site_url("activity/publishing"); ?>');">
                         <span class="glyphicon glyphicon-flag"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发起活动
                     </button>
                     <p style="visibility: hidden">位置调整</p>
