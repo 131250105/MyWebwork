@@ -76,21 +76,28 @@ include_once('commerHeader.php');
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
-             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
-        <table class="table table-responsive">
-            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">身体管理</caption>
-            <tbody>
-            </tbody>
-        </table>
+             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+            <table class="table table-responsive">
+                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">身体管理</caption>
+                <tbody>
 
-        <table class="table table-responsive">
-            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">详细数据</caption>
-            <tbody>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+            <table class="table table-responsive">
+                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">详细数据</caption>
+                <tbody>
 
-
+                </tbody>
+            </table>
+        </div>
     </div>
+    <div class="row">
+        <p style="visibility: hidden">位置调整</p>
+    </div>
+</div>
+
+<div style="position: absolute;bottom: 0px;width: 100%;text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+    MyHealth————您的健康管理专家
 </div>
 
 <script src=" <?php echo base_url('js/countToNumFun.js');?>"></script>

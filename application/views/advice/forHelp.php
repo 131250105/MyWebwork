@@ -149,6 +149,13 @@ include_once('commerHeader.php');
             </div>
         </div>
     </div>
+    <div class="row">
+        <p style="visibility: hidden">位置调整</p>
+    </div>
+</div>
+
+<div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+    MyHealth————您的健康管理专家
 </div>
 
 
