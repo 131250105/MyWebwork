@@ -27,4 +27,8 @@ class activity extends CI_Controller
     public function collected(){
         $this->load->view("activity/collected");
     }
+
+    public function publishing(){
+        $this->load->view("activity/publishing");
+    }
 }

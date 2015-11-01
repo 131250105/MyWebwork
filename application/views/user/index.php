@@ -78,7 +78,7 @@ include_once('commerHeader.php');
                         <tbody>
                         <tr>
                             <td style="text-align: center;padding:30px;background-color:#f3f3f3">
-                                <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" alt="Cinque Terre" width="100%" align="center">
+                                <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" align="center">
                                 <label style="padding-top:10px;">鼓楼多人越野活动</label>
                             </td>
                         </tr>
