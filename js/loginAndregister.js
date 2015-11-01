@@ -31,8 +31,10 @@ function login(){
         url: "user/login",
         type: "POST",
         data:{email:email,password:password,remember:remember},
-        error: function(){
-            alert('服务器忙请稍后再试');
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
             return false;
         },
         success: function(data,status){//如果调用php成功

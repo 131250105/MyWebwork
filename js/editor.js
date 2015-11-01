@@ -1,6 +1,7 @@
 /**
  * Created by apple on 2015/10/29.
  */
+
 function editordata(){
     var username =document.getElementById("username").value;
     var usersex =document.getElementById("usersex").value;
@@ -18,3 +19,4 @@ function editordata(){
 function uploadpicture(){
 
 }
+

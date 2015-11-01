@@ -223,7 +223,7 @@
         -->
         <li class="li_h" onclick="window.open('<?php echo site_url("user/index"); ?>')"><i class="fa fa-home fa-lg"></i> 个人中心</li>
         <li class="li_h"><i class="fa fa-envelope fa-lg"></i> 消息 </li>
-        <li class="li_h"><i class="fa fa-user fa-lg"></i> 注销</li>
+        <li class="li_h" onclick="window.location.href='<?php echo site_url("user/logout"); ?>'"><i class="fa fa-user fa-lg"></i> 注销</li>
     </ul>
 </div>
 

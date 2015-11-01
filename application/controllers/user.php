@@ -90,9 +90,8 @@ class user extends CI_Controller
 
 
     public function logout(){
-        unset($_SESSION['userphoto']);
-        unset($_SESSION['userId']);
-        $this->load->view("welcome/index");
+        session_unset();
+        redirect('', 'refresh');
     }
 
     /*
@@ -119,5 +118,15 @@ class user extends CI_Controller
         $userId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
         $this->load->view("user/edit",array('user'=>$userinfo));
+    }
+
+
+    /*
+     * 省市相关
+     */
+    public function getprovince(){
+        $this->load->model("User_model");
+        $allprovince =$this->User_model->getprovince();
+        echo $allprovince;
     }
 }

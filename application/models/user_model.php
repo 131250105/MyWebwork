@@ -58,6 +58,7 @@ class User_model extends CI_Model
         }
         return $userinfo;
     }
+
     public function login($email ,$password){
         $res = $this->db->from('user')
             ->where('email',$email)
@@ -81,4 +82,45 @@ class User_model extends CI_Model
         );
         return $this->db->insert("user",$data);
     }
+
+    /*
+     * 省市相关
+     */
+    public function getprovince(){
+        $res = $this->db->select('sName')
+            ->from('tcity')
+            ->where('sBelongCode',"0")
+            ->get();
+        $result =array();
+        foreach($res->result() as $item){
+            Array_push($result,$item->sName);
+        }
+        return $result;
+    }
+
+
+    public function getprovinceidbyname($provincename){
+        $res = $this->db->select('iCityId')
+            ->from('tcity')
+            ->where('sName',$provincename)
+            ->get();
+        foreach($res->result() as $item){
+            $result=$item->sName;
+        }
+        return $result;
+    }
+
+
+    public function getcitybyprovince($provinceid){
+        $res = $this->db->select('sName')
+            ->from('tcity')
+            ->where('sBelongCode',$provinceid)
+            ->get();
+        $result =array();
+        foreach($res->result() as $item){
+            Array_push($result,$item->sName);
+        }
+        return $result;
+    }
+
 }

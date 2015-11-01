@@ -276,6 +276,23 @@ include_once('commerHeader.php');
         $('#btnZoomOut').on('click', function() {
             cropper.zoomOut();
         })
+
+        $.ajax({
+            url: "<?php echo site_url("user/getprovince")?>",
+            type: "POST",
+            data:{},
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+//                alert('服务器忙请稍后再试');
+//                alert(XMLHttpRequest.status);
+//                alert(XMLHttpRequest.readyState);
+//                alert(textStatus);
+                return false;
+            },
+            success: function(data,status) {
+               
+            }
+        });
+
     });
 
     $('#data').on('click', function() {
