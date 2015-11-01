@@ -17,17 +17,6 @@
     <!-- [endif]-->
 
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
-    <style type="text/css">
-        @font-face {
-            font-family: 'Glyphicons Halflings';
-
-            src: url('<?php echo base_url('fonts/glyphicons-halflings-regular.eot');?>');
-            src: url('<?php echo base_url('fonts/glyphicons-halflings-regular.eot?#iefix');?>') format('embedded-opentype'),
-            url('<?php echo base_url('fonts/glyphicons-halflings-regular.woff');?>') format('woff'),
-            url('<?php echo base_url('fonts/glyphicons-halflings-regular.ttf');?>') format('truetype'),
-            url('<?php echo base_url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular');?>') format('svg');
-        }
-    </style>
 </head>
 <body>
 <?php include_once ('commerHeader.php');?>

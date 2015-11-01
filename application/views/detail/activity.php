@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: apple
- * Date: 2015/11/01
- * Time: 下午14:20
+ * Date: 2015/10/25
+ * Time: 下午19:02
  */
 include_once("bean/userbean.php");
 include_once('commerHeader.php');
@@ -34,7 +34,10 @@ include_once('commerHeader.php');
         }
 
         th {
-            font-size: 18px;
+            vertical-align:middle;
+            padding: 20px;
+            font-family: '幼圆';
+            font-size: large;
         }
 
         td {
@@ -85,7 +88,7 @@ include_once('commerHeader.php');
                      style="">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
+                        <li><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
                         <li><a href="<?php echo site_url("activity/search")?>">活动搜索</a></li>
                         <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
                         <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
@@ -98,53 +101,94 @@ include_once('commerHeader.php');
         <div class="col-xs-9 col-sm-9"
              style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
         <table class="table table-hover">
-            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">活动一览</caption>
-            <thead style="text-align:center">
-            <tr>
-                <th>标题/图片</th>
-                <th style="vertical-align:middle;text-align: center">参与人数</th>
-                <th style="vertical-align:middle;text-align: center">活动类型</th>
-                <th style="vertical-align:middle;text-align: center">距开始还有</th>
-                <th style="vertical-align:middle;text-align: center">备注</th>
-            </tr>
-            </thead>
             <tbody>
             <tr>
-                <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    <a id="test" href="javascript:;void(0)">鼓楼多人越野活动</a>
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/40</td>
-                <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">约2个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
+                <th style="vertical-align:middle;padding: 20px;" colspan="8">
+                    跑步
+                </th>
             </tr>
             <tr>
                 <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
+                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
                          width="100px" >
-                    <a  href="<?php echo site_url("detail/activity")?>">鼓楼篮球对抗赛</a>
                 </td>
-                <td style="vertical-align:middle;text-align: center">0/12</td>
-                <td style="vertical-align:middle;text-align: center">篮球</td>
-                <td style="vertical-align:middle;text-align: center">约1个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
+                <td style="vertical-align:middle" colspan="6">
+                    鼓楼篮球对抗赛
+                </td>
+                <td style="vertical-align:middle;text-align: center">
+                    <button type="button" class="btn btn-primary">
+                        我要加入
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle;font-size: medium;" colspan="8">
+                    <p>开始时间：12-01 14:00 至 12-01 18:00</p>
+                    <p>离比赛开始还有约 1 个月</p>
+                </td>
+            </tr>
+            <tr>
+                <th style="vertical-align:middle;padding: 20px;" colspan="8">
+                    参与成员
+                </th>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle" width="12.5%">
+                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
+                         width="60px" >
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <p>围观群众</p>
+                    <p>其他信息</p>
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
+                         width="60px" >
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <p>围观群众</p>
+                    <p>其他信息</p>
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
+                         width="60px" >
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <p>围观群众</p>
+                    <p>其他信息</p>
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
+                         width="60px" >
+                </td>
+                <td style="vertical-align:middle" width="12.5%">
+                    <p>围观群众</p>
+                    <p>其他信息</p>
+                </td>
+            </tr>
+            <tr>
+                <th style="vertical-align:middle;padding: 20px;" colspan="8">
+                    评论
+                </th>
+            </tr>
+            <tr>
+                <td style="border:0px" colspan="8">
+                    <div class="form-group" style="padding-left: 15px;">
+                        <label for="declaration" style="font-family: '微软雅黑 light';
+                            font-size: small;font-weight: 600;">你的回应：</label>
+                        <textarea class="form-control" rows="4" style="resize: none;" id="declaration"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle;padding-left: 25px;" colspan="8">
+                    <button type="button" class="btn btn-primary">
+                        加上去
+                    </button>
+                </td>
             </tr>
             </tbody>
         </table>
-
-        <div align="center">
-            <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul><br>
-        </div>
     </div>
 </div>
 <div class="row">

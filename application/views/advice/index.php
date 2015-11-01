@@ -153,7 +153,7 @@ include_once("bean/userbean.php");
                 <div class="col-xs-12 col-sm-12" style="background-color:white;
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
-                    <table class="table table-hover">
+                    <table class="table">
                         <caption style="padding-left:20px;padding-top:20px;font-family: '华文中宋';font-size: medium;line-height: 2;">推荐建议</caption>
                         <thead style="text-align:center">
                         <tr>
@@ -166,27 +166,14 @@ include_once("bean/userbean.php");
                         <tbody>
                         <tr>
                             <td style="vertical-align:middle">
-                                <a style="font-size:medium">鼓楼多人越野活动</a>
+                                <a style="font-size:medium" href="<?php echo site_url("detail/advice")?>">吃点大蒜能防感冒 8种辣味食物有益健康</a>
                             </td>
                             <td style="vertical-align:middle;text-align: center">小编</td>
-                            <td style="vertical-align:middle;text-align: center">1/5</td>
+                            <td style="vertical-align:middle;text-align: center">1/12</td>
                             <td style="vertical-align:middle;text-align: center">
                                 <p>
                                     夕阳下的泪痕<br>
                                     昨天 21:54
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <a style="font-size:medium">鼓楼篮球对抗赛</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">小编</td>
-                            <td style="vertical-align:middle;text-align: center">6/8</td>
-                            <td style="vertical-align:middle;text-align: center">
-                                <p>
-                                    夕阳下的泪痕<br>
-                                    昨天 21:30
                                 </p>
                             </td>
                         </tr>
