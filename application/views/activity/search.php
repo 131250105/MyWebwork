@@ -14,10 +14,13 @@ include_once('commerHeader.php');
     <title>test</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap-datetimepicker.min.css');?>" rel="stylesheet">
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/bootstrap-datetimepicker.js');?>"></script>
+    <script src=" <?php echo base_url('js/bootstrap-datetimepicker.fr.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -117,7 +120,7 @@ include_once('commerHeader.php');
                                        placeholder="请输入关键字">
                             </div>
                             <div class="col-sm-2">
-                                <button type="button" class="btn btn-primary btn-block">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     <span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索
                                 </button>
                             </div>
@@ -133,121 +136,39 @@ include_once('commerHeader.php');
             <thead style="text-align:center">
             <tr>
                 <th colspan="5">
-                    条件搜索
+                    按时间搜索
                 </th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td colspan="5">
-                    <div class="col-sm-2" style="padding: 10px;">
-                        多选
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">选项 1</label>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="keyWord" class="col-sm-1 control-label" style="font-family: '幼圆';">从</label>
+                            <div class="col-sm-4">
+                                <input size="16" type="text" value="" readonly class="form_datetime" id="starttime"
+                                       style="display: block;width: 100%;height: 34px;padding: 6px 12px;
+                           font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
+                           background-image: none;border: 1px solid #ccc;border-radius: 4px;">
+                            </div>
+                            <label for="keyWord" class="col-sm-1 control-label" style="font-family: '幼圆';">到</label>
+                            <div class="col-sm-4">
+                                <input size="16" type="text" value="" readonly class="form_datetime" id="endtime"
+                                       style="display: block;width: 100%;height: 34px;padding: 6px 12px;
+                           font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
+                           background-image: none;border: 1px solid #ccc;border-radius: 4px;">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">选项 2</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">选项 3</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">选项 4</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="">选项 5</label>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <div class="col-sm-2" style="padding: 10px;">
-                        单选
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1"
-                                       value="option1" checked> 选项 1
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2"
-                                       value="option2">选项 2
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios3"
-                                       value="option3">选项 3
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios4"
-                                       value="option4">选项 4
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios5"
-                                       value="option5">选项 5
-                            </label>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <div class="col-sm-2" style="padding: 10px;">
-                        选择列表
-                    </div>
-                    <div class="col-sm-4">
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-4 col-md-offset-2">
-                        <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-primary">
-                                <input type="radio" name="options" id="option1"> 选项 1
-                            </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="options" id="option2"> 选项 2
-                            </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="options" id="option3"> 选项 3
-                            </label>
-                        </div>
-                    </div>
-                </td>
-            </tr>
+                    </form>
 
-
+                </td>
+            </tr>
             </tbody>
         </table>
 
@@ -272,6 +193,20 @@ include_once('commerHeader.php');
 <div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
+
+<script type="text/javascript">
+    var myDate = new Date();
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+</script>
 
 </body>
 
