@@ -138,6 +138,7 @@ include_once('commerHeader.php');
                     <td style="border:0px">
                             <select class="form-control" id =location_province>
                                 <?php
+                                echo $user->getProvince();
                                 if(is_null($user->getProvince())) {
                                     echo "<option > 请选择省份</option >";
                                 }
@@ -163,20 +164,14 @@ include_once('commerHeader.php');
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">兴趣</td>
                     <td style="border:0px" colspan="3">
-                            <select class="form-control" id =hobby>
-                                <option>跑步</option>
-                                <option>网球</option>
-                                <option>滑板</option>
-                                <option>篮球</option>
-                                <option>排球</option>
-                            </select>
+                        <textarea class="form-control" rows="1" style="resize: none;" id="hobby"><?php echo $user->getHobby() ?></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px " >跑步宣言</td>
                     <td style="border:0px" colspan="3">
                             <div class="form-group">
-                                <textarea class="form-control" rows="3" style="resize: none;" id="declaration"></textarea>
+                                <textarea class="form-control" rows="3" style="resize: none;" id="declaration"><?php echo $user->getDeclaration() ?></textarea>
                             </div>
                     </td>
                 </tr>
@@ -305,6 +300,8 @@ include_once('commerHeader.php');
          */
         var year =document.getElementById("birth_y");
         var month =document.getElementById("birth_m");
+        var province =document.getElementById("location_province");
+        var city =document.getElementById("location_city");
         /*
         初始化年
          */
@@ -356,7 +353,9 @@ include_once('commerHeader.php');
         }
 
 
-
+        /*
+        初始化省
+         */
 
         $.ajax({
             url: "<?php echo site_url("user/getprovince")?>",
@@ -371,7 +370,10 @@ include_once('commerHeader.php');
             },
             success: function(data,status) {
                 var obj = eval('(' + data + ')');
-                //alert(obj[0]);
+                for(var i=0 ; i< obj.length ;i++){
+                    var option = new Option(obj[i], obj[i]);
+                    province.add(option);
+                }
             }
         });
 
