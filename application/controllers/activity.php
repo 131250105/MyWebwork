@@ -28,6 +28,7 @@ class activity extends CI_Controller
             'publisherId'=>$userId,
         );
         $this->Activity_model->add($data);
+        $this->redirect('/activity/joined', 'refresh');
     }
 
 
@@ -73,7 +74,7 @@ class activity extends CI_Controller
 
     public function userindex(){
         $this->load->model("Activity_model");
-        $mydata = $this->Activity_model->getallactivity();
+        $mydata = $this->Activity_model->getallactivity(0);
         $this->load->view("activity/index",$mydata);
     }
 
@@ -84,25 +85,34 @@ class activity extends CI_Controller
     public function joined(){
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
-        $mydata = $this->Activity_model->getjoinactivity($userId);
+        $mydata = $this->Activity_model->getjoinactivity($userId,0);
         $this->load->view("activity/joined",$mydata);
     }
 
     public function published(){
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
-        $mydata = $this->Activity_model->getpublishactivity($userId);
+        $mydata = $this->Activity_model->getpublishactivity($userId,0);
         $this->load->view("activity/published",$mydata);
     }
 
     public function collected(){
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
-        $mydata = $this->Activity_model->getcollacteactivity($userId);
+        $mydata = $this->Activity_model->getcollacteactivity($userId,0);
         $this->load->view("activity/collected",$mydata);
     }
 
     public function publishing(){
         $this->load->view("activity/publishing");
+    }
+
+
+    public function searchbytime(){
+        $starttime =$this->input->post('starttime');
+    }
+
+    public function searchbykey(){
+        $key =$this->input->post('key');
     }
 }

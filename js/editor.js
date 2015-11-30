@@ -12,7 +12,6 @@ function editordata(url){
     var city =document.getElementById("location_city").value;
     var hobby =document.getElementById("hobby").value;
     var declaration =document.getElementById("declaration").value;
-    alert(province);
     $.ajax({
             url:url,
             type: "POST",

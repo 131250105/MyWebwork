@@ -10,7 +10,6 @@ include_once("bean/userbean.php");
 include_once("bean/activitybean.php");
 class activity_model extends CI_Model
 {
-
     public function add($data){
         return $this->db->insert("Activity",$data);
     }
@@ -36,19 +35,38 @@ class activity_model extends CI_Model
     }
 
     public function getallactivity($index){
-        $this->db->get('Activity')
-            ->limit(($index-1)*5,$index*5);
-    }
-
-    public function getpublishactivity($userId){
-
-    }
-
-    public function getcollacteactivity($userId){
+        $res=$this->db->from('Activity')
+            ->limit(($index-1)*5,$index*5)
+            ->get();
+        return $res->result();
 
     }
 
-    public function getjoinactivity($userId){
+    public function getpublishactivity($userId,$index){
+        $res=$this->db->from('Activity')
+            ->where('publisherId',$userId)
+            ->limit(($index-1)*5,$index*5)
+            ->get();
+        return $res->result();
+    }
 
+    public function getcollacteactivity($userId,$index){
+        $res=$this->db
+            ->from('activitycollacte')
+            ->join('Activity','Activity.ActivityId = activitycollacte.collacteactivityId')
+            ->where('activitycollacte.collacteuserId',$userId)
+            ->limit(($index-1)*5,$index*5)
+            ->get();
+        return $res->result();
+    }
+
+    public function getjoinactivity($userId,$index){
+        $res=$this->db
+            ->from('activitypartin')
+            ->join('Activity','Activity.ActivityId = activitypartin.partinactivityid')
+            ->where('activitypartin.partinuserid',$userId)
+            ->limit(($index-1)*5,$index*5)
+            ->get();
+        return $res->result();
     }
 }

@@ -20,7 +20,7 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap-datetimepicker.js');?>"></script>
     <script src=" <?php echo base_url('js/bootstrap-datetimepicker.fr.js');?>"></script>
-
+    <script src=" <?php echo base_url('js/activity.js');?>"></script>
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -100,6 +100,7 @@ include_once('commerHeader.php');
         </div>
         <div class="col-xs-9 col-sm-9"
              style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
+
         <table class="table table-hover">
             <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">发起活动</caption>
             <tbody>
@@ -108,7 +109,7 @@ include_once('commerHeader.php');
                     活动名
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
-                    <input  type="text" class="form-control" placeholder="活动名" id="name">
+                    <input  type="text" class="form-control" placeholder="活动名" id="name" name="name"/>
                 </td>
             </tr>
             <tr>
@@ -117,7 +118,7 @@ include_once('commerHeader.php');
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" style="resize: none;" id="intro"></textarea>
+                        <textarea class="form-control" rows="3" style="resize: none;" id="intro" name="intro"></textarea>
                     </div>
                 </td>
             </tr>
@@ -126,7 +127,7 @@ include_once('commerHeader.php');
                     时间
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input size="16" type="text" value="" readonly class="form_datetime" id="starttime"
+                    <input size="16" type="text" value="" readonly class="form_datetime" id="starttime"  name="starttime"
                            style="display: block;width: 100%;height: 34px;padding: 6px 12px;
                            font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
                            background-image: none;border: 1px solid #ccc;border-radius: 4px;">
@@ -135,7 +136,7 @@ include_once('commerHeader.php');
                     至
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input size="16" type="text" value="" readonly class="form_datetime" id="endtime"
+                    <input size="16" type="text" value="" readonly class="form_datetime" id="endtime" name="endtime"
                            style="display: block;width: 100%;height: 34px;padding: 6px 12px;
                            font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
                            background-image: none;border: 1px solid #ccc;border-radius: 4px;">
@@ -146,7 +147,7 @@ include_once('commerHeader.php');
                     地点
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
-                    <input  type="text" class="form-control" placeholder="地点" id="location">
+                    <input  type="text" class="form-control" placeholder="地点" id="location" name="location">
                 </td>
             </tr>
             <tr>
@@ -155,15 +156,14 @@ include_once('commerHeader.php');
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" style="resize: none;" id="beizhu"></textarea>
+                        <textarea class="form-control" rows="3" style="resize: none;" id="beizhu" name="beizhu"></textarea>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td colspan="6" style="padding:20px">
                     <div class="pull-right">
-                        <button type="button" class="btn btn-default" style="padding-left:30px;padding-right:30px">取消</button>
-                        <button type="button" class="btn btn-primary" style="padding-left:30px;padding-right:30px">确认发布</button>
+                        <button type="button" class="btn btn-primary" style="padding-left:30px;padding-right:30px" onclick="publishactivity(<?php site_url('activity/addactivity')?>)">确认发布</button>
                     </div>
                 </td>
             </tr>
