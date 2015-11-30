@@ -14,10 +14,12 @@ include_once('commerHeader.php');
     <title>test</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap-datetimepicker.min.css');?>" rel="stylesheet">
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
-    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/bootstrap-datetimepicker.js');?>"></script>
+    <script src=" <?php echo base_url('js/bootstrap-datetimepicker.fr.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -102,26 +104,11 @@ include_once('commerHeader.php');
             <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">发起活动</caption>
             <tbody>
             <tr>
-                <td style="vertical-align:middle;padding-left: 30px;">
-                    活动类型
-                </td>
-                <td style="vertical-align:middle;text-align: center">
-                    <select class="form-control">
-                        <option>跑步</option>
-                        <option>篮球</option>
-                    </select>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
                 <td style="padding-left: 30px;">
                     活动名
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
-                    <input  type="text" class="form-control" placeholder="活动名">
+                    <input  type="text" class="form-control" placeholder="活动名" id="name">
                 </td>
             </tr>
             <tr>
@@ -130,78 +117,36 @@ include_once('commerHeader.php');
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+                        <textarea class="form-control" rows="3" style="resize: none;" id="intro"></textarea>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td style="vertical-align:middle;padding-left: 30px;">
+                <td style="padding-left: 30px;">
                     时间
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input  type="text" class="form-control" placeholder="开始日期">
-                </td>
-                <td style="vertical-align:middle;text-align: center">
-                    <select class="form-control" id =start_t>
-                        <option>00:00</option>
-                        <option>01:00</option>
-                        <option>02:00</option>
-                        <option>03:00</option>
-                        <option>04:00</option>
-                        <option>05:00</option>
-                        <option>06:00</option>
-                        <option>07:00</option>
-                        <option>08:00</option>
-                        <option>09:00</option>
-                        <option>10:00</option>
-                        <option>11:00</option>
-                        <option>12:00</option>
-                        <option>13:00</option>
-                        <option>14:00</option>
-                        <option>15:00</option>
-                        <option>16:00</option>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
-                        <option>21:00</option>
-                        <option>22:00</option>
-                        <option>23:00</option>
-                    </select>
+                    <input size="16" type="text" value="" readonly class="form_datetime" id="starttime"
+                           style="display: block;width: 100%;height: 34px;padding: 6px 12px;
+                           font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
+                           background-image: none;border: 1px solid #ccc;border-radius: 4px;">
                 </td>
                 <td style="vertical-align:middle;text-align: center">
                     至
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input  type="text" class="form-control" placeholder="结束日期">
+                    <input size="16" type="text" value="" readonly class="form_datetime" id="endtime"
+                           style="display: block;width: 100%;height: 34px;padding: 6px 12px;
+                           font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
+                           background-image: none;border: 1px solid #ccc;border-radius: 4px;">
                 </td>
-                <td style="vertical-align:middle;text-align: center">
-                    <select class="form-control" id =end_t>
-                        <option>00:00</option>
-                        <option>01:00</option>
-                        <option>02:00</option>
-                        <option>03:00</option>
-                        <option>04:00</option>
-                        <option>05:00</option>
-                        <option>06:00</option>
-                        <option>07:00</option>
-                        <option>08:00</option>
-                        <option>09:00</option>
-                        <option>10:00</option>
-                        <option>11:00</option>
-                        <option>12:00</option>
-                        <option>13:00</option>
-                        <option>14:00</option>
-                        <option>15:00</option>
-                        <option>16:00</option>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
-                        <option>21:00</option>
-                        <option>22:00</option>
-                        <option>23:00</option>
-                    </select>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;">
+                    地点
+                </td>
+                <td style="vertical-align:middle;text-align: center" colspan="5">
+                    <input  type="text" class="form-control" placeholder="地点" id="location">
                 </td>
             </tr>
             <tr>
@@ -210,7 +155,7 @@ include_once('commerHeader.php');
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+                        <textarea class="form-control" rows="3" style="resize: none;" id="beizhu"></textarea>
                     </div>
                 </td>
             </tr>
@@ -235,6 +180,20 @@ include_once('commerHeader.php');
 <div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
+
+<script type="text/javascript">
+    var myDate = new Date();
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+</script>
 
 </body>
 
