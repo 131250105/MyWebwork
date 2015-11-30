@@ -32,15 +32,49 @@ class activity extends CI_Controller
 
 
     public function joinactivity(){
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $activityId =$this->input->post('activityId');
+        $time=date("Y-m-d H:i:s");
+        $data =array(
+            'partinuserid'=> $userId,
+            'partinactivityid'=>$activityId,
+            'partintime'=>$time,
+        );
+        $this->Activity_model->join($data);
+    }
 
+    public function canceljoinactivity(){
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $activityId =$this->input->post('activityId');
+        $this->Activity_model->cnaceljoin($userId,$activityId);
     }
 
     public function collacteactivity(){
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $activityId =$this->input->post('activityId');
+        $time=date("Y-m-d H:i:s");
+        $data =array(
+            'collacteuserId'=> $userId,
+            'collacteactivityId'=>$activityId,
+            'collactetime'=>$time,
+        );
+        $this->Activity_model->collacte($data);
+    }
 
+    public function cancelcollacteactivity(){
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $activityId =$this->input->post('activityId');
+        $this->Activity_model->cnacelcollacte($userId,$activityId);
     }
 
     public function userindex(){
-        $this->load->view("activity/index");
+        $this->load->model("Activity_model");
+        $mydata = $this->Activity_model->getallactivity();
+        $this->load->view("activity/index",$mydata);
     }
 
     public function search(){
@@ -48,15 +82,24 @@ class activity extends CI_Controller
     }
 
     public function joined(){
-        $this->load->view("activity/joined");
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $mydata = $this->Activity_model->getjoinactivity($userId);
+        $this->load->view("activity/joined",$mydata);
     }
 
     public function published(){
-        $this->load->view("activity/published");
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $mydata = $this->Activity_model->getpublishactivity($userId);
+        $this->load->view("activity/published",$mydata);
     }
 
     public function collected(){
-        $this->load->view("activity/collected");
+        $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
+        $mydata = $this->Activity_model->getcollacteactivity($userId);
+        $this->load->view("activity/collected",$mydata);
     }
 
     public function publishing(){
