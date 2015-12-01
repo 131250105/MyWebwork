@@ -111,24 +111,20 @@ include_once('commerHeader.php');
             <tbody>
             <tr>
                 <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    <a id="test">鼓楼多人越野活动</a>
+                    <a id="test" href="javascript::void(0)">鼓楼多人越野活动</a>
                 </td>
                 <td style="vertical-align:middle;text-align: center">0/40</td>
                 <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">约2个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
+                <td style="vertical-align:middle;text-align: center">2015-05-29 15:00:00</td>
+                <td style="vertical-align:middle;text-align: center">的撒给大使馆反对恢复的好地方和</td>
             </tr>
             <tr>
                 <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    鼓楼篮球对抗赛
+                    <a  href="<?php echo site_url("detail/activity")?>">鼓楼篮球对抗赛</a>
                 </td>
-                <td style="vertical-align:middle;text-align: center">0/12</td>
-                <td style="vertical-align:middle;text-align: center">篮球</td>
-                <td style="vertical-align:middle;text-align: center">约1个月</td>
+                <td style="vertical-align:middle;text-align: center">0/40</td>
+                <td style="vertical-align:middle;text-align: center">跑步</td>
+                <td style="vertical-align:middle;text-align: center">2015-05-29 15:00:00</td>
                 <td style="vertical-align:middle;text-align: center">无</td>
             </tr>
             </tbody>
