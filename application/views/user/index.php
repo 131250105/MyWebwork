@@ -90,7 +90,7 @@ include_once('commerHeader.php');
         <div class="col-xs-6 col-sm-9"
              style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
             <p style="visibility: hidden">位置调整</p>
-            <table class="table table-striped">
+            <table class="table table-deafult">
                 <caption style="
                 text-align: center;
                 font-family: '华文中宋';
@@ -163,9 +163,11 @@ include_once('commerHeader.php');
                 <tr>
                     <td colspan="3" style="background-color: #E9E9E9;padding: 15px;">
                         <form role="form">
-                            <div class="form-group">
+                            <br class="form-group">
                                 <label for="name"  style="font-size: large;line-height: 2;">我想说...</label>
                                 <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+                                <br/>
+                                <button type="submit" class="btn btn-primary pull-right" align="right">提交</button>
                             </div>
                         </form>
                     </td>
