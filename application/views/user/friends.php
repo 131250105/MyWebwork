@@ -78,76 +78,272 @@ include_once('commerHeader.php');
                     <a href ="<?php echo site_url("user/edit");?>" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block">
                             <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑资料
                         </button></a>
+                    <p style="visibility: hidden">位置调整</p>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row">
                 <div class="col-xs-12 col-sm-12"
                      style="">
                     <p style="visibility: hidden">位置调整</p>
-                    <table class="table">
-                        <caption style="line-height: 2;">活动推荐</caption>
-                        <tbody>
-                        <tr>
-                            <td style="text-align: center;padding:30px;background-color:#f3f3f3">
-                                <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" align="center">
-                                <label style="padding-top:10px;font-size: 15px;">鼓楼多人越野活动</label>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="<?php echo site_url("user/friends")?>">好友列表</a></li>
+                        <li><a href="<?php echo site_url("user/search")?>">新鲜事</a></li>
+                        <li><a href="<?php echo site_url("user/joined")?>">好友参与的活动</a></li>
+                        <li><a href="<?php echo site_url("user/published")?>">好友发布的活动</a></li>
+                        <li><a href="<?php echo site_url("user/collected")?>">好友收藏的活动</a></li>
+                    </ul>
+                    <p style="visibility: hidden">位置调整</p>
                 </div>
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
-             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
-        <table class="table table-hover">
-            <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">活动一览</caption>
-            <thead style="text-align:center">
-            <tr>
-                <th>标题/图片</th>
-                <th style="vertical-align:middle;text-align: center">参与人数</th>
-                <th style="vertical-align:middle;text-align: center">活动类型</th>
-                <th style="vertical-align:middle;text-align: center">距开始还有</th>
-                <th style="vertical-align:middle;text-align: center">备注</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    <a id="test" href="javascript:;void(0)">鼓楼多人越野活动</a>
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/40</td>
-                <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">约2个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
-            </tr>
-            <tr>
-                <td style="vertical-align:middle">
-                    <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
-                         width="100px" >
-                    <a  href="<?php echo site_url("detail/activity")?>">鼓楼篮球对抗赛</a>
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/12</td>
-                <td style="vertical-align:middle;text-align: center">篮球</td>
-                <td style="vertical-align:middle;text-align: center">约1个月</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div align="center">
-            <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul><br>
+             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12"
+                     style="">
+                    <p style="padding: 20px;font-family: '华文中宋';font-size: x-large;
+                    line-height: 2;color: #777;text-align: left;">好友列表</p>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px;">
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px;">
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3"
+                     style="">
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    </div>
+                    <div class="col-xs-6 col-sm-6"
+                         style="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">昵称</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="visibility: hidden">
+                                <a class="pull-right">占位</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <a class="pull-right">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <br/><br/>
+                <div class="col-xs-12 col-sm-12"
+                     style="">
+                    <button type="button" class="btn btn-primary btn-block">加载更多</button>
+                </div>
+                <br/><br/><br/>
+            </div>
         </div>
+
+
     </div>
 </div>
 <div class="row">
