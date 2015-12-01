@@ -156,4 +156,68 @@ class user extends CI_Controller
         $result=preg_replace("#\\\u([0-9a-f]+)#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))", $json);
         echo $result;
     }
+
+
+    /*
+     * friend相关, 0,1,2,3分别表示未接受，接受，删除，拒绝
+     */
+    public function addfriend(){
+        $this->load->model("User_model");
+        $firstuserId = $this->input->post('firstuserId');
+        $seconduserId = $this->input->post('seconduserId');
+        $state =0;
+        $createtime=date("Y-m-d H:i:s");
+        $data =array(
+            'firstuserid' => $firstuserId,
+            'seconduserid'  => $seconduserId,
+            'state'=> $state,
+            'createtime' => $createtime,
+        );
+        $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+    }
+
+    public function deletefriend(){
+        $this->load->model("User_model");
+        $firstuserId = $this->input->post('firstuserId');
+        $seconduserId = $this->input->post('seconduserId');
+        $state =2;
+        $createtime=date("Y-m-d H:i:s");
+        $data =array(
+            'firstuserid' => $firstuserId,
+            'seconduserid'  => $seconduserId,
+            'state'=> $state,
+            'createtime' => $createtime,
+        );
+        $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+    }
+
+    public function acceptfriend(){
+        $this->load->model("User_model");
+        $firstuserId = $this->input->post('firstuserId');
+        $seconduserId = $this->input->post('seconduserId');
+        $state =1;
+        $createtime=date("Y-m-d H:i:s");
+        $data =array(
+            'firstuserid' => $firstuserId,
+            'seconduserid'  => $seconduserId,
+            'state'=> $state,
+            'createtime' => $createtime,
+        );
+        $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+    }
+
+    public function rejectfriend(){
+        $this->load->model("User_model");
+        $firstuserId = $this->input->post('firstuserId');
+        $seconduserId = $this->input->post('seconduserId');
+        $state =3;
+        $createtime=date("Y-m-d H:i:s");
+        $data =array(
+            'firstuserid' => $firstuserId,
+            'seconduserid'  => $seconduserId,
+            'state'=> $state,
+            'createtime' => $createtime,
+        );
+        $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+    }
 }

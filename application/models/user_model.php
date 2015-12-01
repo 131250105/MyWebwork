@@ -127,4 +127,24 @@ class User_model extends CI_Model
         return $result;
     }
 
+    public function addfriend($data){
+        $this->db->insert("friendship",$data);
+    }
+
+    public function updatefriend($firstuser,$seconduser,$data){
+        $this->db->where('firstuserid',$firstuser)
+             ->where('seconduserid',$seconduser)
+             ->update('friendship',$data)
+             ->set();
+    }
+
+    public function getallfriends($userId){
+        $res = $this->db
+            ->from('tcity')
+            ->where('firstuserid',$userId)
+            ->where('state',1)
+            ->orwhere('seconduserid',$userId)
+            ->get();
+        return $res->result();
+    }
 }
