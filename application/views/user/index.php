@@ -21,6 +21,7 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/topic.js');?>"></script>
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -165,9 +166,9 @@ include_once('commerHeader.php');
                         <form role="form">
                             <br class="form-group">
                                 <label for="name"  style="font-size: large;line-height: 2;">我想说...</label>
-                                <textarea class="form-control" rows="3" style="resize: none;"></textarea>
+                                <textarea class="form-control" rows="3" style="resize: none;" id ="context"></textarea>
                                 <br/>
-                                <button type="submit" class="btn btn-primary pull-right" align="right">提交</button>
+                                <button type="button" class="btn btn-primary pull-right" align="right" onclick="publishtopic('<?php echo site_url("topic/publishtopic")?> ')">提交</button>
                             </div>
                         </form>
                     </td>

@@ -24,7 +24,8 @@ function publishactivity(url){
                 return false;
             },
             success: function(data,status) {
-                alert("保存成功");
+                alert("活动发布成功");
+                window.location ="/mywebwork/activity/joined";
             }
         });
     }

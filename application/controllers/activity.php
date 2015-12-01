@@ -28,7 +28,6 @@ class activity extends CI_Controller
             'publisherId'=>$userId,
         );
         $this->Activity_model->add($data);
-        $this->redirect('/activity/joined', 'refresh');
     }
 
 

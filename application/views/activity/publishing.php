@@ -163,7 +163,7 @@ include_once('commerHeader.php');
             <tr>
                 <td colspan="6" style="padding:20px">
                     <div class="pull-right">
-                        <button type="button" class="btn btn-primary" style="padding-left:30px;padding-right:30px" onclick="publishactivity(<?php site_url('activity/addactivity')?>)">确认发布</button>
+                        <button type="button" class="btn btn-primary" style="padding-left:30px;padding-right:30px" onclick="publishactivity('<?php echo site_url('activity/addactivity')?> ')">确认发布</button>
                     </div>
                 </td>
             </tr>
