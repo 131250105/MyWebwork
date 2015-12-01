@@ -120,6 +120,14 @@ class user extends CI_Controller
         $this->load->view("user/edit",array('user'=>$userinfo));
     }
 
+    public function friends(){
+        $this->load->model("User_model");
+        $userId =$_SESSION['userId'];
+        $userinfo =$this->User_model->getUserByUserId($userId);
+        $this->load->view("user/friends",array('user'=>$userinfo));
+    }
+
+
     public function submitedit(){
         $this->load->model("User_model");
         $username = $this->input->post('username');
