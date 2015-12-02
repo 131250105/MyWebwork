@@ -116,4 +116,7 @@ class activity extends CI_Controller
     public function searchbykey(){
         $key =$this->input->post('key');
     }
+
+
+
 }

@@ -49,7 +49,7 @@ include_once('commerHeader.php');
 
 </head>
 <body style="background-color:#f3f3f3">
-
+<?php var_dump($mydata)?>
 
 <div class="container">
     <div class="row" >
@@ -104,7 +104,7 @@ include_once('commerHeader.php');
             <tbody>
             <tr>
                 <th style="vertical-align:middle;padding: 20px;" colspan="8">
-                    跑步
+                    <?php echo $mydata[0]->Activitytype?>
                 </th>
             </tr>
             <tr>
@@ -113,7 +113,7 @@ include_once('commerHeader.php');
                          width="100px" >
                 </td>
                 <td style="vertical-align:middle" colspan="6">
-                    鼓楼篮球对抗赛
+                    <?php echo $mydata[0]->ActivityName?>
                 </td>
                 <td style="vertical-align:middle;text-align: center">
                     <button type="button" class="btn btn-primary">

@@ -8,7 +8,11 @@
 class detail extends CI_Controller
 {
     public function activity(){
-        $this->load->view("detail/activity");
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        $activityId =$_GET['activityId'];
+        $this->load->model("Activity_model");
+        $activity =$this->Activity_model->getdetailactivity($activityId);
+        $this->load->view("detail/activity",array('mydata'=>$activity));
     }
 
     public function advice(){

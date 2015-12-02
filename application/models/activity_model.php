@@ -69,4 +69,12 @@ class activity_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+    public function getdetailactivity($activityId){
+        $res=$this->db
+            ->from('activity')
+            ->where('ActivityId',$activityId)
+            ->get();
+        return $res->result();
+    }
 }

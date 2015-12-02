@@ -101,7 +101,7 @@ include_once('commerHeader.php');
             <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">我收藏的活动</caption>
             <thead style="text-align:center">
             <tr>
-                <th>标题/图片</th>
+                <th>标题</th>
                 <th style="vertical-align:middle;text-align: center">参与人数</th>
                 <th style="vertical-align:middle;text-align: center">活动类型</th>
                 <th style="vertical-align:middle;text-align: center">距开始还有</th>
