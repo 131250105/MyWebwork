@@ -98,7 +98,7 @@ include_once('commerHeader.php');
                     <table class="table table-hover">
                         <thead style="text-align:center">
                         <tr>
-                            <th>主题</th>
+                            <th style="line-height: 3;">主题</th>
                             <th style="vertical-align:middle;text-align: center">作者</th>
                             <th style="vertical-align:middle;text-align: center">回复/查看</th>
                             <th style="vertical-align:middle;text-align: center">最后发表</th>

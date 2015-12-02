@@ -43,19 +43,19 @@
             <li id="a" value="saf"><a href="<?php echo site_url("sport/userindex")?>">运动管理</a></li>
             <li><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
             <li><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
+            <li><a href="<?php echo site_url("user/userManagement")?>">用户管理</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">
                             Go!
                         </button>
                     </span>
-                </div>
-            </form>
+                    </div>
+                </form>
             </li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
@@ -63,7 +63,7 @@
                 <?php
                 if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
                     echo '<a style="padding: 5px" href="javascript:;void(0)">'.
-                    '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
+                        '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
                         width="40" height="40" style="padding: 0px" id="userImg"></a></li>';
                 }
                 else{
@@ -93,43 +93,43 @@
             <div class="alert alert-warning"  id="emptyLoginTip_password" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;密码为空</div>
             <div class="alert alert-danger"  id="errorLoginTip" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;用户名或密码错误</div>
             <form class="form-horizontal" role="form"  style="padding:30px 50px;">
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="email"
-                           placeholder="邮箱">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <input type="password" class="form-control" id="loginpassword"
-                           placeholder="密码">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="email">用户类型</label>
-                    <select class="form-control" id =logintype>
-                         <option>普通用户</option>
-                         <option>健康教练</option>
-                         <option>医生</option>
-                         <option>管理员</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <div class="checkbox">
-                        <label> <input type="checkbox" id="remember"> 记住我
-                        </label>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="email"
+                               placeholder="邮箱">
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <button type="button" class="btn btn-primary btn-block"
-                            onclick="login()" style="">登录</button>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control" id="loginpassword"
+                               placeholder="密码">
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="email">用户类型</label>
+                        <select class="form-control" id =logintype>
+                            <option>普通用户</option>
+                            <option>健康教练</option>
+                            <option>医生</option>
+                            <option>管理员</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="checkbox">
+                            <label> <input type="checkbox" id="remember"> 记住我
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary btn-block"
+                                onclick="login()" style="">登录</button>
+                    </div>
+                </div>
             </form>
 
 
@@ -151,70 +151,70 @@
             </div>
 
             <form class="form-horizontal" role="form"  style="padding:30px 50px;">
-            <div class="form-group" id="registeremailForm" style="display:block">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="registeremail"
-                           onchange="checkId()" placeholder="邮箱">
+                <div class="form-group" id="registeremailForm" style="display:block">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="registeremail"
+                               onchange="checkId()" placeholder="邮箱">
                     <span class="glyphicon glyphicon-ok form-control-feedback" id="registeremailIconT"
                           aria-hidden="true" style="display:none"></span>
                     <span class="glyphicon glyphicon-remove form-control-feedback" id="registeremailIconF"
                           aria-hidden="true" style="display:none"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group" id="registerpasswordForm">
-                <div class="col-sm-12">
-                    <input type="password" class="form-control" id="registerpassword"
-                          onchange="checkPassword()" placeholder="密码">
+                <div class="form-group" id="registerpasswordForm">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control" id="registerpassword"
+                               onchange="checkPassword()" placeholder="密码">
                     <span class="glyphicon glyphicon-ok form-control-feedback" id="registerpasswordIconT"
                           aria-hidden="true" style="display:none"></span>
                     <span class="glyphicon glyphicon-remove form-control-feedback" id="registerpasswordIconF"
                           aria-hidden="true" style="display:none"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group" id="registerpasswordConfirmForm">
-                <div class="col-sm-12">
-                    <input type="password" class="form-control" id="registerpasswordConfirm"
-                          onchange="checkPasswordConfirm()" placeholder="确认密码">
+                <div class="form-group" id="registerpasswordConfirmForm">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control" id="registerpasswordConfirm"
+                               onchange="checkPasswordConfirm()" placeholder="确认密码">
                     <span class="glyphicon glyphicon-ok form-control-feedback" id="registerpasswordConfirmIconT"
                           aria-hidden="true" style="display:none"></span>
                     <span class="glyphicon glyphicon-remove form-control-feedback" id="registerpasswordConfirmIconF"
                           aria-hidden="true" style="display:none"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group" id="usernameForm">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="username"
-                          onchange="checkUsername()" placeholder="昵称">
+                <div class="form-group" id="usernameForm">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="username"
+                               onchange="checkUsername()" placeholder="昵称">
                     <span class="glyphicon glyphicon-ok form-control-feedback" id="usernameIconT"
                           aria-hidden="true" style="display:none"></span>
                     <span class="glyphicon glyphicon-remove form-control-feedback" id="usernameIconF"
                           aria-hidden="true" style="display:none"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="name">性别</label>
-                       <select class="form-control" id =usersex>
-                           <option>男</option>
-                           <option>女</option>
-                       </select>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="name">性别</label>
+                        <select class="form-control" id =usersex>
+                            <option>男</option>
+                            <option>女</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="name">用户类型</label>
-                       <select class="form-control" id =usertype>
-                          <option>普通用户</option>
-                          <option>健康教练</option>
-                          <option>医生</option>
-                       </select>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="name">用户类型</label>
+                        <select class="form-control" id =usertype>
+                            <option>普通用户</option>
+                            <option>健康教练</option>
+                            <option>医生</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12" align="left">
-                    <button type="button" class="btn btn-primary btn-block" onclick="register()">注册</button>
+                <div class="form-group">
+                    <div class="col-sm-12" align="left">
+                        <button type="button" class="btn btn-primary btn-block" onclick="register()">注册</button>
+                    </div>
                 </div>
-            </div>
             </form>
 
 
@@ -244,64 +244,64 @@
         $('#dropDownMenu').collapse('toggle')
     });
 
-function checkId()
-{
-    var str=document.getElementById( "registeremail" ).value;
-    var   sReg   =   /[_a-zA-Z\d\-\.]+@[_a-zA-Z\d\-]+(\.[_a-zA-Z\d\-]+)+$/;
-    if   (!sReg.test(str)){
-        document.getElementById( "registeremailForm" ).className = "form-group has-error has-feedback";
-        document.getElementById( "registeremailIconT" ).style.display = "none";
-        document.getElementById( "registeremailIconF" ).style.display = "block";
+    function checkId()
+    {
+        var str=document.getElementById( "registeremail" ).value;
+        var   sReg   =   /[_a-zA-Z\d\-\.]+@[_a-zA-Z\d\-]+(\.[_a-zA-Z\d\-]+)+$/;
+        if   (!sReg.test(str)){
+            document.getElementById( "registeremailForm" ).className = "form-group has-error has-feedback";
+            document.getElementById( "registeremailIconT" ).style.display = "none";
+            document.getElementById( "registeremailIconF" ).style.display = "block";
+        }
+        else {
+            document.getElementById( "registeremailForm" ).className = "form-group has-success has-feedback";
+            document.getElementById( "registeremailIconF" ).style.display = "none";
+            document.getElementById( "registeremailIconT" ).style.display = "block";
+        }
     }
-    else {
-        document.getElementById( "registeremailForm" ).className = "form-group has-success has-feedback";
-        document.getElementById( "registeremailIconF" ).style.display = "none";
-        document.getElementById( "registeremailIconT" ).style.display = "block";
+    function checkPassword()
+    {
+        var str=document.getElementById( "registerpassword" ).value;
+        if(str.length<6||str.length>15){
+            document.getElementById( "registerpasswordForm" ).className = "form-group has-error has-feedback";
+            document.getElementById( "registerpasswordIconT" ).style.display = "none";
+            document.getElementById( "registerpasswordIconF" ).style.display = "block";
+        }
+        else {
+            document.getElementById( "registerpasswordForm" ).className = "form-group has-success has-feedback";
+            document.getElementById( "registerpasswordIconF" ).style.display = "none";
+            document.getElementById( "registerpasswordIconT" ).style.display = "block";
+        }
     }
-}
-function checkPassword()
-{
-    var str=document.getElementById( "registerpassword" ).value;
-    if(str.length<6||str.length>15){
-        document.getElementById( "registerpasswordForm" ).className = "form-group has-error has-feedback";
-        document.getElementById( "registerpasswordIconT" ).style.display = "none";
-        document.getElementById( "registerpasswordIconF" ).style.display = "block";
+    function checkPasswordConfirm()
+    {
+        var str=document.getElementById( "registerpassword" ).value;
+        var str2=document.getElementById( "registerpasswordConfirm" ).value;
+        if(str!=str2){
+            document.getElementById( "registerpasswordConfirmForm" ).className = "form-group has-error has-feedback";
+            document.getElementById( "registerpasswordConfirmIconT" ).style.display = "none";
+            document.getElementById( "registerpasswordConfirmIconF" ).style.display = "block";
+        }
+        else {
+            document.getElementById( "registerpasswordConfirmForm" ).className = "form-group has-success has-feedback";
+            document.getElementById( "registerpasswordConfirmIconF" ).style.display = "none";
+            document.getElementById( "registerpasswordConfirmIconT" ).style.display = "block";
+        }
     }
-    else {
-        document.getElementById( "registerpasswordForm" ).className = "form-group has-success has-feedback";
-        document.getElementById( "registerpasswordIconF" ).style.display = "none";
-        document.getElementById( "registerpasswordIconT" ).style.display = "block";
+    function checkUsername()
+    {
+        var str=document.getElementById( "username" ).value;
+        if(!str.length>0){
+            document.getElementById( "usernameForm" ).className = "form-group has-error has-feedback";
+            document.getElementById( "usernameIconT" ).style.display = "none";
+            document.getElementById( "usernameIconF" ).style.display = "block";
+        }
+        else {
+            document.getElementById( "usernameForm" ).className = "form-group has-success has-feedback";
+            document.getElementById( "usernameIconF" ).style.display = "none";
+            document.getElementById( "usernameIconT" ).style.display = "block";
+        }
     }
-}
-function checkPasswordConfirm()
-{
-    var str=document.getElementById( "registerpassword" ).value;
-    var str2=document.getElementById( "registerpasswordConfirm" ).value;
-    if(str!=str2){
-        document.getElementById( "registerpasswordConfirmForm" ).className = "form-group has-error has-feedback";
-        document.getElementById( "registerpasswordConfirmIconT" ).style.display = "none";
-        document.getElementById( "registerpasswordConfirmIconF" ).style.display = "block";
-    }
-    else {
-        document.getElementById( "registerpasswordConfirmForm" ).className = "form-group has-success has-feedback";
-        document.getElementById( "registerpasswordConfirmIconF" ).style.display = "none";
-        document.getElementById( "registerpasswordConfirmIconT" ).style.display = "block";
-    }
-}
-function checkUsername()
-{
-    var str=document.getElementById( "username" ).value;
-    if(!str.length>0){
-        document.getElementById( "usernameForm" ).className = "form-group has-error has-feedback";
-        document.getElementById( "usernameIconT" ).style.display = "none";
-        document.getElementById( "usernameIconF" ).style.display = "block";
-    }
-    else {
-        document.getElementById( "usernameForm" ).className = "form-group has-success has-feedback";
-        document.getElementById( "usernameIconF" ).style.display = "none";
-        document.getElementById( "usernameIconT" ).style.display = "block";
-    }
-}
 </script>
 
 

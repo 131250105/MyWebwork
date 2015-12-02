@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: apple
- * Date: 2015/10/18
- * Time: 下午13:58
+ * User: asus
+ * Date: 2015/12/2
+ * Time: 16:09
  */
 include_once("bean/userbean.php");
 include_once('commerHeader_admin.php');
@@ -58,78 +58,17 @@ include_once('commerHeader_admin.php');
                 <div class="col-xs-12 col-sm-12"
                      style="">
                     <p style="visibility: hidden">位置调整</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <p style="padding-top: 20px;padding-left: 20px;padding-bottom:20px;font-family: '华文中宋';font-size: medium;
-                    line-height: 1;color: #777;text-align: left;">推荐好友</p>
-                        </div>
-                    </div>
-                    <?php
-                    for ($x=0; $x<3; $x++) {?>
-                        <div class="row" style="padding: 10px;">
-                            <div class="col-xs-12 col-sm-12"
-                                 style="">
-                                <div class="col-xs-6 col-sm-6"
-                                     style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="70%" align="center">
-                                </div>
-                                <div class="col-xs-6 col-sm-6"
-                                     style="line-height: 2;">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12"
-                                             style="">
-                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12"
-                                             style="">
-                                            <a class="">类型</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <p style="padding-top: 60px;padding-left: 20px;padding-bottom:20px;font-family: '华文中宋';font-size: medium;
-                    line-height: 1;color: #777;text-align: left;">推荐圈子</p>
-                        </div>
-                    </div>
-                    <?php
-                    for ($y=0; $y<3; $y++) {?>
-                        <div class="row" style="padding: 10px;">
-                            <div class="col-xs-12 col-sm-12"
-                                 style="">
-                                <div class="col-xs-6 col-sm-6"
-                                     style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="70%" align="center">
-                                </div>
-                                <div class="col-xs-6 col-sm-6"
-                                     style="line-height: 2;">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12"
-                                             style="">
-                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12"
-                                             style="">
-                                            <a class="">类型</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                    ?>
+                    <table class="table">
+                        <caption style="line-height: 2;">活动推荐</caption>
+                        <tbody>
+                        <tr>
+                            <td style="text-align: center;padding:30px;background-color:#f3f3f3">
+                                <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" align="center">
+                                <label style="padding-top:10px;">鼓楼多人越野活动</label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -207,75 +146,75 @@ include_once('commerHeader_admin.php');
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="padding: 15px;">
+                    <td colspan="3" style="background-color: #E9E9E9;padding: 15px;">
                         <form role="form">
                             <br class="form-group">
-                                <label for="name"  style="font-size: large;line-height: 2;">我想说...</label>
-                                <textarea class="form-control" rows="3" style="resize: none;" id ="context"></textarea>
-                                <br/>
-                                <button type="button" class="btn btn-primary pull-right" align="right" onclick="publishtopic('<?php echo site_url("topic/publishtopic")?> ')">提交</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" style="padding: 15px;font-size: large;line-height: 2;">话题</td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="col-xs-1 col-sm-1"
-                             style="">
-                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
-                        </div>
-                        <div class="col-xs-11 col-sm-11"
-                             style="">
-                            <div class="row">
-                                <p>小编</p>
-                            </div>
-                            <div class="row">
-                                <p>万众瞩目的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
-                            </div>
-                            <div class="row">
-                                2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="col-xs-1 col-sm-1"
-                             style="">
-                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
-                        </div>
-                        <div class="col-xs-11 col-sm-11"
-                             style="">
-                            <div class="row">
-                                <p>小编</p>
-                            </div>
-                            <div class="row">
-                                <p>鼓楼篮球对抗赛将于期末考试结束后不就开始，你们准备好了没？</p>
-                            </div>
-                            <div class="row">
-                                2015-10-27 14:10<a style="float:right">赞(<span>18</span>)</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <button type="button" class="btn btn-primary btn-block">更多话题</button>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                            <label for="name"  style="font-size: large;line-height: 2;">我想说...</label>
+                            <textarea class="form-control" rows="3" style="resize: none;" id ="context"></textarea>
+                            <br/>
+                            <button type="button" class="btn btn-primary pull-right" align="right" onclick="publishtopic('<?php echo site_url("topic/publishtopic")?> ')">提交</button>
         </div>
+        </form>
+        </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding: 15px;font-size: large;line-height: 2;">话题</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="col-xs-1 col-sm-1"
+                     style="">
+                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                </div>
+                <div class="col-xs-11 col-sm-11"
+                     style="">
+                    <div class="row">
+                        <p>小编</p>
+                    </div>
+                    <div class="row">
+                        <p>万众瞩目的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
+                    </div>
+                    <div class="row">
+                        2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="col-xs-1 col-sm-1"
+                     style="">
+                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                </div>
+                <div class="col-xs-11 col-sm-11"
+                     style="">
+                    <div class="row">
+                        <p>小编</p>
+                    </div>
+                    <div class="row">
+                        <p>鼓楼篮球对抗赛将于期末考试结束后不就开始，你们准备好了没？</p>
+                    </div>
+                    <div class="row">
+                        2015-10-27 14:10<a style="float:right">赞(<span>18</span>)</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="col-xs-12 col-sm-12"
+                     style="">
+                    <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        </table>
     </div>
-    <div class="row">
-        <p style="visibility: hidden">位置调整</p>
-    </div>
+</div>
+<div class="row">
+    <p style="visibility: hidden">位置调整</p>
+</div>
 </div>
 
 <div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">

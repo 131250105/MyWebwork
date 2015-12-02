@@ -63,9 +63,9 @@ include_once('commerHeader.php');
             </div>
             <div class="row" >
                 <div class="col-xs-12 col-sm-12"
-                     style="visibility: hidden">
+                     style="">
                     <a href ="<?php echo site_url("user/edit");?>" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block">
-                            <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑资料
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加为好友
                         </button></a>
                 </div>
             </div>

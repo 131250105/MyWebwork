@@ -96,10 +96,9 @@ include_once('commerHeader.php');
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
                     <table class="table table-hover">
-                        <caption style="padding-left:20px;padding-top:20px;font-family: '华文中宋';font-size: medium;line-height: 2;">推荐建议</caption>
                         <thead style="text-align:center">
                         <tr>
-                            <th>主题</th>
+                            <th style="line-height: 3;">主题</th>
                             <th style="vertical-align:middle;text-align: center">作者</th>
                             <th style="vertical-align:middle;text-align: center">回复/查看</th>
                             <th style="vertical-align:middle;text-align: center">最后发表</th>

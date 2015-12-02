@@ -27,7 +27,7 @@
 <div class="container">
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
-            <table class="table table-striped" id="dataTab">
+            <table class="table table-default" id="dataTab">
                 <caption style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
                 line-height: 3;color: #434343;">活动推荐</caption>
@@ -127,7 +127,7 @@
     </div>
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
-            <table class="table table-striped" id="dataTab">
+            <table class="table table-default" id="dataTab">
                 <caption style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
                 line-height: 3;color: #434343;">热门话题</caption>
@@ -159,7 +159,7 @@
     </div>
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
-            <table class="table table-striped" id="dataTab">
+            <table class="table table-default" id="dataTab">
                 <caption style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
                 line-height: 3;color: #434343;">建议推荐</caption>

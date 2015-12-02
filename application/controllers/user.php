@@ -134,6 +134,13 @@ class user extends CI_Controller
         $this->load->view("user/otherUserView",array('user'=>$userinfo));
     }
 
+    public function userManagement(){
+        $this->load->model("User_model");
+        $userId =$_SESSION['userId'];
+        $userinfo =$this->User_model->getUserByUserId($userId);
+        $this->load->view("user/userManagement",array('user'=>$userinfo));
+    }
+
 
     public function submitedit(){
         $this->load->model("User_model");
