@@ -18,6 +18,7 @@ class activity extends CI_Controller
         $ActivityEndtime =$this->input ->post('endtime');
         $Activitylocation =$this->input->post('location');
         $Activitybeizhu =$this->input->post('beizhu');
+        $Activitytype =$this->input->post('type');
         $data =array(
             'ActivityName' =>$ActivityName,
             'ActivityIntro' =>$ActivityIntro,
@@ -26,6 +27,7 @@ class activity extends CI_Controller
             'Activitylocation' =>$Activitylocation,
             'Activitybeizhu' =>$Activitybeizhu,
             'publisherId'=>$userId,
+            'Activitytype'=>$Activitytype,
         );
         $this->Activity_model->add($data);
     }
@@ -74,7 +76,7 @@ class activity extends CI_Controller
     public function userindex(){
         $this->load->model("Activity_model");
         $mydata = $this->Activity_model->getallactivity(0);
-        $this->load->view("activity/index",$mydata);
+        $this->load->view("activity/index",array('mydata' => $mydata));
     }
 
     public function search(){
@@ -85,21 +87,21 @@ class activity extends CI_Controller
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $mydata = $this->Activity_model->getjoinactivity($userId,0);
-        $this->load->view("activity/joined",$mydata);
+        $this->load->view("activity/joined",array('mydata' => $mydata));
     }
 
     public function published(){
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $mydata = $this->Activity_model->getpublishactivity($userId,0);
-        $this->load->view("activity/published",$mydata);
+        $this->load->view("activity/published",array('mydata' => $mydata));
     }
 
     public function collected(){
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $mydata = $this->Activity_model->getcollacteactivity($userId,0);
-        $this->load->view("activity/collected",$mydata);
+        $this->load->view("activity/collected",array('mydata' => $mydata));
     }
 
     public function publishing(){

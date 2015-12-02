@@ -108,8 +108,14 @@ include_once('commerHeader.php');
                 <td style="padding-left: 30px;">
                     活动名
                 </td>
-                <td style="vertical-align:middle;text-align: center" colspan="5">
+                <td style="vertical-align:middle;text-align: center" colspan="1">
                     <input  type="text" class="form-control" placeholder="活动名" id="name" name="name"/>
+                </td>
+                <td style="padding-left: 30px;">
+                    运动类型
+                </td>
+                <td style="vertical-align:middle;text-align: center" colspan="1">
+                    <input  type="text" class="form-control" placeholder="运动类型" id="type" name="type"/>
                 </td>
             </tr>
             <tr>

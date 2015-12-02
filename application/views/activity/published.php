@@ -109,24 +109,17 @@ include_once('commerHeader.php');
             </tr>
             </thead>
             <tbody>
+            <?php foreach($mydata as $item){?>
             <tr>
                 <td style="vertical-align:middle">
-                    <a id="test" href="javascript::void(0)">鼓楼多人越野活动</a>
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/40</td>
-                <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">2015-05-29 15:00:00</td>
-                <td style="vertical-align:middle;text-align: center">的撒给大使馆反对恢复的好地方和</td>
-            </tr>
-            <tr>
-                <td style="vertical-align:middle">
-                    <a  href="<?php echo site_url("detail/activity")?>">鼓楼篮球对抗赛</a>
+                    <a  href="<?php echo site_url("detail/activity")?>"><?php echo $item->ActivityName?></a>
                 </td>
                 <td style="vertical-align:middle;text-align: center">0/40</td>
                 <td style="vertical-align:middle;text-align: center">跑步</td>
                 <td style="vertical-align:middle;text-align: center">2015-05-29 15:00:00</td>
                 <td style="vertical-align:middle;text-align: center">无</td>
             </tr>
+            <?php } ?>
             </tbody>
         </table>
 
