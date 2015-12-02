@@ -122,9 +122,25 @@ include_once('commerHeader.php');
                 </td>
             </tr>
             <tr>
+                <th style="vertical-align:middle;padding: 20px;" colspan="8">
+                    基础信息
+                </th>
+            </tr>
+            <tr>
                 <td style="vertical-align:middle;font-size: medium;" colspan="8">
-                    <p>开始时间：12-01 14:00 至 12-01 18:00</p>
-                    <p>离比赛开始还有约 1 个月</p>
+                    <p>地点：<?php echo $mydata[0]->Activitylocation?></p>
+                    <p>时间：<?php echo $mydata[0]->Activitystarttime?> 至 <?php echo $mydata[0]->ActivityEndtime?></p>
+                    <p>备注：<?php echo $mydata[0]->Activitybeizhu?></p>
+                </td>
+            </tr>
+            <tr>
+                <th style="vertical-align:middle;padding: 20px;" colspan="8">
+                    详细介绍
+                </th>
+            </tr>
+            <tr>
+                <td style="vertical-align:middle;font-size: medium;" colspan="8">
+                    <p><?php echo $mydata[0]->ActivityIntro?></p>
                 </td>
             </tr>
             <tr>
