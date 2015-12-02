@@ -6,7 +6,7 @@
  * Time: 下午13:58
  */
 include_once("bean/userbean.php");
-include_once('commerHeader_admin.php');
+include_once('commerHeader.php');
 ?>
 <html lang="zh-CN">
 <head>

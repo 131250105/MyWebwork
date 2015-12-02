@@ -70,7 +70,10 @@
                     echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
                          data-backdrop="static">登录</a></li><li>
                          <a data-toggle="modal" data-target="#registerNewNicknameDiv"
-                         data-backdrop="static">注册</a></li>';
+                         data-backdrop="static">注册</a></li><li>
+                         <a href="';
+                    echo site_url("admin/login");
+                    echo '">管理员入口</a></li>';
                 }   ?>
         </ul>
     </div>
@@ -232,7 +235,7 @@
         <li class="li_h"><i class="fa fa-envelope fa-lg"></i> Inbox <span class="unread">2</span></li>
         以上是未读效果
         -->
-        <li class="li_h" onclick="window.open('<?php echo site_url("user/index"); ?>')"><i class="fa fa-home fa-lg"></i> 个人中心</li>
+        <li class="li_h" onclick="toUserIndex()"><i class="fa fa-home fa-lg"></i> 个人中心</li>
         <li class="li_h" onclick="window.open('<?php echo site_url("user/friends"); ?>')"><i class="fa fa-envelope fa-lg"></i> 好友 </li>
         <li class="li_h" onclick="window.location.href='<?php echo site_url("user/logout"); ?>'"><i class="fa fa-user fa-lg"></i> 注销</li>
     </ul>
@@ -243,7 +246,21 @@
     $('#userImg').on('click', function() {
         $('#dropDownMenu').collapse('toggle')
     });
-
+function toUserIndex()
+{
+    $('#dropDownMenu').collapse('toggle');
+    window.open('<?php echo site_url("user/index"); ?>');
+}
+    function toFriends()
+    {
+        $('#dropDownMenu').collapse('toggle');
+        window.open('<?php echo site_url("user/friends"); ?>');
+    }
+    function toLogout()
+    {
+        $('#dropDownMenu').collapse('toggle');
+        window.open('<?php echo site_url("user/logout"); ?>');
+    }
 function checkId()
 {
     var str=document.getElementById( "registeremail" ).value;

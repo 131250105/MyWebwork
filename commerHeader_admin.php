@@ -38,205 +38,25 @@
     </div>
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav" style="font-family: '幼圆';">
+
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li id="a" value="saf"><a href="<?php echo site_url("sport/userindex")?>">运动管理</a></li>
-            <li><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
-            <li><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
             <li><a href="<?php echo site_url("user/userManagement")?>">用户管理</a></li>
+            <li style="visibility: hidden"><a>位置调整</a></li>
+            <li style="visibility: hidden"><a>位置调整</a></li>
+            <li style="visibility: hidden"><a>位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            Go!
-                        </button>
-                    </span>
-                    </div>
-                </form>
-            </li>
+            <li style="visibility: hidden"><a href="#">位置调整</a></li>
+            <li style="visibility: hidden"><a href="#">位置调整</a></li>
+            <li style="visibility: hidden"><a href="#">位置调整</a></li>
+            <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
-            <li>
-                <?php
-                if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
-                    echo '<a style="padding: 5px" href="javascript:;void(0)">'.
-                        '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
-                        width="40" height="40" style="padding: 0px" id="userImg"></a></li>';
-                }
-                else{
-                    echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
-                         data-backdrop="static">登录</a></li><li>
-                         <a data-toggle="modal" data-target="#registerNewNicknameDiv"
-                         data-backdrop="static">注册</a></li>';
-                }   ?>
+            <li onclick="window.location.href='<?php echo site_url("user/logout");?>'"><a>注销</a></li>
         </ul>
     </div>
 </nav>
 
-
-
-
-
-<div class="modal fade" id="submitNewNicknameDiv" tabindex="-1"
-     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" align="center">
-        <div class="modal-content"  align="left" style="width:400px;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">账号登录</h4>
-            </div>
-            <div class="alert alert-warning"  id="emptyLoginTip_id" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;用户名为空</div>
-            <div class="alert alert-warning"  id="emptyLoginTip_password" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;密码为空</div>
-            <div class="alert alert-danger"  id="errorLoginTip" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;用户名或密码错误</div>
-            <form class="form-horizontal" role="form"  style="padding:30px 50px;">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="email"
-                               placeholder="邮箱">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="password" class="form-control" id="loginpassword"
-                               placeholder="密码">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label for="email">用户类型</label>
-                        <select class="form-control" id =logintype>
-                            <option>普通用户</option>
-                            <option>健康教练</option>
-                            <option>医生</option>
-                            <option>管理员</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <div class="checkbox">
-                            <label> <input type="checkbox" id="remember"> 记住我
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button type="button" class="btn btn-primary btn-block"
-                                onclick="login()" style="">登录</button>
-                    </div>
-                </div>
-            </form>
-
-
-
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal -->
-</div>
-
-<div class="modal fade" id="registerNewNicknameDiv" tabindex="-1"
-     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" align="center">
-        <div class="modal-content"  align="left" style="width:400px;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">账号注册</h4>
-            </div>
-
-            <form class="form-horizontal" role="form"  style="padding:30px 50px;">
-                <div class="form-group" id="registeremailForm" style="display:block">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="registeremail"
-                               onchange="checkId()" placeholder="邮箱">
-                    <span class="glyphicon glyphicon-ok form-control-feedback" id="registeremailIconT"
-                          aria-hidden="true" style="display:none"></span>
-                    <span class="glyphicon glyphicon-remove form-control-feedback" id="registeremailIconF"
-                          aria-hidden="true" style="display:none"></span>
-                    </div>
-                </div>
-                <div class="form-group" id="registerpasswordForm">
-                    <div class="col-sm-12">
-                        <input type="password" class="form-control" id="registerpassword"
-                               onchange="checkPassword()" placeholder="密码">
-                    <span class="glyphicon glyphicon-ok form-control-feedback" id="registerpasswordIconT"
-                          aria-hidden="true" style="display:none"></span>
-                    <span class="glyphicon glyphicon-remove form-control-feedback" id="registerpasswordIconF"
-                          aria-hidden="true" style="display:none"></span>
-                    </div>
-                </div>
-                <div class="form-group" id="registerpasswordConfirmForm">
-                    <div class="col-sm-12">
-                        <input type="password" class="form-control" id="registerpasswordConfirm"
-                               onchange="checkPasswordConfirm()" placeholder="确认密码">
-                    <span class="glyphicon glyphicon-ok form-control-feedback" id="registerpasswordConfirmIconT"
-                          aria-hidden="true" style="display:none"></span>
-                    <span class="glyphicon glyphicon-remove form-control-feedback" id="registerpasswordConfirmIconF"
-                          aria-hidden="true" style="display:none"></span>
-                    </div>
-                </div>
-                <div class="form-group" id="usernameForm">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="username"
-                               onchange="checkUsername()" placeholder="昵称">
-                    <span class="glyphicon glyphicon-ok form-control-feedback" id="usernameIconT"
-                          aria-hidden="true" style="display:none"></span>
-                    <span class="glyphicon glyphicon-remove form-control-feedback" id="usernameIconF"
-                          aria-hidden="true" style="display:none"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label for="name">性别</label>
-                        <select class="form-control" id =usersex>
-                            <option>男</option>
-                            <option>女</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label for="name">用户类型</label>
-                        <select class="form-control" id =usertype>
-                            <option>普通用户</option>
-                            <option>健康教练</option>
-                            <option>医生</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12" align="left">
-                        <button type="button" class="btn btn-primary btn-block" onclick="register()">注册</button>
-                    </div>
-                </div>
-            </form>
-
-
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal -->
-</div>
-
-
-<div id="dropDownMenu" class="collapse"
-     style="position: absolute; right: 0px;top: 30px;z-index: 999">
-    <ul class="ul_h">
-        <!-- class="li_h_a"  有已激活效果
-        <li class="li_h"><i class="fa fa-envelope fa-lg"></i> Inbox <span class="unread">2</span></li>
-        以上是未读效果
-        -->
-        <li class="li_h" onclick="window.open('<?php echo site_url("user/index"); ?>')"><i class="fa fa-home fa-lg"></i> 个人中心</li>
-        <li class="li_h" onclick="window.open('<?php echo site_url("user/friends"); ?>')"><i class="fa fa-envelope fa-lg"></i> 好友 </li>
-        <li class="li_h" onclick="window.location.href='<?php echo site_url("user/logout"); ?>'"><i class="fa fa-user fa-lg"></i> 注销</li>
-    </ul>
-</div>
 
 
 <script type="text/javascript">
