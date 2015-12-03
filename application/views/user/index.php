@@ -320,6 +320,7 @@ include_once('commerHeader.php');
 <script type="text/javascript">
     function showAllTopic()
     {
+
         $('#allTopic').show();
         $('#myTopic').hide();
         $('#toAllTopic').style.color='black';

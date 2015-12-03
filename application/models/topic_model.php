@@ -16,9 +16,18 @@ class topic_model extends CI_Model
 
 
     public function delete($data){
-        $this->load->model("Topic_model");
 
     }
 
+    public function getalltopic(){
+        $this->db->from('topic')->limit(0,10)->get();
+        return $this->result();
+    }
 
+
+    public function getmytopic($userId){
+        $this->db->from('topic')
+            ->where('publisherId',$userId)
+            ->limit(0,10)->get();
+    }
 }
