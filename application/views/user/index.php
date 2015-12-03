@@ -219,54 +219,85 @@ include_once('commerHeader.php');
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="padding: 15px;font-size: large;line-height: 2;">话题</td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="col-xs-1 col-sm-1"
-                             style="">
-                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
-                        </div>
-                        <div class="col-xs-11 col-sm-11"
-                             style="">
-                            <div class="row">
-                                <p>小编</p>
-                            </div>
-                            <div class="row">
-                                <p>万众瞩目的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
-                            </div>
-                            <div class="row">
-                                2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
-                            </div>
-                        </div>
+                    <td colspan="3" style="padding: 15px;font-size: large;line-height: 2;">
+                        <a href="javascript::void(0)" onclick="showAllTopic()">所有话题</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="javascript::void(0)" onclick="showMyTopic()">我发布的话题</a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <div class="col-xs-1 col-sm-1"
-                             style="">
-                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
-                        </div>
-                        <div class="col-xs-11 col-sm-11"
-                             style="">
+                        <div class="col-xs-12 col-sm-12" id="allTopic">
                             <div class="row">
-                                <p>小编</p>
+                                <div class="col-xs-1 col-sm-1"
+                                     style="">
+                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                                </div>
+                                <div class="col-xs-11 col-sm-11"
+                                     style="">
+                                    <div class="row">
+                                        <p>小编</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>万众瞩目的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
+                                    </div>
+                                    <div class="row">
+                                        2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                                <p>鼓楼篮球对抗赛将于期末考试结束后不就开始，你们准备好了没？</p>
+                                <div class="col-xs-1 col-sm-1"
+                                     style="">
+                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                                </div>
+                                <div class="col-xs-11 col-sm-11"
+                                     style="">
+                                    <div class="row">
+                                        <p>小编</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>鼓楼篮球对抗赛将于期末考试结束后不就开始，你们准备好了没？</p>
+                                    </div>
+                                    <div class="row">
+                                        2015-10-27 14:10<a style="float:right">赞(<span>18</span>)</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                                2015-10-27 14:10<a style="float:right">赞(<span>18</span>)</a>
+                                <div class="col-xs-12 col-sm-12"
+                                     style="">
+                                    <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                                </div>
                             </div>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                        <div class="col-xs-12 col-sm-12" id="myTopic" style="display:none">
+                            <div class="row">
+                                <div class="col-xs-1 col-sm-1"
+                                     style="">
+                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                                </div>
+                                <div class="col-xs-11 col-sm-11"
+                                     style="">
+                                    <div class="row">
+                                        <p>小编</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>没人期待的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
+                                    </div>
+                                    <div class="row">
+                                        2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12"
+                                     style="">
+                                    <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                                </div>
+                            </div>
                         </div>
+
                     </td>
                 </tr>
                 </tbody>
@@ -283,6 +314,18 @@ include_once('commerHeader.php');
 </div>
 
 <script src=" <?php echo base_url('js/countToNumFun.js');?>"></script>
+<script type="text/javascript">
+    function showAllTopic()
+    {
+        $('#allTopic').show();
+        $('#myTopic').hide();
+    }
+    function showMyTopic()
+    {
+        $('#allTopic').hide();
+        $('#myTopic').show();
+    }
+</script>
 
 </body>
 

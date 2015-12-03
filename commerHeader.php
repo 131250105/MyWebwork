@@ -13,6 +13,7 @@
     <title>test</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/test.css');?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('css/header.css');?>" media="screen" type="text/css" />
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
@@ -22,60 +23,69 @@
     <script src="<?php echo base_url('js/header.js');?>"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="padding:5px;" id="commonHeaderContainer">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                data-target="#example-navbar-collapse">
-            <span class="sr-only">切换导航</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>" style="padding-top: 5px;padding-left: 30px;">
-            <img src="<?php echo base_url('images/logo.png');?>" class="img-responsive"
-                 height="40" style="">
-        </a>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="padding: 5px;
+    margin-bottom: 0px;
+    opacity: 5;
+    background-color: rgba(228, 228, 228, 0);
+    box-shadow: rgba(27, 178, 0, 0.1) 0 1px 2px;
+    border-color: rgba(0, 0, 0, 0.53);" id="commonHeaderContainer">
+    <div class="popWindow" style="display: none;">
     </div>
-    <div class="collapse navbar-collapse" id="example-navbar-collapse">
-        <ul class="nav navbar-nav" style="font-family: '幼圆';">
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li id="a" value="saf"><a href="<?php echo site_url("sport/userindex")?>">运动管理</a></li>
-            <li><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
-            <li><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
+    <div style="z-index:2">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>" style="padding-top: 5px;padding-left: 30px;">
+                <img src="<?php echo base_url('images/logo.png');?>" class="img-responsive"
+                     height="40" style="">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav" style="font-family: '幼圆';">
+                <li style="visibility: hidden"><a href="#">位置调整</a></li>
+                <li style="visibility: hidden"><a href="#">位置调整</a></li>
+                <li id="a" value="saf"><a href="<?php echo site_url("sport/userindex")?>">运动管理</a></li>
+                <li><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
+                <li><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
+                <li style="visibility: hidden"><a href="#">位置调整</a></li>
+                <li style="visibility: hidden"><a href="#">位置调整</a></li>
+                <li>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">
                             Go!
                         </button>
                     </span>
-                </div>
-            </form>
-            </li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
-            <li>
-                <?php
-                if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
-                    echo '<a style="padding: 5px" href="javascript:;void(0)">'.
-                    '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
+                        </div>
+                    </form>
+                </li>
+                <li style="visibility: hidden"><a href="#">位置调整</a></li>
+                <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
+                <li>
+                    <?php
+                    if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
+                        echo '<a style="padding: 5px" href="javascript:;void(0)">'.
+                            '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
                         width="40" height="40" style="padding: 0px" id="userImg"></a></li>';
-                }
-                else{
-                    echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
+                    }
+                    else{
+                        echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
                          data-backdrop="static">登录</a></li><li>
                          <a data-toggle="modal" data-target="#registerNewNicknameDiv"
                          data-backdrop="static">注册</a></li><li>
                          <a href="';
-                    echo site_url("admin/login");
-                    echo '">管理员入口</a></li>';
-                }   ?>
-        </ul>
+                        echo site_url("admin/login");
+                        echo '">管理员入口</a></li>';
+                    }   ?>
+            </ul>
+        </div>
     </div>
 </nav>
 

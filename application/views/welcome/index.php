@@ -22,7 +22,7 @@
 <?php include_once ('commerHeader.php');?>
 
 
-<img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" style="margin-top:60px">
+<img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" style="">
 
 <div class="container">
     <div class="row" >
