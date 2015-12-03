@@ -30,6 +30,8 @@ class User_model extends CI_Model
             $userinfo->setSex($item->sex);
             $userinfo->setHobby($item->hobby);
             $userinfo->setDeclaration($item->declaration);
+            $userinfo->setCreatedAt($item->createdAt);
+            $userinfo->setState($item->state);
         }
         return $userinfo;
     }
@@ -63,9 +65,10 @@ class User_model extends CI_Model
         $this->db->update('user',$data,array('userId'=>$userid));
     }
 
-    public function login($email ,$password){
+    public function login($email ,$password,$usertype){
         $res = $this->db->from('user')
             ->where('email',$email)
+            ->where('usertype',$usertype)
             ->get();
         foreach($res->result() as $item){
             if($item->password ==$password)

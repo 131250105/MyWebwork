@@ -131,7 +131,6 @@
                          <option>普通用户</option>
                          <option>健康教练</option>
                          <option>医生</option>
-                         <option>管理员</option>
                     </select>
                 </div>
             </div>

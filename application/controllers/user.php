@@ -90,20 +90,22 @@ class user extends CI_Controller
         }
         $userId =$this->User_model->login($email ,$password,$usertype);
         if($userId != -1) {
-            if()
             $userinfo =$this->User_model->getUserByUserId($userId);
-            $_SESSION['userId']=$userId;
-            $_SESSION['userphoto']=$userinfo->getPhoto();
-            $_SESSION['username']=$userinfo->getusername();
-            $_SESSION['usersex']=$userinfo->getSex();
-            $_SESSION['usertype']=$userinfo->getUsertype();
-            if($userinfo->getProvince()==$userinfo->getCity()){
-                $_SESSION['userlocation']=$userinfo->getProvince();
+            if($userinfo->getState()!=0){
+                echo "banned";
+            }else {
+                $_SESSION['userId'] = $userId;
+                $_SESSION['userphoto'] = $userinfo->getPhoto();
+                $_SESSION['username'] = $userinfo->getusername();
+                $_SESSION['usersex'] = $userinfo->getSex();
+                $_SESSION['usertype'] = $userinfo->getUsertype();
+                if ($userinfo->getProvince() == $userinfo->getCity()) {
+                    $_SESSION['userlocation'] = $userinfo->getProvince();
+                } else {
+                    $_SESSION['userlocation'] = $userinfo->getProvince() . $userinfo->getCity();
+                }
+                echo "success";
             }
-            else {
-                $_SESSION['userlocation'] = $userinfo->getProvince().$userinfo->getCity();
-            }
-            echo "success";
         }
         else
             echo "wrong";

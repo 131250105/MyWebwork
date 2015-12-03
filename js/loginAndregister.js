@@ -5,6 +5,7 @@ function login(){
     var email =document.getElementById("email").value;
     var password =hex_md5(document.getElementById("loginpassword").value);
     var remember =document.getElementById("remember").checked;
+    var logintype =document.getElementById("logintype").value;
     /*
     输入判断开始
      */
@@ -30,7 +31,7 @@ function login(){
     $.ajax({
         url: "user/login",
         type: "POST",
-        data:{email:email,password:password,remember:remember},
+        data:{email:email,password:password,remember:remember,usertype:logintype},
         error: function(XMLHttpRequest, textStatus, errorThrown){
             //alert(XMLHttpRequest.status);
             //alert(XMLHttpRequest.readyState);
@@ -43,7 +44,10 @@ function login(){
                 $('#emptyLoginTip_password').hide();
                 $('#errorLoginTip').show();
                 return true;
-            }else{
+            }else if(data=="banned"){
+                alert("该账号已被查封，请联系管理员QQ598435826");
+            }
+            else{
                 window.location.href="user/index";
                 return true;
             }
