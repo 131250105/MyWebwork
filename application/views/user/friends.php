@@ -47,7 +47,8 @@ include_once('commerHeader.php');
 </head>
 <body style="background-color:#f3f3f3">
 
-<?php var_dump($friends)?>
+<?php var_dump($leftfriends)?>
+<?php var_dump($rightfriends)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-6 col-sm-3">

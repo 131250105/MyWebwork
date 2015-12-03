@@ -198,11 +198,20 @@ class User_model extends CI_Model
             ->delete();
     }
 
-    public function getallfriends($userId){
+    public function getleftfriends($userId){
         $res=$this->db
             ->from('friendship')
+            ->join('user','user.userId=friendship.seconduserid')
             ->where('firstuserid',$userId)
-            ->or_where('seconduserid',$userId)
+            ->get();
+        return $res->result();
+    }
+
+    public function getrightfriends($userId){
+        $res=$this->db
+            ->from('friendship')
+            ->join('user','user.userId=friendship.firstuserid')
+            ->where('seconduserid',$userId)
             ->get();
         return $res->result();
     }

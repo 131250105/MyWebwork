@@ -147,8 +147,10 @@ class user extends CI_Controller
     public function friends(){
         $this->load->model("User_model");
         $userId =$_SESSION['userId'];
-        $friends =$this->User_model->getallfriends($userId);
-        $this->load->view("user/friends",array('friends'=>$friends));
+        $leftfriends =$this->User_model->getleftfriends($userId);
+        $rightfriends =$this->User_model->getrightfriends($userId);
+        $this->load->view("user/friends",array('leftfriends'=>$leftfriends,'rightfriends'=> $rightfriends));
+
     }
 
     public function otherUserView(){
