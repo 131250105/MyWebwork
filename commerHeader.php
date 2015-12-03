@@ -58,8 +58,6 @@
                        style="font-size: 16px;color:#DADB7D">建议专区</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
-                <li style="visibility: hidden;"><a>位置调整</a></li>
-                <li style="visibility: hidden;"><a>位调</a></li>
                 <li>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="input-group">

@@ -13,6 +13,7 @@
     <title>test</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/test.css');?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('css/header.css');?>" media="screen" type="text/css" />
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
@@ -23,6 +24,8 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="padding:5px;" id="commonHeaderContainer">
+    <div class="popWindow" style="display: block;">
+    </div>
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
                 data-target="#example-navbar-collapse">
@@ -39,14 +42,12 @@
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav" style="font-family: '幼圆';">
 
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li><a href="<?php echo site_url("user/userManagement")?>">用户管理</a></li>
+            <li><a  onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+                    href="<?php echo site_url("user/userManagement")?>"
+                    style="font-size: 16px;color:#DADB7D">用户管理</a></li>
             <li style="visibility: hidden"><a>位置调整</a></li>
             <li style="visibility: hidden"><a>位置调整</a></li>
             <li style="visibility: hidden"><a>位置调整</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
-            <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
