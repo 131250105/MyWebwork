@@ -147,16 +147,18 @@ class user extends CI_Controller
     public function friends(){
         $this->load->model("User_model");
         $userId =$_SESSION['userId'];
-        $userinfo =$this->User_model->getUserByUserId($userId);
-        $this->load->view("user/friends",array('user'=>$userinfo));
+        $friends =$this->User_model->getallfriends($userId);
+        $this->load->view("user/friends",array('friends'=>$friends));
     }
 
     public function otherUserView(){
         $this->load->model("User_model");
         parse_str($_SERVER['QUERY_STRING'], $_GET);
         $userId =$_GET['userId'];
+        $thisuserId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
-        $this->load->view("user/otherUserView",array('user'=>$userinfo));
+        $judgefriends =$this->User_model->judgefriends($userId,$thisuserId);
+        $this->load->view("user/otherUserView",array('user'=>$userinfo,'judgefriends'=>$judgefriends));
     }
 
     public function userManagement(){
@@ -230,8 +232,8 @@ class user extends CI_Controller
      */
     public function addfriend(){
         $this->load->model("User_model");
-        $firstuserId = $this->input->post('firstuserId');
-        $seconduserId = $this->input->post('seconduserId');
+        $firstuserId = $_SESSION['userId'];
+        $seconduserId = $this->input->post('userId');;
         $state =0;
         $createtime=date("Y-m-d H:i:s");
         $data =array(
@@ -240,22 +242,14 @@ class user extends CI_Controller
             'state'=> $state,
             'createtime' => $createtime,
         );
-        $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+        $this->User_model->addfriend($data);
     }
 
     public function deletefriend(){
         $this->load->model("User_model");
-        $firstuserId = $this->input->post('firstuserId');
-        $seconduserId = $this->input->post('seconduserId');
-        $state =2;
-        $createtime=date("Y-m-d H:i:s");
-        $data =array(
-            'firstuserid' => $firstuserId,
-            'seconduserid'  => $seconduserId,
-            'state'=> $state,
-            'createtime' => $createtime,
-        );
-        $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+        $firstuserId = $_SESSION['userId'];
+        $seconduserId = $this->input->post('userId');
+        $this->User_model->deletefriends($firstuserId,$seconduserId);
     }
 
     public function acceptfriend(){

@@ -36,7 +36,6 @@ include_once('commerHeader.php');
 </head>
 <body  style="background-color:#f3f3f3">
 
-
 <div class="container">
     <div class="row" >
         <div class="col-xs-6 col-sm-3">
@@ -64,9 +63,16 @@ include_once('commerHeader.php');
             <div class="row" >
                 <div class="col-xs-12 col-sm-12"
                      style="">
-                    <a href ="<?php echo site_url("user/edit");?>" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block" onclick="addfriends('<?php echo site_url('')?>')">
+                    <?php if($judgefriends==0){ ?>
+                    <a href ="" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block" onclick="addfriends('<?php echo site_url('user/addfriend')?>','<?php echo $user->getUserId() ?>')">
                             <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加为好友
                         </button></a>
+                    <?php }  else { ?>
+                        <a href ="" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block" onclick="deletefriends('<?php echo site_url('user/deletefriend')?>','<?php echo $user->getUserId() ?>')">
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除好友
+                            </button></a>
+                    <?php } ?>
+
                 </div>
             </div>
             <div class="row" >

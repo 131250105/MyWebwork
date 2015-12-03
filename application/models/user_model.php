@@ -144,15 +144,10 @@ class User_model extends CI_Model
              ->set();
     }
 
-    public function getallfriends($userId){
-        $res = $this->db
-            ->from('tcity')
-            ->where('firstuserid',$userId)
-            ->where('state',1)
-            ->orwhere('seconduserid',$userId)
-            ->get();
-        return $res->result();
+    public function deletefriend($firstuser,$seconduser){
+
     }
+
 
 
     public function getpotentialfriends($userId){
@@ -161,6 +156,53 @@ class User_model extends CI_Model
             ->where('usertype !=','admin')
             ->where('userId !=',$userId)
             ->limit(0,3)
+            ->get();
+        return $res->result();
+    }
+
+
+    public function judgefriends($userId,$thisuserId){
+        $res1 = $this->db
+            ->from('friendship')
+            ->where('firstuserid',$userId)
+            ->where('seconduserid',$thisuserId)
+            ->get();
+
+        $res2 = $this->db
+            ->from('friendship')
+            ->where('firstuserid',$thisuserId)
+            ->where('seconduserid',$userId)
+            ->get();
+
+        if(count($res1->result())!=0){
+            return 1;
+        }
+
+        if(count($res2->result())!=0){
+            return 1;
+        }
+        return 0;
+    }
+
+
+    public function deletefriends($firstuserId,$seconduserId){
+        $this->db
+            ->from('friendship')
+            ->where('firstuserid',$firstuserId)
+            ->where('seconduserid',$seconduserId)
+            ->delete();
+        $this->db
+            ->from('friendship')
+            ->where('firstuserid',$seconduserId)
+            ->where('seconduserid',$firstuserId)
+            ->delete();
+    }
+
+    public function getallfriends($userId){
+        $res=$this->db
+            ->from('friendship')
+            ->where('firstuserid',$userId)
+            ->or_where('seconduserid',$userId)
             ->get();
         return $res->result();
     }
