@@ -41,7 +41,6 @@
     </div>
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav" style="font-family: '幼圆';">
-
             <li><a  onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
                     href="<?php echo site_url("user/userManagement")?>"
                     style="font-size: 16px;color:#DADB7D">用户管理</a></li>

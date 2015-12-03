@@ -40,22 +40,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>" style="padding-top: 5px;padding-left: 30px;">
-                <img src="<?php echo base_url('images/logo.png');?>" class="img-responsive"
-                     height="40" style="">
-            </a>
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav" style="font-family: '幼圆';">
-                <li><a onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+
+                <li><a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>" style="padding-top: 5px;padding-left: 30px;">
+                    <img src="<?php echo base_url('images/logo2.png');?>" class="img-responsive"
+                        onmouseover="this.src='<?php echo base_url('images/logo2_h.png');?>'"
+                         onmouseout="this.src='<?php echo base_url('images/logo2.png');?>'"
+                         height="40" style="">
+                </a></li>
+                <li><a onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
                        href="<?php echo site_url("sport/userindex")?>"
-                       style="font-size: 16px;color:#DADB7D">运动管理</a></li>
-                <li><a onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+                       style="font-size: 16px;color:black">运动管理</a></li>
+                <li><a onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
                        href="<?php echo site_url("activity/userindex")?>"
-                       style="font-size: 16px;color:#DADB7D">活动专区</a></li>
-                <li><a onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+                       style="font-size: 16px;color:black">活动专区</a></li>
+                <li><a onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
                        href="<?php echo site_url("advice/userindex")?>"
-                       style="font-size: 16px;color:#DADB7D">建议专区</a></li>
+                       style="font-size: 16px;color:black">建议专区</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li>
@@ -71,21 +74,25 @@
                     </form>
                 </li>
                 <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
-                <li>
+
                     <?php
                     if(isset($_SESSION['userId'])&& isset($_SESSION['userphoto'])) {
-                        echo '<a style="padding: 5px" href="javascript:;void(0)">'.
+                        echo '<li style="visibility: hidden;"><a>位置调整</a></li>
+                              <li style="visibility: hidden;"><a>位置调整</a></li>
+                              <li style="visibility: hidden;"><a>位置调整</a></li>'.
+                            '<li><a style="padding: 5px" href="javascript:;void(0)">'.
                             '<img src="'.$_SESSION['userphoto']. '" alt="First slide" class="img-circle"
                         width="40" height="40" style="padding: 0px" id="userImg"></a></li>';
                     }
                     else{
-                        echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
-                         data-backdrop="static" style="font-size: 16px;color:#DADB7D" href="javascript::void(0)"
-                          onmouseout="this.style.color=\'#DADB7D\'" onmouseover="this.style.color=\'white\'">登录</a></li><li>
+                        echo '<li style="visibility: hidden;"><a>位置调整</a></li>'.
+                        '<li><a data-toggle="modal" data-target="#submitNewNicknameDiv"
+                         data-backdrop="static" style="font-size: 16px;color:black" href="javascript::void(0)"
+                          onmouseout="this.style.color=\'black\'" onmouseover="this.style.color=\'white\'">登录</a></li><li>
                          <a data-toggle="modal" data-target="#registerNewNicknameDiv"
-                         data-backdrop="static" style="font-size: 16px;color:#DADB7D" href="javascript::void(0)"
-                         onmouseout="this.style.color=\'#DADB7D\'" onmouseover="this.style.color=\'white\'">注册</a></li><li>
-                         <a style="font-size: 16px;color:#DADB7D" onmouseout="this.style.color=\'#DADB7D\'"
+                         data-backdrop="static" style="font-size: 16px;color:black" href="javascript::void(0)"
+                         onmouseout="this.style.color=\'black\'" onmouseover="this.style.color=\'white\'">注册</a></li><li>
+                         <a style="font-size: 16px;color:black" onmouseout="this.style.color=\'black\'"
                          onmouseover="this.style.color=\'white\'" href="';
                         echo site_url("admin/login");
                         echo '">管理员入口</a></li>';

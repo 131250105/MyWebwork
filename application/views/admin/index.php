@@ -58,10 +58,10 @@ include_once('commerHeader_admin.php');
                     line-height: 2;color: #777;text-align: left;">用户列表</p>
             </div>
         </div>
-        <?php foreach($mydata as $item){  ?>
         <div class="row" style="padding: 20px;">
-            <div class="col-xs-3 col-sm-3"
-                 style="">
+        <?php foreach($mydata as $item){  ?>
+            <div class="col-xs-4 col-sm-4"
+                 style="padding-top:20px">
                 <div class="col-xs-6 col-sm-6"
                      style="">
                     <img src="<?php echo $item->photo?>" class="img-responsive" width="100%" align="center">
@@ -71,40 +71,43 @@ include_once('commerHeader_admin.php');
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称:<?php echo $item->username?></a>
+                            <span class="pull-left" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')"
+                                style="line-height:2;display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">昵称:<?php echo $item->username?></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型:<?php echo $item->usertype?></a>
+                             style="line-height:2;">
+                            <span class="pull-left">类型:<?php echo $item->usertype?></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间:<?php echo $item->createdAt?></a>
+                             style="line-height:2;">
+                            <span class="pull-left"
+                               style="display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">注册时间:<?php echo substr($item->createdAt,0,10)?></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">ID:<?php echo $item->userId?></a>
+                             style="line-height:2;">
+                            <span class="pull-left">ID:<?php echo $item->userId?></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
-                             style="">
+                             style="line-height:2;">
                             <?php if($item->state==0){?>
-                            <a class="pull-right" onclick ="ban('<?php echo site_url("admin/ban")?>',<?php echo $item->userId?>)">封号</a>
+                            <a class="pull-left" onclick ="ban('<?php echo site_url("admin/ban")?>',<?php echo $item->userId?>)">封号</a>
                             <?php }else {?>
-                            <a class="pull-right" onclick ="cancelban('<?php echo site_url("admin/cancelban")?>',<?php echo $item->userId?>)">取消封号</a>
+                            <a class="pull-left" onclick ="cancelban('<?php echo site_url("admin/cancelban")?>',<?php echo $item->userId?>)">取消封号</a>
                             <?php }?>
                         </div>
                     </div>
                 </div>
             </div>
             <?php }?>
+        </div>
 
         <div align="center">
             <ul class="pagination">
