@@ -11,20 +11,20 @@ class admin extends CI_Controller
     public function index()
     {
         $this->load->model("Admin_model");
-        $username = $this->input->post('email');
-        $password = $this->input->post('loginpassword');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
         $user =$this->Admin_model->getadminbyadminname($username);
         if(count($user)!=0) {
             foreach($user as $item){
                 if($item->password == md5($password))
-                    $this->load->view("admin/index");
+                    echo 'success';
                 else
-                    $this->load->view("admin/fail");
+                    echo 'fail';
                 break;
             }
         }
         else{
-            $this->load->view("admin/fail");
+            echo 'fail';
         }
     }
 
@@ -32,5 +32,10 @@ class admin extends CI_Controller
     public function login()
     {
         $this->load->view("admin/login");
+    }
+
+
+    public function userlist(){
+        $this->load->view("admin/index");
     }
 }

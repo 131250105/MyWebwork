@@ -45,6 +45,7 @@ class user extends CI_Controller
         $username = $this->input->post('username');
         $usertype = $this->input->post('usertype');
         $usersex  = $this->input->post('usersex');
+        $createdAt =date("Y-m-d H:i:s");
         $userphoto ="";
         if($usersex=="男"){
             $userphoto =base_url("images/user_defaultHead_male.jpg");
@@ -54,11 +55,20 @@ class user extends CI_Controller
         }
         $lastid =$this->db->insert_id();
         $userId =$this->User_model->insertuser($email,$password,
-            $username,$usertype,$usersex,$userphoto);
+            $username,$usertype,$usersex,$userphoto,$createdAt);
         if($lastid!=$this->db->insert_id()){
             $_SESSION['userId']=$this->db->insert_id();
             $userinfo =$this->User_model->getUserByUserId($this->db->insert_id());
             $_SESSION['userphoto']=$userinfo->getPhoto();
+            $_SESSION['username']=$userinfo->getusername();
+            $_SESSION['usersex']=$userinfo->getSex();
+            $_SESSION['usertype']=$userinfo->getUsertype();
+            if($userinfo->getProvince()==$userinfo->getCity()){
+                $_SESSION['userlocation']=$userinfo->getProvince();
+            }
+            else {
+                $_SESSION['userlocation'] = $userinfo->getProvince().$userinfo->getCity();
+            }
             echo "success";
         }
         else{
@@ -73,12 +83,14 @@ class user extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $remember =$this->input->post('remember');
+        $usertype =$this->input->post('usertype');
         if($remember==true){
             setcookie("email",$email,time()+3600*24*365);
             setcookie("password",$password,time()+3600*24*365);
         }
-        $userId =$this->User_model->login($email ,$password);
+        $userId =$this->User_model->login($email ,$password,$usertype);
         if($userId != -1) {
+            if()
             $userinfo =$this->User_model->getUserByUserId($userId);
             $_SESSION['userId']=$userId;
             $_SESSION['userphoto']=$userinfo->getPhoto();

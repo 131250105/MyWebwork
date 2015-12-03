@@ -17,7 +17,7 @@ include_once('commerHeader_admin.php');
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
-    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/admin.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -108,9 +108,7 @@ include_once('commerHeader_admin.php');
                  style="">
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <a href="<?php echo site_url("admin/index")?>">
-                            <button type="button" class="btn btn-primary btn-block" style="">登录</button>
-                        </a>
+                        <button type="button" class="btn btn-primary btn-block" style="" onclick ="adminlogin('<?php echo site_url("admin/index")?>')">登录</button>
                     </div>
                 </div>
             </div>

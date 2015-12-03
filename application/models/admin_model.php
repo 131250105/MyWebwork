@@ -10,7 +10,7 @@ class admin_model extends CI_Model
 {
     public function getadminbyadminname($adminname){
         $res = $this->db->from('user')
-            ->where('eamil',$adminname)
+            ->where('email',$adminname)
             ->where('usertype','admin')
             ->get();
         return $res->result();

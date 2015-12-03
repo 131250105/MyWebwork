@@ -75,7 +75,7 @@ class User_model extends CI_Model
     }
 
     public function insertuser($email ,$password ,$username ,$usertype
-    ,$usersex,$userphoto){
+    ,$usersex,$userphoto,$createdAt){
         $data =array(
             'email' =>$email,
             'password' =>$password,
@@ -83,6 +83,8 @@ class User_model extends CI_Model
             'username' =>$username,
             'sex' =>$usersex,
             'photo' =>$userphoto,
+            'createdAt' =>$createdAt,
+            'state'=>0,
         );
         return $this->db->insert("user",$data);
     }
