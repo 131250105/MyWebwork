@@ -18,7 +18,7 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
-
+    <script src=" <?php echo base_url('js/activity.js');?>"></script>
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -49,30 +49,14 @@ include_once('commerHeader.php');
 
 </head>
 <body style="background-color:#f3f3f3">
-<?php var_dump($mydata)?>
-
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
              style="">
             <div class="row">
-                <div class="col-xs-6 col-sm-4.8"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-7.2"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <p style="font-family: '微软雅黑';">昵称：</p>
-                    <p style="font-family: '微软雅黑';">性别：</p>
-                    <p style="font-family: '微软雅黑';">年龄：</p>
-                    <p style="font-family: '微软雅黑';">所在地：</p>
-                    <p style="visibility: hidden">位置调整</p>
-                    <!--glyphicon glyphicon-leaf
-                    glyphicon glyphicon-wrench
-                    glyphicon glyphicon-pushpin-->
-                </div>
+                <?php
+                include_once('leftColumn.php');
+                ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
@@ -116,10 +100,34 @@ include_once('commerHeader.php');
                     <?php echo $mydata[0]->ActivityName?>
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <button type="button" class="btn btn-primary">
-                        我要加入
+                    <?php if($judgejoin ==0){ ?>
+                    <button type="button" class="btn btn-primary" onclick="join('<?php echo site_url('activity/joinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                            我要加入
                     </button>
-                </td>
+                    <?php if($judgecollect ==0){ ?>
+                            <button type="button" class="btn btn-primary" onclick="collect('<?php echo site_url('activity/collacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                                我要收藏
+                            </button>
+                        <?php }else{?>
+                            <button type="button" class="btn btn-primary" onclick="cancelcollect('<?php echo site_url('activity/cancelcollacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                                取消收藏
+                            </button>
+                        <?php }?>
+                    <?php }else {?>
+                        <button type="button" class="btn btn-primary" onclick="canceljoin('<?php echo site_url('activity/canceljoinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                            取消报名
+                        </button>
+                        <?php if($judgecollect ==0){ ?>
+                            <button type="button" class="btn btn-primary" onclick="collect('<?php echo site_url('activity/collacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                                我要收藏
+                            </button>
+                        <?php }else{?>
+                            <button type="button" class="btn btn-primary" onclick="cancelcollect('<?php echo site_url('activity/cancelcollacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                                取消收藏
+                            </button>
+                        <?php }?>
+                    <?php }?>
+                 </td>
             </tr>
             <tr>
                 <th style="vertical-align:middle;padding: 20px;" colspan="8">
@@ -149,38 +157,18 @@ include_once('commerHeader.php');
                 </th>
             </tr>
             <tr>
+                <?php foreach($joindata as $item){?>
                 <td style="vertical-align:middle" width="12.5%">
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
+                    <img src="<?php echo $item->photo?>" class="img-rounded"
                          width="60px" >
                 </td>
                 <td style="vertical-align:middle" width="12.5%">
-                    <p>围观群众</p>
-                    <p>其他信息</p>
+                    <p><?php echo $item->username?></p>
+                    <p><?php echo $item->usertype?></p>
                 </td>
-                <td style="vertical-align:middle" width="12.5%">
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
-                         width="60px" >
-                </td>
-                <td style="vertical-align:middle" width="12.5%">
-                    <p>围观群众</p>
-                    <p>其他信息</p>
-                </td>
-                <td style="vertical-align:middle" width="12.5%">
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
-                         width="60px" >
-                </td>
-                <td style="vertical-align:middle" width="12.5%">
-                    <p>围观群众</p>
-                    <p>其他信息</p>
-                </td>
-                <td style="vertical-align:middle" width="12.5%">
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
-                         width="60px" >
-                </td>
-                <td style="vertical-align:middle" width="12.5%">
-                    <p>围观群众</p>
-                    <p>其他信息</p>
-                </td>
+                <?php } ?>
+
+
             </tr>
             <tr>
                 <th style="vertical-align:middle;padding: 20px;" colspan="8">

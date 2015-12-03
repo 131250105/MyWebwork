@@ -102,31 +102,26 @@ include_once('commerHeader.php');
             <thead style="text-align:center">
             <tr>
                 <th>标题</th>
-                <th style="vertical-align:middle;text-align: center">参与人数</th>
                 <th style="vertical-align:middle;text-align: center">活动类型</th>
-                <th style="vertical-align:middle;text-align: center">距开始还有</th>
-                <th style="vertical-align:middle;text-align: center">备注</th>
+                <th style="vertical-align:middle;text-align: center">地点</th>
+                <th style="vertical-align:middle;text-align: center">开始时间</th>
+                <th style="vertical-align:middle;text-align: center">结束时间</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td style="vertical-align:middle">
-                    <a id="test" href="javascript::void(0)">鼓楼多人越野活动</a>
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/40</td>
-                <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">2015-05-29 15:00:00</td>
-                <td style="vertical-align:middle;text-align: center">的撒给大使馆反对恢复的好地方和</td>
-            </tr>
-            <tr>
-                <td style="vertical-align:middle">
-                    <a  href="<?php echo site_url("detail/activity")?>">鼓楼篮球对抗赛</a>
-                </td>
-                <td style="vertical-align:middle;text-align: center">0/40</td>
-                <td style="vertical-align:middle;text-align: center">跑步</td>
-                <td style="vertical-align:middle;text-align: center">2015-05-29 15:00:00</td>
-                <td style="vertical-align:middle;text-align: center">无</td>
-            </tr>
+
+            <?php foreach($mydata as $item){?>
+                <tr>
+                    <td style="vertical-align:middle">
+                        <?php echo $item->ActivityId ?>
+                        <a  href="<?php echo site_url("detail/activity?activityId=".$item->ActivityId)?>"><?php echo $item->ActivityName?></a>
+                    </td>
+                    <td style="vertical-align:middle;text-align: center"><?php echo $item->Activitytype?></td>
+                    <td style="vertical-align:middle;text-align: center"><?php echo $item->Activitylocation?></td>
+                    <td style="vertical-align:middle;text-align: center"><?php echo $item->Activitystarttime?></td>
+                    <td style="vertical-align:middle;text-align: center"><?php echo $item->ActivityEndtime?></td>
+                </tr>
+            <?php } ?>
             </tbody>
         </table>
 

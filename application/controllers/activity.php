@@ -8,7 +8,6 @@
  */
 class activity extends CI_Controller
 {
-
     public function addactivity(){
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
@@ -50,7 +49,7 @@ class activity extends CI_Controller
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $activityId =$this->input->post('activityId');
-        $this->Activity_model->cnaceljoin($userId,$activityId);
+        $this->Activity_model->canceljoin($userId,$activityId);
     }
 
     public function collacteactivity(){
@@ -70,7 +69,7 @@ class activity extends CI_Controller
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $activityId =$this->input->post('activityId');
-        $this->Activity_model->cnacelcollacte($userId,$activityId);
+        $this->Activity_model->cancelcollacte($userId,$activityId);
     }
 
     public function userindex(){

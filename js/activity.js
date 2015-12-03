@@ -34,3 +34,81 @@ function publishactivity(url){
 }
 
 
+function join(url,id){
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{activityId:id},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("报名成功");
+            window.location ="/mywebwork/activity/joined";
+        }
+    });
+}
+
+
+function collect(url,id){
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{activityId:id},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("收藏成功");
+            window.location ="/mywebwork/activity/collected";
+        }
+    });
+}
+
+
+function canceljoin(url,id){
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{activityId:id},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("取消报名成功");
+            window.location ="/mywebwork/activity/joined";
+        }
+    });
+}
+
+
+function cancelcollect(url,id){
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{activityId:id},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("取消收藏成功");
+            window.location ="/mywebwork/activity/collected";
+        }
+    });
+}

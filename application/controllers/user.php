@@ -82,6 +82,10 @@ class user extends CI_Controller
             $userinfo =$this->User_model->getUserByUserId($userId);
             $_SESSION['userId']=$userId;
             $_SESSION['userphoto']=$userinfo->getPhoto();
+            $_SESSION['username']=$userinfo->getusername();
+            $_SESSION['usersex']=$userinfo->getSex();
+            $_SESSION['usertype']=$userinfo->getUsertype();
+            $_SESSION['userlocation']=$userinfo->getProvince().$userinfo->getCity();
             echo "success";
         }
         else

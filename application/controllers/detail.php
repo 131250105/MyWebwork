@@ -11,8 +11,20 @@ class detail extends CI_Controller
         parse_str($_SERVER['QUERY_STRING'], $_GET);
         $activityId =$_GET['activityId'];
         $this->load->model("Activity_model");
+        $userId =$_SESSION['userId'];
         $activity =$this->Activity_model->getdetailactivity($activityId);
-        $this->load->view("detail/activity",array('mydata'=>$activity));
+        $joiner =$this->Activity_model->getjoinmember($activityId);
+        $judgejoin =0 ;
+        $judgecollect =0;
+        $join =$this->Activity_model->getjoinmember($activityId,$userId);
+        $collect =$this->Activity_model->judgecollect($activityId,$userId);
+        if(count($join)!=0){
+            $judgejoin=1;
+        }
+        if(count($collect)!=0){
+            $judgecollect=1;
+        }
+        $this->load->view("detail/activity",array('mydata'=>$activity,'joindata'=>$joiner,'judgejoin'=>$judgejoin,'judgecollect'=>$judgecollect));
     }
 
     public function advice(){

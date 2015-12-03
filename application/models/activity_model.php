@@ -39,7 +39,6 @@ class activity_model extends CI_Model
             ->limit(($index-1)*5,$index*5)
             ->get();
         return $res->result();
-
     }
 
     public function getpublishactivity($userId,$index){
@@ -72,8 +71,35 @@ class activity_model extends CI_Model
 
     public function getdetailactivity($activityId){
         $res=$this->db
-            ->from('activity')
-            ->where('ActivityId',$activityId)
+            ->from('Activity')
+            ->where('Activity.ActivityId',$activityId)
+            ->get();
+        return $res->result();
+    }
+
+    public function getjoinmember($activityId){
+        $res=$this->db
+            ->from('activitypartin')
+            ->join('user','activitypartin.partinuserid =user.userId')
+            ->where('partinactivityid',$activityId)
+            ->get();
+        return $res->result();
+    }
+
+    public function judgejoin($activityId,$userId){
+        $res=$this->db
+            ->from('activitypartin')
+            ->where('partinactivityid',$activityId)
+            ->where('partinuserid',$userId)
+            ->get();
+        return $res->result();
+    }
+
+    public function judgecollect($activityId,$userId){
+        $res=$this->db
+            ->from('activitycollacte')
+            ->where('collacteactivityId',$activityId)
+            ->where('collacteuserId',$userId)
             ->get();
         return $res->result();
     }
