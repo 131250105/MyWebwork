@@ -29,7 +29,7 @@
     background-color: rgba(228, 228, 228, 0);
     box-shadow: rgba(27, 178, 0, 0.1) 0 1px 2px;
     border-color: rgba(0, 0, 0, 0.53);" id="commonHeaderContainer">
-    <div class="popWindow" style="display: none;">
+    <div class="popWindow" style="display: block;">
     </div>
     <div style="z-index:2">
         <div class="navbar-header">
@@ -47,13 +47,19 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav" style="font-family: '幼圆';">
-                <li style="visibility: hidden"><a href="#">位置调整</a></li>
-                <li style="visibility: hidden"><a href="#">位置调整</a></li>
-                <li id="a" value="saf"><a href="<?php echo site_url("sport/userindex")?>">运动管理</a></li>
-                <li><a href="<?php echo site_url("activity/userindex")?>">活动专区</a></li>
-                <li><a href="<?php echo site_url("advice/userindex")?>">建议专区</a></li>
-                <li style="visibility: hidden"><a href="#">位置调整</a></li>
-                <li style="visibility: hidden"><a href="#">位置调整</a></li>
+                <li><a onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+                       href="<?php echo site_url("sport/userindex")?>"
+                       style="font-size: 16px;color:#DADB7D">运动管理</a></li>
+                <li><a onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+                       href="<?php echo site_url("activity/userindex")?>"
+                       style="font-size: 16px;color:#DADB7D">活动专区</a></li>
+                <li><a onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+                       href="<?php echo site_url("advice/userindex")?>"
+                       style="font-size: 16px;color:#DADB7D">建议专区</a></li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
+                <li style="visibility: hidden;"><a>位调</a></li>
                 <li>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="input-group">
@@ -66,7 +72,6 @@
                         </div>
                     </form>
                 </li>
-                <li style="visibility: hidden"><a href="#">位置调整</a></li>
                 <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
                 <li>
                     <?php
@@ -77,10 +82,13 @@
                     }
                     else{
                         echo '<a data-toggle="modal" data-target="#submitNewNicknameDiv"
-                         data-backdrop="static">登录</a></li><li>
+                         data-backdrop="static" style="font-size: 16px;color:#DADB7D" href="javascript::void(0)"
+                          onmouseout="this.style.color=\'#DADB7D\'" onmouseover="this.style.color=\'white\'">登录</a></li><li>
                          <a data-toggle="modal" data-target="#registerNewNicknameDiv"
-                         data-backdrop="static">注册</a></li><li>
-                         <a href="';
+                         data-backdrop="static" style="font-size: 16px;color:#DADB7D" href="javascript::void(0)"
+                         onmouseout="this.style.color=\'#DADB7D\'" onmouseover="this.style.color=\'white\'">注册</a></li><li>
+                         <a style="font-size: 16px;color:#DADB7D" onmouseout="this.style.color=\'#DADB7D\'"
+                         onmouseover="this.style.color=\'white\'" href="';
                         echo site_url("admin/login");
                         echo '">管理员入口</a></li>';
                     }   ?>
