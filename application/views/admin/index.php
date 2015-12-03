@@ -96,9 +96,9 @@ include_once('commerHeader_admin.php');
                         <div class="col-xs-12 col-sm-12"
                              style="">
                             <?php if($item->state==0){?>
-                            <a class="pull-right" onclick ="ban('<?php echo site_url("admin/ban")?>')">封号</a>
+                            <a class="pull-right" onclick ="ban('<?php echo site_url("admin/ban")?>',<?php echo $item->userId?>)">封号</a>
                             <?php }else {?>
-                            <a class="pull-right" onclick ="cancelban('<?php echo site_url("admin/cancelban")?>')">取消封号</a>
+                            <a class="pull-right" onclick ="cancelban('<?php echo site_url("admin/cancelban")?>',<?php echo $item->userId?>)">取消封号</a>
                             <?php }?>
                         </div>
                     </div>

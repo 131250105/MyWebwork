@@ -27,10 +27,10 @@ function adminlogin(url){
     });
 }
 
-function ban(url){
+function ban(url,userId){
     alert("!!!");
 }
 
-function cancelban(url){
+function cancelban(url,userId){
     alert("!!!");
 }
