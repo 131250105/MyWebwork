@@ -20,7 +20,7 @@ include_once('commerHeader.php');
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
-    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/friends.js');?>"></script>
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -64,7 +64,7 @@ include_once('commerHeader.php');
             <div class="row" >
                 <div class="col-xs-12 col-sm-12"
                      style="">
-                    <a href ="<?php echo site_url("user/edit");?>" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block">
+                    <a href ="<?php echo site_url("user/edit");?>" style="text-decoration: none;"><button type="button" class="btn btn-primary btn-block" onclick="addfriends('<?php echo site_url('')?>')">
                             <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加为好友
                         </button></a>
                 </div>

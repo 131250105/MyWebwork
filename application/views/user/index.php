@@ -36,8 +36,6 @@ include_once('commerHeader.php');
 
 </head>
 <body  style="background-color:#f3f3f3">
-
-
 <div class="container">
     <div class="row" >
         <div class="col-xs-6 col-sm-3">
@@ -66,26 +64,26 @@ include_once('commerHeader.php');
                         </div>
                     </div>
                     <?php
-                    for ($x=0; $x<3; $x++) {?>
+                    foreach ($pfriends as $item) {?>
                         <div class="row" style="padding: 10px;">
                             <div class="col-xs-12 col-sm-12"
                                  style="">
                                 <div class="col-xs-6 col-sm-6"
                                      style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="70%" align="center">
+                                    <img src="<?php echo $item->photo?>" class="img-responsive" width="70%" align="center">
                                 </div>
                                 <div class="col-xs-6 col-sm-6"
                                      style="line-height: 2;">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12"
                                              style="">
-                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
+                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><?php echo $item->username?></a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12"
                                              style="">
-                                            <a class="">类型</a>
+                                            <?php echo $item->usertype?>
                                         </div>
                                     </div>
                                 </div>
@@ -102,26 +100,27 @@ include_once('commerHeader.php');
                         </div>
                     </div>
                     <?php
-                    for ($y=0; $y<3; $y++) {?>
+                    foreach($pfriends as $item) {?>
                         <div class="row" style="padding: 10px;">
                             <div class="col-xs-12 col-sm-12"
                                  style="">
                                 <div class="col-xs-6 col-sm-6"
                                      style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="70%" align="center">
+                                    <img src="<?php echo $item->photo?>" class="img-responsive" width="70%" align="center">
                                 </div>
                                 <div class="col-xs-6 col-sm-6"
                                      style="line-height: 2;">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12"
                                              style="">
-                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
+                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><?php echo $item->username?></a>
+
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12"
                                              style="">
-                                            <a class="">类型</a>
+                                            <?php echo $item->usertype?>
                                         </div>
                                     </div>
                                 </div>

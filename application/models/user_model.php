@@ -153,4 +153,15 @@ class User_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+
+    public function getpotentialfriends($userId){
+        $res = $this->db
+            ->from('user')
+            ->where('usertype !=','admin')
+            ->where('userId !=',$userId)
+            ->limit(0,3)
+            ->get();
+        return $res->result();
+    }
 }

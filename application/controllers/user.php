@@ -128,7 +128,8 @@ class user extends CI_Controller
         $this->load->model("User_model");
         $userId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
-        $this->load->view("user/index", array('user' => $userinfo));
+        $potentialfriends =$this->User_model->getpotentialfriends($userId);
+        $this->load->view("user/index", array('user' => $userinfo,'pfriends'=>$potentialfriends));
     }
 
     /*
@@ -152,7 +153,8 @@ class user extends CI_Controller
 
     public function otherUserView(){
         $this->load->model("User_model");
-        $userId =$_SESSION['userId'];
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        $userId =$_GET['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
         $this->load->view("user/otherUserView",array('user'=>$userinfo));
     }

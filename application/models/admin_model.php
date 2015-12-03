@@ -22,4 +22,9 @@ class admin_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+    public function changeuserstate($userId,$data){
+        $this->db->where('userId',$userId)
+        ->update('user',$data);
+    }
 }

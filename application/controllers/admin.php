@@ -41,5 +41,20 @@ class admin extends CI_Controller
         $this->load->view("admin/index",array("mydata"=>$userlist));
     }
 
+    public function ban(){
+        $this->load->model("Admin_model");
+        $userId = $this->input->post('userId');
+        $data=array('state'=>1);
+        $this->Admin_model->changeuserstate($userId,$data);
+        echo "success";
+    }
 
+
+    public function cancelban(){
+        $this->load->model("Admin_model");
+        $userId = $this->input->post('userId');
+        $data=array('state'=>0);
+        $this->Admin_model->changeuserstate($userId,$data);
+        echo "success";
+    }
 }

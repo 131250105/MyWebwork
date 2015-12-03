@@ -28,9 +28,39 @@ function adminlogin(url){
 }
 
 function ban(url,userId){
-    alert("!!!");
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{userId:userId},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("封号成功");
+            window.location ="/mywebwork/admin/userlist";
+        }
+    });
 }
 
 function cancelban(url,userId){
-    alert("!!!");
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{userId:userId},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("解封成功");
+            window.location ="/mywebwork/admin/userlist";
+        }
+    });
 }
