@@ -17,7 +17,7 @@ include_once('commerHeader_admin.php');
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
-    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/admin.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -46,8 +46,7 @@ include_once('commerHeader_admin.php');
 
 </head>
 <body style="background-color:#f3f3f3">
-
-
+<?php var_dump($mydata)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-12 col-sm-12"
@@ -59,492 +58,53 @@ include_once('commerHeader_admin.php');
                     line-height: 2;color: #777;text-align: left;">用户列表</p>
             </div>
         </div>
+        <?php foreach($mydata as $item){  ?>
         <div class="row" style="padding: 20px;">
             <div class="col-xs-3 col-sm-3"
                  style="">
                 <div class="col-xs-6 col-sm-6"
                      style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
+                    <img src="<?php echo $item->photo?>" class="img-responsive" width="100%" align="center">
                 </div>
                 <div class="col-xs-6 col-sm-6"
                      style="">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
+                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称:<?php echo $item->username?></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
-                            <a class="pull-right">类型</a>
+                            <a class="pull-right">类型:<?php echo $item->usertype?></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
-                            <a class="pull-right">注册时间</a>
+                            <a class="pull-right">注册时间:<?php echo $item->createdAt?></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
-                            <a class="pull-right">id</a>
+                            <a class="pull-right">ID:<?php echo $item->userId?></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
-                            <a class="pull-right">封号</a>
+                            <?php if($item->state==0){?>
+                            <a class="pull-right" onclick ="ban('<?php echo site_url("admin/ban")?>')">封号</a>
+                            <?php }else {?>
+                            <a class="pull-right" onclick ="cancelban('<?php echo site_url("admin/cancelban")?>')">取消封号</a>
+                            <?php }?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding: 20px;">
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding: 20px;">
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3"
-                 style="">
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-responsive" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-6"
-                     style="">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right" onclick="window.open('<?php echo site_url("user/otherUserView"); ?>')">昵称</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">类型</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">注册时间</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">id</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12"
-                             style="">
-                            <a class="pull-right">封号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php }?>
 
         <div align="center">
             <ul class="pagination">

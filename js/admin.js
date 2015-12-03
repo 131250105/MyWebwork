@@ -2,7 +2,7 @@
  * Created by apple on 2015/12/3.
  */
 function adminlogin(url){
-    var username =document.getElementById("email").value;
+    var username =document.getElementById("adminemail").value;
     var password =document.getElementById("loginpassword").value;
     $.ajax({
         url:url,
@@ -25,4 +25,12 @@ function adminlogin(url){
 
         }
     });
+}
+
+function ban(url){
+    alert("!!!");
+}
+
+function cancelban(url){
+    alert("!!!");
 }

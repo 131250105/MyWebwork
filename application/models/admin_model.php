@@ -15,4 +15,11 @@ class admin_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+    public function getalluser(){
+        $res = $this->db
+            ->from('user')
+            ->get();
+        return $res->result();
+    }
 }

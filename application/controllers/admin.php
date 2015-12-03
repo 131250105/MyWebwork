@@ -36,6 +36,10 @@ class admin extends CI_Controller
 
 
     public function userlist(){
-        $this->load->view("admin/index");
+        $this->load->model("Admin_model");
+        $userlist =$this->Admin_model->getalluser();
+        $this->load->view("admin/index",array("mydata"=>$userlist));
     }
+
+
 }
