@@ -85,7 +85,12 @@ class user extends CI_Controller
             $_SESSION['username']=$userinfo->getusername();
             $_SESSION['usersex']=$userinfo->getSex();
             $_SESSION['usertype']=$userinfo->getUsertype();
-            $_SESSION['userlocation']=$userinfo->getProvince().$userinfo->getCity();
+            if($userinfo->getProvince()==$userinfo->getCity()){
+                $_SESSION['userlocation']=$userinfo->getProvince();
+            }
+            else {
+                $_SESSION['userlocation'] = $userinfo->getProvince().$userinfo->getCity();
+            }
             echo "success";
         }
         else
@@ -170,6 +175,13 @@ class user extends CI_Controller
         );
         $userid =$_SESSION['userId'];
         $this->User_model->update($userid,$data);
+        $_SESSION['username'] =$username;
+        $_SESSION['usersex'] =$usersex;
+        if($province==$city){
+            $_SESSION['userlocation'] =$province;
+        }else{
+            $_SESSION['userlocation'] =$province.$city;
+        }
     }
 
     /*
@@ -183,6 +195,19 @@ class user extends CI_Controller
         echo $result;
     }
 
+    public function getcity(){
+        $this->load->model("User_model");
+        $provincename = $this->input->post('province');
+        $provinceid =$this->User_model->getprovinceidbyname($provincename);
+        if(count($provinceid)!=null){
+                        $city =$this->User_model->getcitybyprovince($provinceid);
+                        $json=json_encode($city);
+                        $result=preg_replace("#\\\u([0-9a-f]+)#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))", $json);
+                        echo $result;
+        }else{
+            echo "fail";
+        }
+    }
 
     /*
      * friend相关, 0,1,2,3分别表示未接受，接受，删除，拒绝

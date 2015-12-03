@@ -75,7 +75,7 @@ include_once('commerHeader_admin.php');
                 <div class="form-group">
                     <div class="col-sm-12">
                         <input type="text" class="form-control" id="email"
-                               placeholder="邮箱">
+                               placeholder="账号名">
                     </div>
                 </div>
             </div>

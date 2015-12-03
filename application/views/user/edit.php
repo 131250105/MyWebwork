@@ -37,7 +37,6 @@ include_once('commerHeader.php');
 </head>
 <body style="background-color:#f3f3f3">
 
-
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
@@ -97,7 +96,7 @@ include_once('commerHeader.php');
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">生日</td>
                     <td style="border:0px">
-                            <select class="form-control" id =birth_y>
+                            <select class="form-control" id =birth_y onchange="changemonth()">
                                 <?php if(!is_null($user->getBirthyear())){
                                     echo "<option>".$user->getBirthyear()."</option>";
                                 }
@@ -117,33 +116,22 @@ include_once('commerHeader.php');
                                 <?php if(!is_null($user->getBirthday())){
                                     echo "<option>".$user->getBirthday()."</option>";
                                 }
-                                ?>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
+                                else echo "<option>请选择出生日期</option>"?>
+
+
                             </select>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left: 20px;font-family: '幼圆';line-height: 2;border:0px">所在地</td>
                     <td style="border:0px">
-                            <select class="form-control" id =location_province>
+                            <select class="form-control" id =location_province onchange="changeprovince()">
                                 <?php
-                                echo $user->getProvince();
                                 if(is_null($user->getProvince())) {
                                     echo "<option > 请选择省份</option >";
                                 }
                                 else {
-                                    echo "<option >$user->getProvince()</option >";
+                                    echo "<option >".$user->getProvince()."</option >";
                                 }
                                 ?>
                             </select>
@@ -155,7 +143,7 @@ include_once('commerHeader.php');
                                     echo "<option >请选择城市</option >";
                                 }
                                 else {
-                                    echo "<option >$user->getCity()</option>";
+                                    echo "<option >".$user->getCity()."</option>";
                                 }
                                 ?>
                             </select>
@@ -300,6 +288,7 @@ include_once('commerHeader.php');
          */
         var year =document.getElementById("birth_y");
         var month =document.getElementById("birth_m");
+        var day =document.getElementById("birth_d");
         var province =document.getElementById("location_province");
         var city =document.getElementById("location_city");
         /*
@@ -363,9 +352,9 @@ include_once('commerHeader.php');
             data:{},
             error: function(XMLHttpRequest, textStatus, errorThrown){
                 alert('服务器忙请稍后再试');
-                alert(XMLHttpRequest.status);
-                alert(XMLHttpRequest.readyState);
-                alert(textStatus);
+                //alert(XMLHttpRequest.status);
+                //alert(XMLHttpRequest.readyState);
+                //alert(textStatus);
                 return false;
             },
             success: function(data,status) {
@@ -396,9 +385,92 @@ include_once('commerHeader.php');
 
     function changemonth(){
         var month =document.getElementById("birth_m");
+        var year =document.getElementById("birth_y");
         var day =document.getElementById("birth_d");
         var monthvalue=month.options[month.options.selectedIndex].value;
+        var yearvalue =year.options[month.options.selectedIndex].value;
+        if(monthvalue==2){
+            if(yearvalue%4==0){
+                for(var i=0;i<day.options.length;)
+                {
+                    day.removeChild(day.options[i]);
+                }
+                for(var i=1 ; i< 30 ;i++){
+                    var option = new Option(i, i);
+                    day.add(option);
+                }
+            }
+            else{
+                for(var i=0;i<day.options.length;)
+                {
+                    day.removeChild(day.options[i]);
+                }
+                for(var i=1 ; i< 29 ;i++){
+                    var option = new Option(i, i);
+                    day.add(option);
+                }
+            }
+        }
+        else if(monthvalue==1||monthvalue==3||monthvalue==5||monthvalue==7||monthvalue==8||monthvalue==10||monthvalue==12){
+            for(var i=0;i<day.options.length;)
+            {
+                day.removeChild(day.options[i]);
+            }
+            for(var i=1 ; i< 32 ;i++){
+                var option = new Option(i, i);
+                day.add(option);
+            }
+        }
+        else{
+            for(var i=0;i<day.options.length;)
+            {
+                day.removeChild(day.options[i]);
+            }
+            for(var i=1 ; i< 31 ;i++){
+                var option = new Option(i, i);
+                day.add(option);
+            }
+        }
+    }
 
+
+    function changeprovince(){
+            var city =document.getElementById("location_city");
+            var province =document.getElementById("location_province");
+            var provincevalue =province.value;
+        $.ajax({
+            url: "<?php echo site_url("user/getcity")?>",
+            type: "POST",
+            data:{province:provincevalue},
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                alert('服务器忙请稍后再试');
+                //alert(XMLHttpRequest.status);
+               // alert(XMLHttpRequest.readyState);
+                //alert(textStatus);
+                return false;
+            },
+            success: function(data,status) {
+                if(data!="fail"){
+                    for(var k=0;k<city.options.length;)
+                    {
+                        city.removeChild(city.options[k]);
+                    }
+                    var obj = eval('(' + data + ')');
+                    for(var m=0 ; m< obj.length ;m++){
+                        var cityoption = new Option(obj[m], obj[m]);
+                        city.add(cityoption);
+                    }
+                }
+                else{
+                    for(var i=0;i<city.options.length;)
+                    {
+                        city.removeChild(city.options[i]);
+                    }
+                    var option = new Option(provincevalue, provincevalue);
+                    city.add(option);
+                }
+            }
+        });
     }
 </script>
 

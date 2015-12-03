@@ -107,9 +107,10 @@ class User_model extends CI_Model
         $res = $this->db->select('iCityId')
             ->from('tcity')
             ->where('sName',$provincename)
+            ->where('sBelongCode',0)
             ->get();
         foreach($res->result() as $item){
-            $result=$item->sName;
+            $result=$item->iCityId;
         }
         return $result;
     }
