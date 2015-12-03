@@ -219,9 +219,13 @@ include_once('commerHeader.php');
                 </tr>
                 <tr>
                     <td colspan="3" style="padding: 15px;font-size: large;line-height: 2;">
-                        <a href="javascript::void(0)" onclick="showAllTopic()">所有话题</a>
+                        <a href="javascript::void(0)" onclick="showAllTopic()" id="toAllTopic"
+                           onmouseover="this.style.color='black'"  onmouseout="this.style.color='grey'"
+                           style="text-decoration: none;font-family:'微软雅黑';color:black">所有话题</a>
                         &nbsp;&nbsp;&nbsp;
-                        <a href="javascript::void(0)" onclick="showMyTopic()">我发布的话题</a>
+                        <a href="javascript::void(0)" onclick="showMyTopic()" id="toMyTopic"
+                           onmouseover="this.style.color='black'"  onmouseout="this.style.color='grey'"
+                           style="text-decoration: none;font-family:'微软雅黑';color:grey">我发布的话题</a>
                     </td>
                 </tr>
                 <tr>
@@ -318,11 +322,15 @@ include_once('commerHeader.php');
     {
         $('#allTopic').show();
         $('#myTopic').hide();
+        $('#toAllTopic').style.color='black';
+        $('#toMyTopic').style.color='grey';
     }
     function showMyTopic()
     {
         $('#allTopic').hide();
         $('#myTopic').show();
+        $('#toAllTopic').style.color='grey';
+        $('#toMyTopic').style.color='black';
     }
 </script>
 
