@@ -20,9 +20,6 @@
 </head>
 <body>
 <?php include_once ('commerHeader.php');?>
-<?php var_dump($advice)?>
-<?php var_dump($activity)?>
-<?php var_dump($topic)?>
 <img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" style="">
 
 <div class="container">
