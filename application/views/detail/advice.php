@@ -156,6 +156,75 @@ background-size: 200%;">
                         <td style="padding: 3px;" colspan="7"></td>
                     </tr>
                 <?php } ?>
+                <?php foreach($reply as $item){?>
+                    <tr>
+                        <td style="" width="7%">
+                            查看:12
+                        </td>
+                        <td style="" width="7%">
+                            回复：1
+                        </td>
+                        <td colspan="7" style="background-color: rgba(255, 255, 255, 0.42);;font-family:'黑体';font-size:large">
+                            <?php echo $item->advicetitle?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"  data-toggle="tooltip" title="<?php echo $item->publishername?>"
+                            style="display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                            <?php echo $item->publishername?>
+                        </td>
+                        <td style="background-color: rgba(255, 255, 255, 0.42);;" colspan="3">
+                            发布于 <?php echo $item->createdAt?> | 只看该作者 | 倒序浏览
+                        </td>
+                        <td colspan="4" style="text-align: right;background-color: rgba(255, 255, 255, 0.42);;">
+                            <?php $c++;
+                            if($c==1)echo '楼主';
+                            else if($c==2)echo '沙发';
+                            else if($c==3)echo '凳子';
+                            else if($c==4)echo '地板';
+                            else echo $c.'楼';?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2" style="">
+                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-rounded"
+                                 width="140px" >
+                        </td>
+                        <td colspan="7" rowspan="5" style="background-color: rgba(255, 255, 255, 0.42);;">
+                            <p><?php echo $thisadvice[0]->advicecontent?></p>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <p>1</p>
+                            <p>主题</p>
+                        </td>
+                        <td style="text-align: center;">
+                            <p>1</p>
+                            <p>帖子</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:0px">
+                        </td>
+                        <td style="border:0px"></td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <td style=""></td>
+                        <td style=""></td>
+                        <td style="background-color: rgba(255, 255, 255, 0.42);;">回复</td>
+                        <td style="text-align: right;background-color: rgba(255, 255, 255, 0.42);;" colspan="6">举报</td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 3px;" colspan="2"></td>
+                        <td style="padding: 3px;" colspan="7"></td>
+                    </tr>
+                <?php } ?>
 
 
 

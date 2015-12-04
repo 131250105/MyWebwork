@@ -45,6 +45,7 @@ include_once("bean/userbean.php");
     </style>
 
 </head>
+<?php var_dump($lasthelpadvice)?>
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
@@ -53,23 +54,9 @@ background-size: 200%;">
         <div class="col-xs-3 col-sm-3"
              style="">
             <div class="row">
-                <div class="col-xs-6 col-sm-4.8"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-7.2"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <p style="font-family: '微软雅黑';">昵称：</p>
-                    <p style="font-family: '微软雅黑';">性别：</p>
-                    <p style="font-family: '微软雅黑';">年龄：</p>
-                    <p style="font-family: '微软雅黑';">所在地：</p>
-                    <p style="visibility: hidden">位置调整</p>
-                    <!--glyphicon glyphicon-leaf
-                    glyphicon glyphicon-wrench
-                    glyphicon glyphicon-pushpin-->
-                </div>
+                <?php
+                include_once('leftColumn.php');
+                ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
@@ -126,15 +113,20 @@ background-size: 200%;">
                                      width="60px" >
                                 <a href="<?php echo site_url("advice/forHelp")?>" style="padding-left:15px">求助版块</a>
                             </td>
-                            <td style="vertical-align:middle;text-align: center">0/3</td>
+                            <td style="vertical-align:middle;text-align: center">
+                                <span data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->advicetitle?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lasthelpadvice[0]->advicetitle?>
+                                </span>
+                                <span data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->publishername?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lasthelpadvice[0]->publishername?>
+                                </span>
+                            </td>
                             <td style="vertical-align:middle;text-align: left;display:block;width:20%">
-                                <p data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->advicetitle?>"
+                                <p data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->createdAt?>"
                                    style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                                        <?php echo $lasthelpadvice[0]->advicetitle?>
-                                </p>
-                                <p data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->publishername?>"
-                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                                        <?php echo $lasthelpadvice[0]->publishername?>
+                                    <?php echo $lasthelpadvice[0]->createdAt?>
                                 </p>
                             </td>
                         </tr>
@@ -144,15 +136,20 @@ background-size: 200%;">
                                      width="60px" >
                                 <a href="<?php echo site_url("advice/doctor")?>" style="padding-left:15px">医生来了</a>
                             </td>
-                            <td style="vertical-align:middle;text-align: center">12/20</td>
-                            <td style="vertical-align:middle;text-align: left">
-                                <p data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->advicetitle?>"
+                            <td style="vertical-align:middle;text-align: center">
+                                <span data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->advicetitle?>"
                                    style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                                     <?php echo $lastdoctoradvice[0]->advicetitle?>
-                                </p>
-                                <p data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->publishername?>"
+                                </span>
+                                <span data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->publishername?>"
                                    style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                                     <?php echo $lastdoctoradvice[0]->publishername?>
+                                </span>
+                            </td>
+                            <td style="vertical-align:middle;text-align: left">
+                                <p data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->createdAt?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lastdoctoradvice[0]->createdAt?>
                                 </p>
                             </td>
                         </tr>
@@ -162,15 +159,20 @@ background-size: 200%;">
                                      width="60px" >
                                 <a href="<?php echo site_url("advice/coach")?>" style="padding-left:15px">教练，我想...</a>
                             </td>
-                            <td style="vertical-align:middle;text-align: center">12/20</td>
-                            <td style="vertical-align:middle;text-align: left">
-                                <p data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->advicetitle?>"
+                            <td style="vertical-align:middle;text-align: center">
+                                <span data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->advicetitle?>"
                                    style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                                     <?php echo $lastcoachadvice[0]->advicetitle?>
-                                </p>
-                                <p data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->publishername?>"
+                                </span>
+                                <span data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->publishername?>"
                                    style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                                     <?php echo $lastcoachadvice[0]->publishername?>
+                                </span>
+                            </td>
+                            <td style="vertical-align:middle;text-align: left">
+                                <p data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->createdAt?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lastdoctoradvice[0]->createdAt?>
                                 </p>
                             </td>
                         </tr>
@@ -194,8 +196,8 @@ background-size: 200%;">
                         <tr>
                             <th>主题</th>
                             <th style="vertical-align:middle;text-align: center">作者</th>
-                            <th style="vertical-align:middle;text-align: center">回复/查看</th>
-                            <th style="vertical-align:middle;text-align: center">最后发表</th>
+                            <th style="vertical-align:middle;text-align: center">回复</th>
+                            <th style="vertical-align:middle;text-align: center">最后发表时间</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -205,11 +207,11 @@ background-size: 200%;">
                                 <a style="font-size:medium" href="<?php echo site_url("detail/advice?adviceId=".$item->adviceId)?>"><?php echo $item->advicetitle?></a>
                             </td>
                             <td style="vertical-align:middle;text-align: center"><?php echo $item->publishername?></td>
-                            <td style="vertical-align:middle;text-align: center">1/12</td>
+                            <td style="vertical-align:middle;text-align: center"><?php echo $item->replynum?></td>
                             <td style="vertical-align:middle;text-align: center">
                                 <p>
-                                    夕阳下的泪痕<br>
-                                    昨天 21:54
+                                    <?php if($item->lasttime==0)echo '暂无';
+                                    else echo $item->lasttime?>
                                 </p>
                             </td>
                         </tr>
@@ -239,7 +241,9 @@ background-size: 200%;">
 <div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
-
+<script>
+    $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
 
 </body>
 

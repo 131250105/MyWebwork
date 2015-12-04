@@ -46,23 +46,9 @@ background-size: 200%;">
         <div class="col-xs-3 col-sm-3"
              style="">
             <div class="row">
-                <div class="col-xs-6 col-sm-4.8"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-7.2"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <p style="font-family: '微软雅黑';">昵称：</p>
-                    <p style="font-family: '微软雅黑';">性别：</p>
-                    <p style="font-family: '微软雅黑';">年龄：</p>
-                    <p style="font-family: '微软雅黑';">所在地：</p>
-                    <p style="visibility: hidden">位置调整</p>
-                    <!--glyphicon glyphicon-leaf
-                    glyphicon glyphicon-wrench
-                    glyphicon glyphicon-pushpin-->
-                </div>
+                <?php
+                include_once('leftColumn.php');
+                ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
@@ -107,22 +93,22 @@ background-size: 200%;">
                         <tr>
                             <th style="line-height: 3;">主题</th>
                             <th style="vertical-align:middle;text-align: center">作者</th>
-                            <th style="vertical-align:middle;text-align: center">回复/查看</th>
-                            <th style="vertical-align:middle;text-align: center">最后发表</th>
+                            <th style="vertical-align:middle;text-align: center">回复</th>
+                            <th style="vertical-align:middle;text-align: center">最后发表时间</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php foreach($advice as $item){?>
                             <tr>
                                 <td style="vertical-align:middle">
-                                    <a style="font-size:medium"><?php echo $item->advicetitle?></a>
+                                    <a style="font-size:medium" href="<?php echo site_url("detail/advice?adviceId=".$item->adviceId)?>"><?php echo $item->advicetitle?></a>
                                 </td>
                                 <td style="vertical-align:middle;text-align: center"><?php echo $item->publishername?></td>
-                                <td style="vertical-align:middle;text-align: center">1/5</td>
+                                <td style="vertical-align:middle;text-align: center"><?php echo $item->replynum?></td>
                                 <td style="vertical-align:middle;text-align: center">
                                     <p>
-                                        夕阳下的泪痕<br>
-                                        昨天 21:54
+                                        <?php if($item->lasttime==0)echo '暂无';
+                                        else echo $item->lasttime?>
                                     </p>
                                 </td>
                             </tr>

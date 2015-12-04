@@ -229,82 +229,61 @@ include_once('commerHeader.php');
                            style="text-decoration: none;font-family:'微软雅黑';color:grey">我发布的话题</a>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="col-xs-12 col-sm-12" id="allTopic">
-                            <div class="row">
-                                <div class="col-xs-1 col-sm-1"
-                                     style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
-                                </div>
-                                <div class="col-xs-11 col-sm-11"
-                                     style="">
-                                    <div class="row">
-                                        <p>小编</p>
-                                    </div>
-                                    <div class="row">
-                                        <p>万众瞩目的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
-                                    </div>
-                                    <div class="row">
-                                        2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
-                                    </div>
-                                </div>
+        <tr>
+            <td colspan="3">
+                <div class="col-xs-12 col-sm-12" id="allTopic">
+                    <?php foreach($alltopic as $item){?>
+                        <div class="row">
+                            <div class="col-xs-1 col-sm-1"
+                                 style="">
+                                <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" height="40px">
                             </div>
-                            <div class="row">
-                                <div class="col-xs-1 col-sm-1"
-                                     style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
+                            <div class="col-xs-11 col-sm-11"
+                                 style="">
+                                <div class="row">
+                                    <p><?php echo $item->username?></p>
                                 </div>
-                                <div class="col-xs-11 col-sm-11"
-                                     style="">
-                                    <div class="row">
-                                        <p>小编</p>
-                                    </div>
-                                    <div class="row">
-                                        <p>鼓楼篮球对抗赛将于期末考试结束后不就开始，你们准备好了没？</p>
-                                    </div>
-                                    <div class="row">
-                                        2015-10-27 14:10<a style="float:right">赞(<span>18</span>)</a>
-                                    </div>
+                                <div class="row">
+                                    <p><?php echo $item->context?></p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12"
-                                     style="">
-                                    <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                                <div class="row">
+                                    <p><?php echo $item->createdtime?><a style="float:right">赞(<span><?php echo $item->praisenum?></span>)</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12" id="myTopic" style="display:none">
-                            <div class="row">
-                                <div class="col-xs-1 col-sm-1"
-                                     style="">
-                                    <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" alt="First slide" height="40px">
-                                </div>
-                                <div class="col-xs-11 col-sm-11"
-                                     style="">
-                                    <div class="row">
-                                        <p>小编</p>
-                                    </div>
-                                    <div class="row">
-                                        <p>没人期待的鼓楼多人越野赛日程已上线，详情请关注活动专区！</p>
-                                    </div>
-                                    <div class="row">
-                                        2015-10-29 15:15<a style="float:right">赞(<span>15</span>)</a>
-                                    </div>
-                                </div>
+                    <?php } ?>
+                </div>
+                <div class="col-xs-12 col-sm-12" id="myTopic" style="display:none">
+                    <?php foreach($mytopic as $item){?>
+                        <div class="row">
+                            <div class="col-xs-1 col-sm-1"
+                                 style="">
+                                <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" height="40px">
                             </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12"
-                                     style="">
-                                    <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                            <div class="col-xs-11 col-sm-11"
+                                 style="">
+                                <div class="row">
+                                    <p><?php echo $item->username?></p>
+                                </div>
+                                <div class="row">
+                                    <p><?php echo $item->context?></p>
+                                </div>
+                                <div class="row">
+                                    <p><?php echo $item->createdtime?><a style="float:right">赞(<span><?php echo $item->praisenum?></span>)</a></p>
                                 </div>
                             </div>
                         </div>
-
-                    </td>
-                </tr>
-                </tbody>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12"
+                                 style="">
+                                <button type="button" class="btn btn-primary btn-block">更多话题</button>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </td>
+        </tr>
+        </tbody>
             </table>
         </div>
     </div>
@@ -321,7 +300,6 @@ include_once('commerHeader.php');
 <script type="text/javascript">
     function showAllTopic()
     {
-
         $('#allTopic').show();
         $('#myTopic').hide();
         $('#toAllTopic').style.color='black';

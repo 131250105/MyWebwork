@@ -56,23 +56,9 @@ include_once('commerHeader.php');
         <div class="col-xs-3 col-sm-3"
              style="">
             <div class="row">
-                <div class="col-xs-6 col-sm-4.8"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded" width="100%" align="center">
-                </div>
-                <div class="col-xs-6 col-sm-7.2"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                    <p style="font-family: '微软雅黑';">昵称：</p>
-                    <p style="font-family: '微软雅黑';">性别：</p>
-                    <p style="font-family: '微软雅黑';">年龄：</p>
-                    <p style="font-family: '微软雅黑';">所在地：</p>
-                    <p style="visibility: hidden">位置调整</p>
-                    <!--glyphicon glyphicon-leaf
-                    glyphicon glyphicon-wrench
-                    glyphicon glyphicon-pushpin-->
-                </div>
+                <?php
+                include_once('leftColumn.php');
+                ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12"

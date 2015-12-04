@@ -28,6 +28,32 @@
 <div class="container">
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
+            <div class="row" >
+                <div class="col-xs-12 col-sm-12">
+                    <p style="text-align:center;vertical-align: middle;
+                font-family: '微软雅黑 light';font-weight: 600;font-size: large;
+                line-height: 3;color: #434343;">活动推荐</p>
+                    <hr/>
+                </div>
+            </div>
+            <div class="row" >
+            <?php foreach($activity as $item){?>
+                <div class="col-xs-3 col-sm-3">
+                    <div class="row" >
+                        <div class="col-xs-12 col-sm-12" style="line-height:3">
+                            <span style="text-align:left;vertical-align: middle;font-size: medium;font-family: '华文中宋';"><?php echo $item->ActivityName?></span>
+                            <span class="pull-right" style="vertical-align: middle;font-size: medium;font-family: '华文中宋';">类型：<?php echo $item->Activitytype?></span>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-xs-12 col-sm-12" style="line-height:3;vertical-align: bottom;font-size: small;font-family: '微软雅黑';">
+                            <span>地点：<?php echo $item->Activitylocation?></span>
+                            <span class="pull-right">开始时间：<?php echo $item->Activitystarttime?></span>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+            </div>
             <table class="table table-default" id="dataTab">
                 <caption style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
@@ -126,8 +152,37 @@
     <div class="row">
         <p style="visibility: hidden">位置调整</p>
     </div>
+
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="row" >
+                        <div class="col-xs-12 col-sm-12">
+                            <p style="text-align:center;vertical-align: middle;
+                font-family: '微软雅黑 light';font-weight: 600;font-size: large;
+                line-height: 3;color: #434343;">热门话题</p>
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <?php foreach($topic as $item){?>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="row" >
+                                    <div class="col-xs-12 col-sm-12" style="line-height:3">
+                                        <span style="text-align:left;vertical-align: middle;font-size: medium;font-family: '华文中宋';"><?php echo $item->context?></span>
+                                    </div>
+                                </div>
+                                <div class="row" >
+                                    <div class="col-xs-12 col-sm-12" style="line-height:3;vertical-align: bottom;font-size: small;font-family: '微软雅黑';">
+                                        <span>posted at：<?php echo $item->createdtime?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
             <table class="table table-default" id="dataTab">
                 <caption style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
@@ -160,6 +215,40 @@
     </div>
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="row" >
+                        <div class="col-xs-12 col-sm-12">
+                            <p style="text-align:center;vertical-align: middle;
+                font-family: '微软雅黑 light';font-weight: 600;font-size: large;
+                line-height: 3;color: #434343;">建议推荐</p>
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <?php foreach($advice as $item){?>
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="row" >
+                                    <div class="col-xs-12 col-sm-12" style="vertical-align: middle;font-size: large;font-family: '黑体';line-height:3">
+                                        <span style="text-align:left;vertical-align: middle;font-size: medium;font-family: '华文中宋';"><?php echo $item->advicetitle?></span>
+                                    </div>
+                                </div>
+                                <div class="row" >
+                                    <div class="col-xs-12 col-sm-12" style="line-height:3;vertical-align: bottom;font-size: small;font-family: '微软雅黑';">
+                                        <span><?php echo $item->createdAt?></span>
+                                        <span>posted by <?php echo $item->publishername?></span>
+                                    </div>
+                                </div>
+                                <div class="row" >
+                                    <div class="col-xs-12 col-sm-12" style="line-height:3;vertical-align: bottom;font-size: small;font-family: '微软雅黑';">
+                                        <span><?php echo $item->advicecontent?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
             <table class="table table-default" id="dataTab">
                 <caption style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
