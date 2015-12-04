@@ -131,7 +131,21 @@ class advice extends CI_Controller
 
 
     public function reply(){
-
+        $this->load->model("Advice_model");
+        $replycontent =$this->input->post('adviceContent');
+        $adviceId =$this->input->post('adviceId');
+        $time=date("Y-m-d H:i:s");
+        $userId =$_SESSION['userId'];
+        $username =$_SESSION['username'];
+        $data =array(
+            'replycontent'=> $replycontent,
+            'adviceId'=>$adviceId,
+            'createdAt'=>$time,
+            'userId'=>$userId,
+            'username'=>$username,
+        );
+        $this->Advice_model->addreply($data);
+        echo "success";
     }
 
 }

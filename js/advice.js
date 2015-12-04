@@ -27,3 +27,25 @@ function post(url){
         }
     });
 }
+
+
+function reply(url,adviceId){
+    alert(url);
+    var adviceContent =document.getElementById("content").value;
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{adviceContent:adviceContent,adviceId:adviceId},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("评论成功");
+            window.location ="/mywebwork/detail/advice?adviceId="+adviceId;
+        }
+    });
+}

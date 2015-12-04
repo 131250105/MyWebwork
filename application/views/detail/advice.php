@@ -69,7 +69,7 @@ include_once("bean/userbean.php");
 <body  style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
-
+<?php var_dump($reply)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-12 col-sm-12" style="
@@ -184,7 +184,7 @@ background-size: 200%;">
                     <p style="visibility: hidden">位置调整</p>
                     <div class="col-sm-12">
                         <button type="button" class="btn btn-primary pull-right"
-                                onclick="" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                onclick="reply('<?php echo site_url("advice/reply")?>' ,  '<?php echo $thisadvice[0]->adviceId?>')" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                     </div>
                 </div>
             </form>

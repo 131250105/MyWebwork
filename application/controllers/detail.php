@@ -32,7 +32,9 @@ class detail extends CI_Controller
         $adviceId =$_GET['adviceId'];
         $this->load->model("Advice_model");
         $advice =$this->Advice_model->getdetailadvice($adviceId);
-        $this->load->view("detail/advice",array('thisadvice'=>$advice));
+        $reply=$this->Advice_model->getreplybyadvice($adviceId);
+        $this->load->view("detail/advice",array('thisadvice'=>$advice,'reply'=>$reply));
+
     }
 
 }
