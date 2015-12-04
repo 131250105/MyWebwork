@@ -9,7 +9,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Simple Examples</title>
+    <title>test</title>
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>

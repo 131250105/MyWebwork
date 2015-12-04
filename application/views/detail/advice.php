@@ -20,6 +20,25 @@ include_once("bean/userbean.php");
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
     <script src=" <?php echo base_url('js/md5.js');?>"></script>
     <script src="<?php echo base_url('js/header.js');?>"></script>
+    <script src=" <?php echo base_url('css/kindeditor-min.js');?> "></script>
+    <script src=" <?php echo base_url('js/advice.js');?> "></script>
+
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                resizeType : 1,
+                allowPreviewEmoticons : false,
+                allowImageUpload : false,
+                items : [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+                afterBlur: function(){this.sync();}
+            });
+        });
+
+    </script>
 
     <style type="text/css">
         @font-face {
@@ -34,6 +53,14 @@ include_once("bean/userbean.php");
 
         td {
             font-family: '微软雅黑';
+        }
+
+
+        form {
+            margin: 0;
+        }
+        textarea {
+            display: block;
         }
 
     </style>
@@ -55,7 +82,7 @@ background-size: 200%;">
                 <caption style="padding-left:5px;padding-top:20px;font-family: '华文中宋';">
                     <button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;">发帖</button>
                     <button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;"
-                            data-toggle="modal" data-target="#submitNewNicknameDiv"
+                            data-toggle="modal" data-target="#replyModal"
                             data-backdrop="static" style="font-size: 16px;color:black" href="javascript::void(0)">回复</button>
                 </caption>
                 <tbody>
@@ -142,59 +169,25 @@ background-size: 200%;">
     </div>
 </div>
 
-<div class="modal fade" id="submitNewNicknameDiv" tabindex="-1"
+<div class="modal fade" id="replyModal" tabindex="-1"
      role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" align="center">
-        <div class="modal-content"  align="left" style="width:400px;">
+        <div class="modal-content"  align="left" style="width:100%;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"
                         aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">账号登录</h4>
+                <h4 class="modal-title" id="myModalLabel">回复</h4>
             </div>
-            <div class="alert alert-warning"  id="emptyLoginTip_id" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;用户名为空</div>
-            <div class="alert alert-warning"  id="emptyLoginTip_password" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;密码为空</div>
-            <div class="alert alert-danger"  id="errorLoginTip" style="margin-bottom: 0px;display:none;padding: 8px;">&nbsp;&nbsp;用户名或密码错误</div>
             <form class="form-horizontal" role="form"  style="padding:30px 50px;">
+                <textarea name="content" id ="content" style="width:100%;height:250px;visibility:hidden;">输入你要发的内容</textarea>
                 <div class="form-group">
+                    <p style="visibility: hidden">位置调整</p>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="email"
-                               placeholder="邮箱">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="password" class="form-control" id="loginpassword"
-                               placeholder="密码">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label for="email">用户类型</label>
-                        <select class="form-control" id =logintype>
-                            <option>普通用户</option>
-                            <option>健康教练</option>
-                            <option>医生</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <div class="checkbox">
-                            <label> <input type="checkbox" id="remember"> 记住我
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button type="button" class="btn btn-primary btn-block"
-                                onclick="login()" style="">登录</button>
+                        <button type="button" class="btn btn-primary pull-right"
+                                onclick="" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                     </div>
                 </div>
             </form>
-
-
-
         </div>
         <!-- /.modal-content -->
     </div>
