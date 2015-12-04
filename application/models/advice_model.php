@@ -101,7 +101,7 @@ class advice_model extends CI_Model
     }
 
     public function getreplybyadvice($adviceId){
-        $res=$this->db->from('advice')
+        $res=$this->db->from('reply')
                       ->where('adviceId',$adviceId)
                       ->get();
         return $res->result();
