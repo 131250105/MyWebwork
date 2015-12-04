@@ -15,6 +15,7 @@
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('css/kindeditor-min.js');?> "></script>
+    <script src=" <?php echo base_url('js/advice.js');?> "></script>
     <style>
         form {
             margin: 0;
@@ -34,9 +35,11 @@
                 items : [
                     'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
                     'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+                    'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+                afterBlur: function(){this.sync();}
             });
         });
+
     </script>
 </head>
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
@@ -77,9 +80,9 @@ background-size: 200%;">
                                        placeholder="请输入标题">
                             </div>
                         </div>
-                        <textarea name="content" style="width:100%;height:300px;visibility:hidden;">输入你要发的内容</textarea>
+                        <textarea name="content" id ="content" style="width:100%;height:300px;visibility:hidden;">输入你要发的内容</textarea>
                         <p style="visibility: hidden">位置调整</p>
-                        <button type="submit" class="btn btn-primary pull-right" style="">
+                        <button type="button" class="btn btn-primary pull-right" style="" onclick="post('<?php echo site_url("advice/postadvice")?>')">
                             &nbsp;&nbsp;&nbsp;&nbsp;提交&nbsp;&nbsp;&nbsp;&nbsp;</button>
                     </div>
                 </div>

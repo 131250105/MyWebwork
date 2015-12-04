@@ -41,6 +41,7 @@ include_once("bean/userbean.php");
 </head>
 <body style="background-color:#f3f3f3">
 <?php include_once ('commerHeader.php');?>
+<?php var_dump($thisadvice)?>
 
 <div class="container">
     <div class="row" >
@@ -81,15 +82,7 @@ include_once("bean/userbean.php");
                              width="140px" >
                     </td>
                     <td colspan="7" rowspan="5" style="background-color: white;">
-                        <p>
-                            导读: 生活中有很多辣味食物，如生姜、大蒜和辣椒等都是菜肴中必不可少的调味品，大多数佳肴都少不了它们的存在。而且辣味食物对人体也有很多好处。下面我们就来看看哪些辣味食物对身体好处多多。……
-                            各种辣味食物有益健康
-                            1.生姜
-
-                            生姜性温味辣，含有姜醇等油性挥发物，还有姜辣素、维生素、姜油酚、树脂、淀粉、纤维以及少量矿物质。能增强血液循环、刺激胃液分泌、兴奋肠道、促进消化、健胃增进食欲。
-                            2.大蒜
-                            大蒜性温味辛，含有蛋白质、脂肪、糖类、B族维生素、维生素C等营养成分，还有硫、硒有机化合物（大蒜素）以及多种活性酶，此外其钙、磷、铁等元素的含量也很丰富。它具有杀虫、解毒、消积、行气、温胃等功效，对饮食积滞、痢疾、百日咳、水肿胀痛、虫蛇咬伤等有一定的治疗作用。此外，吃大蒜还可以防流感、治疗霉菌感染，并具有降血压、降血脂、降血糖和较强的抗癌作用。
-                        </p>
+                        <p><?php echo $thisadvice[0]->advicecontent?></p>
                     </td>
                 </tr>
                 <tr></tr>

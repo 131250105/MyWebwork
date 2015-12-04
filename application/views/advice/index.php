@@ -48,7 +48,7 @@ include_once("bean/userbean.php");
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
-
+<?php var_dump($hotadvice)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
@@ -188,11 +188,12 @@ background-size: 200%;">
                         </tr>
                         </thead>
                         <tbody>
+                        <?php foreach($hotadvice as $item){?>
                         <tr>
                             <td style="vertical-align:middle">
-                                <a style="font-size:medium" href="<?php echo site_url("detail/advice")?>">吃点大蒜能防感冒 8种辣味食物有益健康</a>
+                                <a style="font-size:medium" href="<?php echo site_url("detail/advice?adviceId=".$item->adviceId)?>"><?php echo $item->advicetitle?></a>
                             </td>
-                            <td style="vertical-align:middle;text-align: center">小编</td>
+                            <td style="vertical-align:middle;text-align: center"><?php echo $item->publishername?></td>
                             <td style="vertical-align:middle;text-align: center">1/12</td>
                             <td style="vertical-align:middle;text-align: center">
                                 <p>
@@ -201,6 +202,7 @@ background-size: 200%;">
                                 </p>
                             </td>
                         </tr>
+                        <?php } ?>
                         </tbody>
                     </table>
                     <div align="center">

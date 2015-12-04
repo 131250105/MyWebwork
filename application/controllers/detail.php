@@ -28,7 +28,11 @@ class detail extends CI_Controller
     }
 
     public function advice(){
-        $this->load->view("detail/advice");
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        $adviceId =$_GET['adviceId'];
+        $this->load->model("Advice_model");
+        $advice =$this->Advice_model->getdetailadvice($adviceId);
+        $this->load->view("detail/advice",array('thisadvice'=>$advice));
     }
 
 }
