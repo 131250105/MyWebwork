@@ -30,7 +30,19 @@ class topic extends CI_Controller
         return "success";
     }
 
-    public function deletetopic(){
-
+    public function praise(){
+        $this->load->model("Topic_model");
+        $topicId = $this->input->post('topicId');
+        $praise=$this->Topic_model->gettopicbyId($topicId);
+        $num=0;
+        foreach($praise as $item){
+            $num=$item->praisenum;
+        }
+        $num=$num+1;
+        $data=array(
+            'praisenum'=>$num
+        );
+        $this->Topic_model->update($data,$topicId);
+        echo "success";
     }
 }

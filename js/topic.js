@@ -26,3 +26,23 @@ function publishtopic(url){
     }
 
 }
+
+
+function praise(url,topicId){
+    $.ajax({
+        url:url,
+        type: "POST",
+        data:{topicId:topicId},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('服务器忙请稍后再试');
+            //alert(XMLHttpRequest.status);
+            //alert(XMLHttpRequest.readyState);
+            //alert(textStatus);
+            return false;
+        },
+        success: function(data,status) {
+            alert("点赞成功");
+            window.location ="/mywebwork/user/index";
+        }
+    });
+}

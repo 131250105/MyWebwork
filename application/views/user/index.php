@@ -36,7 +36,6 @@ include_once('commerHeader.php');
 
 </head>
 <body  style="background-color:#f3f3f3">
-<?php var_dump($alltopic)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-6 col-sm-3">
@@ -247,7 +246,7 @@ include_once('commerHeader.php');
                                     <p><?php echo $item->context?></p>
                                 </div>
                                 <div class="row">
-                                    <p><?php echo $item->createdtime?><a style="float:right">赞(<span><?php echo $item->praisenum?></span>)</a></p>
+                                    <p><?php echo $item->createdtime?><a style="float:right" onclick="praise('<?php echo site_url("topic/praise")?>' ,  '<?php echo $item->topicId?>')">赞(<span><?php echo $item->praisenum?></span>)</a></p>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +268,7 @@ include_once('commerHeader.php');
                                     <p><?php echo $item->context?></p>
                                 </div>
                                 <div class="row">
-                                    <p><?php echo $item->createdtime?><a style="float:right">赞(<span><?php echo $item->praisenum?></span>)</a></p>
+                                    <p><?php echo $item->createdtime?><a id="praise" style="float:right" onclick="praise('<?php echo site_url("topic/praise")?>' ,  '<?php echo $item->topicId?>')">赞(<span><?php echo $item->praisenum?></span>)</a></p>
                                 </div>
                             </div>
                         </div>

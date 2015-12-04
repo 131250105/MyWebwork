@@ -15,9 +15,7 @@ class topic_model extends CI_Model
     }
 
 
-    public function delete($data){
 
-    }
 
     public function getalltopic(){
         $res=$this->db->from('topic')->limit(0,10)->get();
@@ -32,6 +30,15 @@ class topic_model extends CI_Model
         return $res->result();
     }
 
+    public function gettopicbyId($topicId){
+        $res=$this->db->select('praisenum')
+            ->from('topic')
+            ->where('topicId',$topicId)
+            ->get();
+        return $res->result();
+    }
 
-
+    public function update($data,$topicId){
+        $this->db->where('topicId',$topicId)->update('topic', $data);
+    }
 }
