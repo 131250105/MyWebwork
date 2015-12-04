@@ -34,25 +34,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>" style="padding-top: 5px;padding-left: 30px;">
-            <img src="<?php echo base_url('images/logo.png');?>" class="img-responsive"
-                 height="40" style="">
-        </a>
     </div>
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav" style="font-family: '幼圆';">
-            <li><a  onmouseout="this.style.color='#DADB7D'" onmouseover="this.style.color='white'"
+            <li><a class="navbar-brand" href="<?php echo site_url("welcome/index") ;?>" style="padding-top: 5px;padding-left: 30px;">
+                    <img src="<?php echo base_url('images/logo2.png');?>" class="img-responsive"
+                         onmouseover="this.src='<?php echo base_url('images/logo2_h.png');?>'"
+                         onmouseout="this.src='<?php echo base_url('images/logo2.png');?>'"
+                         height="40" style="">
+                </a></li>
+            <li><a  onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
                     href="<?php echo site_url("user/userManagement")?>"
-                    style="font-size: 16px;color:#DADB7D">用户管理</a></li>
+                    style="font-size: 16px;color:black">用户管理</a></li>
             <li style="visibility: hidden"><a>位置调整</a></li>
             <li style="visibility: hidden"><a>位置调整</a></li>
             <li style="visibility: hidden"><a>位置调整</a></li>
+            <li style="visibility: hidden"><a href="#">位置调整</a></li>
+            <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <li style="visibility: hidden"><a href="#">位置调整</a></li>
             <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
-            <li onclick="window.location.href='<?php echo site_url("user/logout");?>'"><a>注销</a></li>
+            <li onclick="window.location.href='<?php echo site_url("user/logout");?>'">
+                <a style="font-size: 16px;color:black" href="javascript::void(0)"
+                    onmouseout="this.style.color='black'" onmouseover="this.style.color='white'">注销</a></li>
         </ul>
     </div>
 </nav>

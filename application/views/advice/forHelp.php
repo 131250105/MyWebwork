@@ -78,9 +78,12 @@ background-size: 200%;">
         </div>
         <div class="col-xs-9 col-sm-9" style="">
             <div class="row">
-                <div class="col-xs-12 col-sm-12" style="background-color:white;
+                <div class="col-xs-12 col-sm-12" style="
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+                    </div>
                     <div style="padding-top:20px;text-align: center;vertical-align: middle;font-size: x-large;font-family:'华文中宋'">
                         版块公告
                     </div>
@@ -93,9 +96,12 @@ background-size: 200%;">
                 <p style="visibility: hidden">位置调整</p>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12" style="background-color:white;
+                <div class="col-xs-12 col-sm-12" style="
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+                    </div>
                     <table class="table table-hover">
                         <thead style="text-align:center">
                         <tr>
@@ -106,32 +112,21 @@ background-size: 200%;">
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <a style="font-size:medium">鼓楼多人越野活动</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">小编</td>
-                            <td style="vertical-align:middle;text-align: center">1/5</td>
-                            <td style="vertical-align:middle;text-align: center">
-                                <p>
-                                    夕阳下的泪痕<br>
-                                    昨天 21:54
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <a style="font-size:medium">鼓楼篮球对抗赛</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">小编</td>
-                            <td style="vertical-align:middle;text-align: center">6/8</td>
-                            <td style="vertical-align:middle;text-align: center">
-                                <p>
-                                    夕阳下的泪痕<br>
-                                    昨天 21:30
-                                </p>
-                            </td>
-                        </tr>
+                        <?php foreach($advice as $item){?>
+                            <tr>
+                                <td style="vertical-align:middle">
+                                    <a style="font-size:medium"><?php echo $item->advicetitle?></a>
+                                </td>
+                                <td style="vertical-align:middle;text-align: center"><?php echo $item->publishername?></td>
+                                <td style="vertical-align:middle;text-align: center">1/5</td>
+                                <td style="vertical-align:middle;text-align: center">
+                                    <p>
+                                        夕阳下的泪痕<br>
+                                        昨天 21:54
+                                    </p>
+                                </td>
+                            </tr>
+                        <?php } ?>
                         </tbody>
                     </table>
                     <div align="center">

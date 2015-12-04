@@ -112,32 +112,21 @@ background-size: 200%;">
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <a style="font-size:medium">鼓楼多人越野活动</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">小编</td>
-                            <td style="vertical-align:middle;text-align: center">1/5</td>
-                            <td style="vertical-align:middle;text-align: center">
-                                <p>
-                                    夕阳下的泪痕<br>
-                                    昨天 21:54
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:middle">
-                                <a style="font-size:medium">鼓楼篮球对抗赛</a>
-                            </td>
-                            <td style="vertical-align:middle;text-align: center">小编</td>
-                            <td style="vertical-align:middle;text-align: center">6/8</td>
-                            <td style="vertical-align:middle;text-align: center">
-                                <p>
-                                    夕阳下的泪痕<br>
-                                    昨天 21:30
-                                </p>
-                            </td>
-                        </tr>
+                        <?php foreach($advice as $item){?>
+                            <tr>
+                                <td style="vertical-align:middle">
+                                    <a style="font-size:medium"><?php echo $item->advicetitle?></a>
+                                </td>
+                                <td style="vertical-align:middle;text-align: center"><?php echo $item->publishername?></td>
+                                <td style="vertical-align:middle;text-align: center">1/5</td>
+                                <td style="vertical-align:middle;text-align: center">
+                                    <p>
+                                        夕阳下的泪痕<br>
+                                        昨天 21:54
+                                    </p>
+                                </td>
+                            </tr>
+                        <?php } ?>
                         </tbody>
                     </table>
                     <div align="center">

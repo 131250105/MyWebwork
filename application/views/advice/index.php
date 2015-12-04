@@ -48,7 +48,6 @@ include_once("bean/userbean.php");
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
-<?php var_dump($hotadvice)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
@@ -128,10 +127,14 @@ background-size: 200%;">
                                 <a href="<?php echo site_url("advice/forHelp")?>" style="padding-left:15px">求助版块</a>
                             </td>
                             <td style="vertical-align:middle;text-align: center">0/3</td>
-                            <td style="vertical-align:middle;text-align: left">
-                                <p>
-                                    游戏界面bug<br>
-                                    16 小时前 夜念心寒伤
+                            <td style="vertical-align:middle;text-align: left;display:block;width:20%">
+                                <p data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->advicetitle?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                        <?php echo $lasthelpadvice[0]->advicetitle?>
+                                </p>
+                                <p data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->publishername?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                        <?php echo $lasthelpadvice[0]->publishername?>
                                 </p>
                             </td>
                         </tr>
@@ -143,9 +146,13 @@ background-size: 200%;">
                             </td>
                             <td style="vertical-align:middle;text-align: center">12/20</td>
                             <td style="vertical-align:middle;text-align: left">
-                                <p>
-                                    游戏界面bug<br>
-                                    16 小时前 夜念心寒伤
+                                <p data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->advicetitle?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lastdoctoradvice[0]->advicetitle?>
+                                </p>
+                                <p data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->publishername?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lastdoctoradvice[0]->publishername?>
                                 </p>
                             </td>
                         </tr>
@@ -157,9 +164,13 @@ background-size: 200%;">
                             </td>
                             <td style="vertical-align:middle;text-align: center">12/20</td>
                             <td style="vertical-align:middle;text-align: left">
-                                <p>
-                                    游戏界面bug<br>
-                                    16 小时前 夜念心寒伤
+                                <p data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->advicetitle?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lastcoachadvice[0]->advicetitle?>
+                                </p>
+                                <p data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->publishername?>"
+                                   style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                    <?php echo $lastcoachadvice[0]->publishername?>
                                 </p>
                             </td>
                         </tr>
