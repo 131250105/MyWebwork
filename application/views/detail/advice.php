@@ -122,7 +122,7 @@ background-size: 200%;">
                                  width="140px" >
                         </td>
                         <td colspan="7" rowspan="5" style="background-color: rgba(255, 255, 255, 0.42);;">
-                            <p><?php echo $thisadvice[0]->advicecontent?></p>
+                            <p><?php echo $item->advicecontent?></p>
                         </td>
                     </tr>
                     <tr></tr>
@@ -158,20 +158,9 @@ background-size: 200%;">
                 <?php } ?>
                 <?php foreach($reply as $item){?>
                     <tr>
-                        <td style="" width="7%">
-                            查看:12
-                        </td>
-                        <td style="" width="7%">
-                            回复：1
-                        </td>
-                        <td colspan="7" style="background-color: rgba(255, 255, 255, 0.42);;font-family:'黑体';font-size:large">
-                            <?php echo $item->advicetitle?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"  data-toggle="tooltip" title="<?php echo $item->publishername?>"
+                        <td colspan="2"  data-toggle="tooltip" title="<?php echo $item->username?>"
                             style="display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                            <?php echo $item->publishername?>
+                            <?php echo $item->username?>
                         </td>
                         <td style="background-color: rgba(255, 255, 255, 0.42);;" colspan="3">
                             发布于 <?php echo $item->createdAt?> | 只看该作者 | 倒序浏览
@@ -191,7 +180,7 @@ background-size: 200%;">
                                  width="140px" >
                         </td>
                         <td colspan="7" rowspan="5" style="background-color: rgba(255, 255, 255, 0.42);;">
-                            <p><?php echo $thisadvice[0]->advicecontent?></p>
+                            <p><?php echo $item->replycontent?></p>
                         </td>
                     </tr>
                     <tr></tr>
