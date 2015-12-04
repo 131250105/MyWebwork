@@ -74,6 +74,11 @@ include_once("bean/userbean.php");
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
                      style="">
+                    <a href ="<?php echo site_url("advice/post");?>" style="text-decoration: none;">
+                        <button type="button" class="btn btn-primary btn-block">
+                        发帖
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

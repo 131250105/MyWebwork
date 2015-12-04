@@ -23,4 +23,8 @@ class advice extends CI_Controller
     public function coach(){
         $this->load->view("advice/coach");
     }
+
+    public function post(){
+        $this->load->view("advice/post");
+    }
 }
