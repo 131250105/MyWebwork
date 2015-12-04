@@ -39,7 +39,8 @@ include_once("bean/userbean.php");
     </style>
 
 </head>
-<body style="background-color:#f3f3f3">
+<body style="background: #fff url(<?php echo base_url('images/green (1).jpg')?>) no-repeat left top;
+    background-size: 100%;">
 <?php include_once ('commerHeader.php');?>
 
 <div class="container">

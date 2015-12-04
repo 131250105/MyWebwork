@@ -111,6 +111,9 @@ class user extends CI_Controller
             echo "wrong";
     }
 
+    public function interestCircle(){
+        $this->load->view("user/interestCircle");
+    }
 
     public function logout(){
         session_unset();

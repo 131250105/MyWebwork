@@ -259,6 +259,7 @@
         -->
         <li class="li_h" onclick="toUserIndex()"><i class="fa fa-home fa-lg"></i> 个人中心</li>
         <li class="li_h" onclick="window.open('<?php echo site_url("user/friends"); ?>')"><i class="fa fa-envelope fa-lg"></i> 好友 </li>
+        <li class="li_h" onclick="window.open('<?php echo site_url("user/interestCircle"); ?>')"><i class="fa fa-envelope fa-lg"></i> 圈子 </li>
         <li class="li_h" onclick="window.location.href='<?php echo site_url("user/logout"); ?>'"><i class="fa fa-user fa-lg"></i> 注销</li>
     </ul>
 </div>
