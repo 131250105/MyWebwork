@@ -22,8 +22,8 @@ class welcome_model extends CI_Model
 
     public function getindexadvice(){
         $res=$this->db->from('advice')
-            ->where('activitytype','coach')
-            ->or_where('activitytype','doctor')
+            ->where('advicetype','coach')
+            ->or_where('advicetype','doctor')
             ->limit(0,2)
             ->get();
         return $res->result();
