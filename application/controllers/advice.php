@@ -128,4 +128,10 @@ class advice extends CI_Controller
 
     }
 
+
+
+    public function reply(){
+
+    }
+
 }

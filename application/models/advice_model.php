@@ -77,4 +77,11 @@ class advice_model extends CI_Model
     public function addadvice($data){
         $this->db->insert("advice",$data);
     }
+
+
+    public function addreply($data){
+        $this->db->insert("reply",$data);
+    }
+
+
 }
