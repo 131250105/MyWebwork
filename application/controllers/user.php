@@ -133,10 +133,13 @@ class user extends CI_Controller
      */
     public function index(){
         $this->load->model("User_model");
+        $this->load->model("Topic_model");
         $userId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
+        $alltopic =$this->Topic_model->getalltopic();
+        $mytopic =$this->Topic_model->getmytopic($userId);
         $potentialfriends =$this->User_model->getpotentialfriends($userId);
-        $this->load->view("user/index", array('user' => $userinfo,'pfriends'=>$potentialfriends));
+        $this->load->view("user/index", array('user' => $userinfo,'pfriends'=>$potentialfriends,'alltopic'=>$alltopic,'mytopic'=>$mytopic));
     }
 
     /*

@@ -15,6 +15,7 @@ class topic extends CI_Controller
     public function publishtopic(){
         $this->load->model("Topic_model");
         $userId =$_SESSION['userId'];
+        $username =$_SESSION['username'];
         $context = $this->input->post('context');
         $time=date("Y-m-d H:i:s");
         $praisenum =0;
@@ -23,6 +24,7 @@ class topic extends CI_Controller
             'context'  => $context,
             'createdtime'=> $time,
             'praisenum' => $praisenum,
+            'username'=>$username,
         );
         $this->Topic_model->add($data);
         return "success";

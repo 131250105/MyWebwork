@@ -20,16 +20,16 @@ class topic_model extends CI_Model
     }
 
     public function getalltopic(){
-        $this->db->from('topic')->limit(0,10)->get();
-        return $this->result();
+        $res=$this->db->from('topic')->limit(0,10)->get();
+        return $res->result();
     }
 
 
     public function getmytopic($userId){
-        $this->db->from('topic')
+        $res=$this->db->from('topic')
             ->where('publisherId',$userId)
             ->limit(0,10)->get();
-        return $this->result();
+        return $res->result();
     }
 
 

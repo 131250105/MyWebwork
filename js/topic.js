@@ -2,13 +2,11 @@
  * Created by apple on 2015/12/1.
  */
 function publishtopic(url){
-    alert(url);
     var context =document.getElementById("context").value;
     if(context==""){
         alert("内容不能为空");
     }
     else{
-        alert(url);
         $.ajax({
             url:url,
             type: "POST",
@@ -22,6 +20,7 @@ function publishtopic(url){
             },
             success: function(data,status) {
                 alert("发布成功");
+                window.location ="/mywebwork/user/index";
             }
         });
     }
