@@ -9,33 +9,50 @@
 class advice_model extends CI_Model
 {
     public function gethelpadvice($index){
-        $res=$this->db->from('advice')
-            ->where('advicetype','help')
-            ->limit(($index-1)*10,$index*10)
-            ->get();
+        $sql = 'select a.adviceId , a.publishername , a.advicetitle , count(replyId) as replynum , ifnull(s.lasttime,0) as lasttime'.
+            ' from advice a left join reply r on a.adviceId =r.adviceId '.
+            ' left join (select r1.adviceId , max(r1.createdAt) as lasttime from reply r1 group by r1.adviceId) s'.
+            ' on  a.adviceId =s.adviceId'.
+            ' where a.advicetype = \'help\''.
+            ' group by a.adviceId'.
+            ' limit 0,10;';
+        $res=$this->db->query($sql);
         return $res->result();
     }
 
     public function getcoachadvice($index){
-        $res=$this->db->from('advice')
-            ->where('advicetype','coach')
-            ->limit(($index-1)*10,$index*10)
-            ->get();
+        $sql = 'select a.adviceId , a.publishername , a.advicetitle , count(replyId) as replynum , ifnull(s.lasttime,0) as lasttime'.
+            ' from advice a left join reply r on a.adviceId =r.adviceId '.
+            ' left join (select r1.adviceId , max(r1.createdAt) as lasttime from reply r1 group by r1.adviceId) s'.
+            ' on  a.adviceId =s.adviceId'.
+            ' where a.advicetype = \'coach\''.
+            ' group by a.adviceId'.
+            ' limit 0,10;';
+        $res=$this->db->query($sql);
         return $res->result();
     }
 
     public function getdoctoradvice($index){
-        $res=$this->db->from('advice')
-            ->where('advicetype','doctor')
-            ->limit(($index-1)*10,$index*10)
-            ->get();
+        $sql = 'select a.adviceId , a.publishername , a.advicetitle , count(replyId) as replynum , ifnull(s.lasttime,0) as lasttime'.
+            ' from advice a left join reply r on a.adviceId =r.adviceId '.
+            ' left join (select r1.adviceId , max(r1.createdAt) as lasttime from reply r1 group by r1.adviceId) s'.
+            ' on  a.adviceId =s.adviceId'.
+            ' where a.advicetype = \'doctor\''.
+            ' group by a.adviceId'.
+            ' limit 0,10;';
+        $res=$this->db->query($sql);
         return $res->result();
     }
 
 
     public function gethotadvice($usertype){
-        $res=$this->db->from('advice')
-            ->get();
+        $sql = 'select a.adviceId , a.publishername , a.advicetitle , count(replyId) as replynum , ifnull(s.lasttime,0) as lasttime'.
+        ' from advice a left join reply r on a.adviceId =r.adviceId '.
+        ' left join (select r1.adviceId , max(r1.createdAt) as lasttime from reply r1 group by r1.adviceId) s'.
+        ' on  a.adviceId =s.adviceId'.
+        ' group by a.adviceId'.
+        ' limit 0,10;';
+        $res=$this->db->query($sql);
         return $res->result();
     }
 
@@ -83,5 +100,11 @@ class advice_model extends CI_Model
         $this->db->insert("reply",$data);
     }
 
+    public function getreplybyadvice($adviceId){
+        $res=$this->db->from('advice')
+                      ->where('adviceId',$adviceId)
+                      ->get();
+        return $res->result();
+    }
 
 }
