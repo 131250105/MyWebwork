@@ -111,6 +111,10 @@ class user extends CI_Controller
             echo "wrong";
     }
 
+    public function createCircle(){
+        $this->load->view("user/createCircle");
+    }
+
     public function interestCircle(){
         $this->load->view("user/interestCircle");
     }

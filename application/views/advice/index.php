@@ -36,11 +36,17 @@ include_once("bean/userbean.php");
             font-family: '微软雅黑';
         }
 
+        /**
+        *td a {
+        *color:black;
+        *}
+        */
+
     </style>
 
 </head>
-<body style="background: #fff url(<?php echo base_url('images/green (1).jpg')?>) no-repeat left top;
-    background-size: 100%;">
+<body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
+background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
 
 <div class="container">
@@ -85,14 +91,20 @@ include_once("bean/userbean.php");
         </div>
         <div class="col-xs-9 col-sm-9" style="">
             <div class="row">
-                <div class="col-xs-12 col-sm-12" style="background-color:white;
+                <div class="col-xs-12 col-sm-12" style="
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
-                    <div style="padding-top:20px;text-align: center;vertical-align: middle;font-size: x-large;font-family:'华文中宋'">
-                        版块公告
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
                     </div>
-                    <div style="padding:30px;vertical-align: middle;font-family:'微软雅黑'">
-                        你看见了最新的版块公告
+                    <div style="">
+                        <div style="padding-top:20px;text-align: center;vertical-align: middle;font-size: x-large;font-family:'华文中宋'">
+                            版块公告
+                        </div>
+                        <div style="padding:30px;vertical-align: middle;font-family:'微软雅黑'">
+                            你看见了最新的版块公告
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -100,9 +112,12 @@ include_once("bean/userbean.php");
                 <p style="visibility: hidden">位置调整</p>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12" style="background-color:white;
+                <div class="col-xs-12 col-sm-12" style="
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+                    </div>
                     <table class="table table-hover">
                         <caption style="padding-left:20px;padding-top:20px;font-family: '华文中宋';font-size: medium;line-height: 2;">子版块</caption>
                         <tbody>
@@ -156,9 +171,12 @@ include_once("bean/userbean.php");
                 <p style="visibility: hidden">位置调整</p>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12" style="background-color:white;
+                <div class="col-xs-12 col-sm-12" style="
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+                    </div>
                     <table class="table">
                         <caption style="padding-left:20px;padding-top:20px;font-family: '华文中宋';font-size: medium;line-height: 2;">推荐建议</caption>
                         <thead style="text-align:center">

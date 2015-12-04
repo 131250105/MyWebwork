@@ -71,11 +71,8 @@ include_once('commerHeader.php');
                      style="">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="<?php echo site_url("user/friends")?>">成员列表</a></li>
-                        <li><a href="<?php echo site_url("user/search")?>">新鲜事</a></li>
-                        <li><a href="<?php echo site_url("user/joined")?>">成员参与的活动</a></li>
-                        <li><a href="<?php echo site_url("user/published")?>">成员发布的活动</a></li>
-                        <li><a href="<?php echo site_url("user/collected")?>">成员收藏的活动</a></li>
+                        <li><a href="<?php echo site_url("user/createCircle")?>">创建圈子</a></li>
+                        <li class="active"><a href="<?php echo site_url("user/interestCircle")?>">我的圈子</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>

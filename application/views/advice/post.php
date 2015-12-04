@@ -39,7 +39,8 @@
         });
     </script>
 </head>
-<body style="background-color:#f3f3f3">
+<body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
+background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
 
 <div class="container">
@@ -47,15 +48,35 @@
         <p style="visibility: hidden">位置调整</p>
     </div>
     <div class="row" >
-        <div class="col-xs-12 col-sm-12" style="background-color:white;
+        <div class="col-xs-12 col-sm-12" style="
                 box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);
                 border-radius: 15px;">
+            <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+            </div>
             <div class="row">
                 <p style="visibility: hidden">位置调整</p>
             </div>
-            <form>
+            <form class="form-horizontal" role="form">
                 <div class="row">
                     <div class="col-xs-10 col-md-offset-1" style="display:block">
+                        <div class="form-group">
+                            <label for="postPlace" class="col-sm-1 control-label" style="text-align: left;">版块：</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" id="postPlace">
+                                    <option>求助板块</option>
+                                    <option>医生板块</option>
+                                    <option>教练板块</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="adviceTitle" class="col-sm-1 control-label" style="text-align: left;">标题：</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="adviceTitle"
+                                       placeholder="请输入标题">
+                            </div>
+                        </div>
                         <textarea name="content" style="width:100%;height:300px;visibility:hidden;">输入你要发的内容</textarea>
                         <p style="visibility: hidden">位置调整</p>
                         <button type="submit" class="btn btn-primary pull-right" style="">
@@ -65,6 +86,7 @@
             </form>
             <div class="row">
                 <p style="visibility: hidden">位置调整</p>
+                <p style="visibility: hidden">位置调整</p>
             </div>
         </div>
     </div>
@@ -73,7 +95,7 @@
     </div>
 </div>
 
-<div style="bottom:0px;position:absolute;width:100%;text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+<div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
 

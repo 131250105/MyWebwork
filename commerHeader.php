@@ -24,7 +24,6 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="padding: 5px;
-    margin-bottom: 0px;
     opacity: 5;
     background-color: rgba(228, 228, 228, 0);
     box-shadow: rgba(27, 178, 0, 0.1) 0 1px 2px;
