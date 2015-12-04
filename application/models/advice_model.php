@@ -107,4 +107,6 @@ class advice_model extends CI_Model
         return $res->result();
     }
 
+
+
 }

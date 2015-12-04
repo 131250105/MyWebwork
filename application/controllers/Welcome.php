@@ -20,6 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->model("Welcome_model");
+		$advice =$this->Welcome_model->getindexadvice();
+		$activity =$this->Welcome_model->getindexactivity();
+		$topic =$this->Welcome_model->getindextopic();
 		if(empty($_COOKIE['email'])||empty($_COOKIE['password'])){
 
 		}
@@ -35,6 +39,6 @@ class Welcome extends CI_Controller {
 				$_SESSION['userphoto'] =$userinfo->getPhoto();
 			}
 		}
-		$this->load->view('welcome/index');
+		$this->load->view('welcome/index',array('advice'=>$advice,'activity'=>$activity,'topic'=>$topic));
 	}
 }

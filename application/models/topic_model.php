@@ -29,5 +29,9 @@ class topic_model extends CI_Model
         $this->db->from('topic')
             ->where('publisherId',$userId)
             ->limit(0,10)->get();
+        return $this->result();
     }
+
+
+
 }

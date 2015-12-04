@@ -103,4 +103,6 @@ class activity_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+
 }
