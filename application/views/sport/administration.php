@@ -19,7 +19,7 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
 
-    <script src="<?php echo base_url('application/views/sport/jqplot.js');?>"></script>
+    <script src="<?php echo base_url('js/jqplot.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -119,6 +119,7 @@ background-size: 400%;">
 
 <script src=" <?php echo base_url('js/countToNumFun.js');?>"></script>
 <script type="text/javascript">
+
 
     var data = [[1,2,3,4,5,6,7,8,9],[3,6,8,1,11,22,4,21,6]];
     var data_max = 30; //Y轴最大刻度
