@@ -293,4 +293,14 @@ class User_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+
+    public function gethotuser(){
+        $res=$this->db
+            ->from('user')
+            ->order_by('userId','desc')
+            ->limit(0,5)
+            ->get();
+        return $res->result();
+    }
 }

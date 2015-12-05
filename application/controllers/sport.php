@@ -9,9 +9,11 @@ class sport extends CI_Controller
 {
     public function userindex(){
         $this->load->model("Sport_model");
+        $this->load->model("User_model");
         $userId =$_SESSION['userId'];
         $data=$this->Sport_model->gethealthdatabyId($userId);
-        $this->load->view("sport/index",array('data'=>$data));
+        $userlist=$this->User_model->gethotuser();
+        $this->load->view("sport/index",array('data'=>$data,'userlist'=>$userlist));
     }
 
     public function administration(){

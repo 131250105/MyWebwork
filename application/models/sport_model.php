@@ -17,7 +17,7 @@ class sport_model  extends CI_Model
             ->from('healthdata')
             ->where('userId',$userId)
             ->order_by('healthdataId','desc')
-            ->limit('0,10')
+            ->limit('10')
             ->get();
         return $res->result();
     }
