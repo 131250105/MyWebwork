@@ -16,10 +16,9 @@ include_once('commerHeader.php');
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('css/avatar_upload.css');?>" rel="stylesheet" type="text/css" />
     <!-- [endif]-->
-    <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
+    <script src=" <?php echo base_url('jquery-1.8.0.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/editor.js');?>"></script>
-
     <script type="text/javascript" src=" <?php echo base_url('js/cropbox.js');?>"></script>
     <script type="text/javascript" src=" <?php echo base_url('js/mouseHover.js');?>"></script>
     <style type="text/css">
@@ -175,7 +174,8 @@ include_once('commerHeader.php');
 
             </table>
             </form>
-
+            <form action="<?php echo site_url('user/changephoto')?>" method="post"
+                  enctype="multipart/form-data">
             <table class="table table-striped" id="avatarTab" style="display:none">
                 <caption style="visibility: hidden;">编辑资料2</caption>
                 <tbody>
@@ -210,7 +210,7 @@ include_once('commerHeader.php');
                 <tr>
                     <td style="padding: 20px;">
                         <a href="javascript:;" class="pic_cut">
-                            <input type="file" id="file" style="float:left; width: 180px">
+                            <input type="file" name ="file" id="file" style="float:left; width: 180px">
                                 更换图片
                         </a>
                     </td>
@@ -224,12 +224,13 @@ include_once('commerHeader.php');
                     </td>
                     <td style="padding: 20px;">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-primary">确认修改</button>
+                            <input type="submit"  name="submit" value="确认修改" class="btn btn-primary" />
                         </div>
                     </td>
                 </tr>
                 </tbody>
             </table>
+                </form>
 
         </div>
     </div>
@@ -472,6 +473,7 @@ include_once('commerHeader.php');
             }
         });
     }
+
 </script>
 
 
