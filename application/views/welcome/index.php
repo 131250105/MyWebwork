@@ -19,7 +19,7 @@
     <!-- <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>-->
 </head>
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
-background-size: 400%;">
+background-size: 1000%;">
 <?php include_once ('commerHeader.php');?>
 <img src="<?php echo base_url('images/main_2.png');?>" class="img-responsive" width="100%" style="">
 
@@ -111,6 +111,7 @@ background-size: 400%;">
                                     </div>
                                 </div>
                             </div>
+                            <hr/>
                         <?php } ?>
                     </div>
                     <div class="row">
@@ -166,6 +167,7 @@ background-size: 400%;">
                                     </div>
                                 </div>
                             </div>
+                            <hr/>
                         <?php } ?>
                     </div>
                     <div class="row">

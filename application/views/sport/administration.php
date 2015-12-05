@@ -9,6 +9,7 @@ include_once("bean/userbean.php");
 include_once('commerHeader.php');
 ?>
 <html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
     <title>test</title>
@@ -74,8 +75,6 @@ background-size: 400%;">
                         <a href="<?php echo site_url("sport/track")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健身追踪器</a></li>
                     <li style="line-height: 2;padding-left: 10px;">
                         <a href="<?php echo site_url("sport/sleepAnalysis")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;睡眠分析</a></li>
-                    <li style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/ride")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健康骑行</a></li>
                 </ul>
                 <p style="visibility: hidden">位置调整</p>
             </div>
@@ -91,28 +90,46 @@ background-size: 400%;">
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12"  style="color: #777;padding:30px;font-family: '华文中宋';font-size: x-large;line-height: 2;">
-                    <div class="htmleaf-content">
-                        <div style="width:100%;margin:0 auto;">
-                            <div>
-                                <canvas id="canvas" height="20" width="100%"></canvas>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-xs-12 col-sm-12">
+                    <table class="table table-responsive">
+                        <tbody>
+                        <tr>
+                            <td style="padding-left:40px;">
+                                身高
+                            </td>
+                            <td>
+                                <?php echo $data[0]->height?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:40px;">
+                                体重
+                            </td>
+                            <td>
+                                <?php echo $data[0]->weight?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:40px;">
+                                BMI指数
+                            </td>
+                            <td>
+                                <?php echo $data[0]->BMI?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:40px;">
+                                病史
+                            </td>
+                            <td>
+                                无相关内容
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <table class="table table-responsive">
-                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">身体管理</caption>
-                <tbody>
-
-                </tbody>
-            </table>
-            <table class="table table-responsive">
-                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">详细数据</caption>
-                <tbody>
-
-                </tbody>
-            </table>
         </div>
     </div>
     <div class="row">
@@ -125,35 +142,6 @@ background-size: 400%;">
 </div>
 
 <script src=" <?php echo base_url('js/countToNumFun.js');?>"></script>
-<script src="<?php echo base_url('js/Chart.js');?>"></script>
-<script>
-    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-    var lineChartData = {
-        labels : ["周一","周二","周三","周四","周五","周六","周日"],
-        datasets : [
-            {
-                label: "My First dataset",
-                fillColor : "#8DA3F3",
-                strokeColor : "#5A78E7",
-                pointColor : "#1E0580",
-                pointStrokeColor : "#fff",
-                pointHighlightFill : "#fff",
-                pointHighlightStroke : "rgba(220,220,220,1)",
-                data : [20,21,1,15,8,7,10]
-            }
-        ]
-
-    }
-
-    window.onload = function(){
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myLine = new Chart(ctx).Line(lineChartData, {
-            responsive: true
-        });
-    }
-
-
-</script>
 
 </body>
 

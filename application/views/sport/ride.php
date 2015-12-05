@@ -70,8 +70,6 @@ background-size: 400%;">
                         <a href="<?php echo site_url("sport/track")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健身追踪器</a></li>
                     <li style="line-height: 2;padding-left: 10px;">
                         <a href="<?php echo site_url("sport/sleepAnalysis")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;睡眠分析</a></li>
-                    <li class="active" style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/ride")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健康骑行</a></li>
                 </ul>
                 <p style="visibility: hidden">位置调整</p>
             </div>

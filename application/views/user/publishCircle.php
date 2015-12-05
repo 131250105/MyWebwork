@@ -91,7 +91,7 @@ background-size: 400%;">
             </div>
             <div class="row" style="padding: 20px;">
                 <?php foreach($circles as $item){  ?>
-                    <div class="col-xs-3 col-sm-3"
+                    <div class="col-xs-6 col-sm-6"
                          style="">
                         <div class="col-xs-6 col-sm-6"
                              style="">
@@ -99,18 +99,18 @@ background-size: 400%;">
                         </div>
                         <div class="col-xs-6 col-sm-6"
                              style="">
-                            <div class="row">
+                            <div class="row" style="line-height:1.5">
+                                <div class="col-xs-12 col-sm-12"
+                                     style="">
+                                <span class="pull-left" data-toggle="tooltip" title="<?php echo $item->groupname?>"
+                                      style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
+                                      onclick="window.open('<?php echo site_url("detail/circle?circleId=".$item->groupId); ?>')">名称:<a href="javascript::void(0)"><?php echo $item->groupname?></a></span>
+                                </div>
                                 <div class="col-xs-12 col-sm-12"
                                      style="">
                                 <span class="pull-left" data-toggle="tooltip" title="<?php echo $item->grouptype?>"
                                       style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                                       >类型:<?php echo $item->grouptype?></span>
-                                </div>
-                                <div class="col-xs-12 col-sm-12"
-                                     style="">
-                                <span class="pull-left" data-toggle="tooltip" title="<?php echo $item->groupname?>"
-                                      style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-                                      onclick="window.open('<?php echo site_url("detail/circle?circleId=".$item->groupId); ?>')">名称:<?php echo $item->groupname?></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-12"
                                      style="">
@@ -155,7 +155,7 @@ background-size: 400%;">
 </div>
 </div>
 
-<div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+<div style="bottom:0px;position:absolute;width:100%;text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
 

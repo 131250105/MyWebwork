@@ -74,6 +74,7 @@ background-size: 400%;">
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
         </div>
         <table class="table table-hover">
+            <caption  style="color: #777;padding:30px;font-family: '华文中宋';font-size: x-large;line-height: 2;">圈子详情</caption>
             <tbody>
             <tr>
                 <th style="vertical-align:middle;padding: 20px;" colspan="8">

@@ -15,6 +15,9 @@ include_once('commerHeader.php');
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('css/default.css');?>" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/chart_normalize.css');?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/chart_default.css');?>">
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
@@ -51,7 +54,6 @@ include_once('commerHeader.php');
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 400%;">
 
-
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
@@ -66,15 +68,13 @@ background-size: 400%;">
                 <p style="visibility: hidden">位置调整</p>
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active" style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/userindex")?>"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;我的运动</a></li>
+                        <a href="<?php echo site_url("sport/userindex")?>" style="color: #fff;background-color: #337ab7;"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;我的运动</a></li>
                     <li style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/administration")?>"><span class="glyphicon glyphicon-headphones"></span>&nbsp;&nbsp;&nbsp;身体管理</a></li>
+                        <a href="<?php echo site_url("sport/administration")?>" style="color: #337ab7;text-decoration: none;background-color: transparent;"><span class="glyphicon glyphicon-headphones"></span>&nbsp;&nbsp;&nbsp;身体管理</a></li>
                     <li style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/track")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健身追踪器</a></li>
+                        <a href="<?php echo site_url("sport/track")?>" style="color: #337ab7;text-decoration: none;background-color: transparent;"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健身追踪器</a></li>
                     <li style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/sleepAnalysis")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;睡眠分析</a></li>
-                    <li style="line-height: 2;padding-left: 10px;">
-                        <a href="<?php echo site_url("sport/ride")?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;健康骑行</a></li>
+                        <a href="<?php echo site_url("sport/sleepAnalysis")?>" style="color: #337ab7;text-decoration: none;background-color: transparent;"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;睡眠分析</a></li>
                 </ul>
                 <p style="visibility: hidden">位置调整</p>
             </div>
@@ -96,8 +96,8 @@ background-size: 400%;">
                                 <h1>Legend:</h1>
                                 <div class="skills">
                                     <ul>
-                                        <li class="jq">运动目标完成</li>
                                         <li class="css">健康BMI</li>
+                                        <li class="jq">运动目标完成</li>
                                         <li class="html">健康睡眠</li>
                                        <!-- <li class="php">PHP</li>
                                         <li class="sql">MySQL</li>-->
@@ -112,18 +112,18 @@ background-size: 400%;">
                     <div class="col-xs-12 col-sm-12">
                         <div class="get">
                             <div class="arc">
-                                <span class="text">运动目标完成</span>
-                                <input type="hidden" class="percent" value="80" />
-                                <input type="hidden" class="color" value="#97BE0D" />
-                            </div>
-                            <div class="arc">
                                 <span class="text">健康BMI(20.8)</span>
-                                <input type="hidden" class="percent" value="43" />
+                                <input type="hidden" class="percent" value="<?php echo $data[0]->BMI; ?>" />
                                 <input type="hidden" class="color" value="#D84F5F" />
                             </div>
                             <div class="arc">
+                                <span class="text">运动目标完成</span>
+                                <input type="hidden" class="percent" value="<?php echo $data[0]->usefulexercise*100; ?>" />
+                                <input type="hidden" class="color" value="#97BE0D" />
+                            </div>
+                            <div class="arc">
                                 <span class="text">健康睡眠</span>
-                                <input type="hidden" class="percent" value="71" />
+                                <input type="hidden" class="percent" value="<?php echo $data[0]->healthsleep*100; ?>" />
                                 <input type="hidden" class="color" value="#88B8E6" />
                             </div>
                         </div>
@@ -205,54 +205,35 @@ background-size: 400%;">
             </tbody>
         </table>
 
-        <div class="col-xs-6 col-sm-6"
+        <div class="col-xs-12 col-sm-12"
              style="">
-            <table class="table table-responsive" width="50%">
-                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">全网排名</caption>
-                <tbody>
-                <tr>
-                    <td style="vertical-align:middle;text-align: center">1</td>
-                    <td style="vertical-align:middle">
-                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>"
-                             class="img-rounded" width="100px" >
-                        小编
-                    </td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:middle;text-align: center">2</td>
-                    <td style="vertical-align:middle">
-                        <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>"
-                             class="img-rounded" width="100px">
-                        围观群众
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="col-xs-6 col-sm-6"
-             style="">
-            <table class="table table-responsive" width="50%">
-                <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">朋友圈排名</caption>
-                <tbody>
-                <tr>
-                    <td style="vertical-align:middle;text-align: center">1</td>
-                    <td style="vertical-align:middle">
-                        <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>"
-                             class="img-rounded" width="100px" >
-                        小编
-                    </td>
-                </tr>
-                <tr>
-                    <td style="vertical-align:middle;text-align: center">2</td>
-                    <td style="vertical-align:middle">
-                        <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>"
-                             class="img-rounded" width="100px">
-                        围观群众
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12"
+                     style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">
+                    全网排名
+                    <hr/>
+                </div>
+            </div>
+            <?php $c=0;
+            foreach($userlist as $item){
+                $c++;?>
+                <div class="row">
+                    <div class="col-xs-1 col-sm-1"
+                         style="">
+                        <span style="line-height: 6;vertical-align: middle;"><?php echo $c ?></span>
+                    </div>
+                    <div class="col-xs-2 col-sm-2"
+                         style="">
+                        <img src="<?php echo $item->photo?>"
+                             class="img-rounded" width="100%"  style="vertical-align: middle">
+                    </div>
+                    <div class="col-xs-9 col-sm-9"
+                         style="">
+                        <span style="line-height: 6;vertical-align: middle"><?php echo $item->username?></span>
+                    </div>
+                </div>
+                <hr/>
+            <?php } ?>
         </div>
 
     </div>
