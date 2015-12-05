@@ -96,31 +96,31 @@ include_once('commerHeader.php');
                         <div class="col-xs-12 col-sm-12"
                              style="">
                             <p style="padding-top: 60px;padding-left: 20px;padding-bottom:20px;font-family: '华文中宋';font-size: medium;
-                    line-height: 1;color: #777;text-align: left;">推荐圈子</p>
+                    line-height: 1;color: #777;text-align: left;">推荐兴趣组</p>
                         </div>
                     </div>
                     <?php
-                    foreach($pfriends as $item) {?>
+                    foreach($circles as $item) {?>
                         <div class="row" style="padding: 10px;">
                             <div class="col-xs-12 col-sm-12"
                                  style="">
                                 <div class="col-xs-6 col-sm-6"
                                      style="">
-                                    <img src="<?php echo $item->photo?>" class="img-responsive" width="70%" align="center">
+                                    <img src="<?php echo base_url('images/activity.jpg')?>" class="img-responsive" width="70%" align="center">
                                 </div>
                                 <div class="col-xs-6 col-sm-6"
                                      style="line-height: 2;">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12"
                                              style="">
-                                            <a class="" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><?php echo $item->username?></a>
+                                            <a class="" onclick="window.open('<?php echo site_url("detail/circle?circleId=".$item->groupId); ?>')"><?php echo $item->groupname?></a>
 
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12"
                                              style="">
-                                            <?php echo $item->usertype?>
+                                            <?php echo $item->grouptype?>
                                         </div>
                                     </div>
                                 </div>

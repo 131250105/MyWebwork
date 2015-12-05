@@ -215,4 +215,82 @@ class User_model extends CI_Model
             ->get();
         return $res->result();
     }
+
+
+    public function addgroup($data){
+        return $this->db->insert("circle",$data);
+    }
+
+    public function removegroup($groupId){
+        $this->db
+            ->from("circle")
+            ->where('groupId',$groupId)
+            ->delete();
+    }
+
+    public function addgrouppartin($data){
+        return $this->db->insert("grouppartin",$data);
+    }
+
+    public function deletegrouppartin($groupId,$userId){
+        $this->db
+            ->from("grouppartin")
+            ->where('partinuserId',$userId)
+            ->where('partingroupId',$groupId)
+            ->delete();
+    }
+
+    public function getpublishcircle($userId){
+        $res=$this->db
+            ->from('circle')
+            ->where('createrId',$userId)
+            ->get();
+        return $res->result();
+    }
+
+    public function gethotcircle(){
+        $res=$this->db
+            ->from('circle')
+            ->limit('0,5')
+            ->get();
+        return $res->result();
+    }
+
+
+    public function getdetailcircle($circleId){
+        $res=$this->db
+            ->from('circle')
+            ->where('groupId',$circleId)
+            ->get();
+        return $res->result();
+    }
+
+
+    public function getpartinmem($circleId){
+        $res=$this->db
+            ->from('grouppartin')
+            ->join('user','grouppartin.partinuserId =user.userId')
+            ->where('partingroupId',$circleId)
+            ->get();
+        return $res->result();
+    }
+
+
+    public function judgejoin($circleId,$userId){
+        $res=$this->db
+            ->from('grouppartin')
+            ->where('partingroupId',$circleId)
+            ->where('partinuserId',$userId)
+            ->get();
+        return $res->result();
+    }
+
+    public function getjoingroup($userId){
+        $res=$this->db
+            ->from('grouppartin')
+            ->join('circle','grouppartin.partingroupId =circle.groupId')
+            ->where('partinuserId',$userId)
+            ->get();
+        return $res->result();
+    }
 }

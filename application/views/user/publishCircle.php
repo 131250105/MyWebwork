@@ -69,8 +69,8 @@ include_once('commerHeader.php');
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="<?php echo site_url("user/createCircle")?>">创建圈子</a></li>
-                        <li class="active"><a href="<?php echo site_url("user/interestCircle")?>">我加入的圈子</a></li>
-                        <li><a href="<?php echo site_url("user/publishedCircle")?>">我创建的圈子</a></li>
+                        <li><a href="<?php echo site_url("user/interestCircle")?>">我加入的圈子</a></li>
+                        <li class="active"><a href="<?php echo site_url("user/publishedCircle")?>">我创建的圈子</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>
@@ -100,7 +100,7 @@ include_once('commerHeader.php');
                                      style="">
                                 <span class="pull-left" data-toggle="tooltip" title="<?php echo $item->grouptype?>"
                                       style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-                                    >类型:<?php echo $item->grouptype?></span>
+                                      >类型:<?php echo $item->grouptype?></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-12"
                                      style="">
@@ -110,9 +110,9 @@ include_once('commerHeader.php');
                                 </div>
                                 <div class="col-xs-12 col-sm-12"
                                      style="">
-                                <span class="pull-left" data-toggle="tooltip" title="<?php echo $item->partincreatedAt?>"
+                                <span class="pull-left" data-toggle="tooltip" title="<?php echo $item->createdAt?>"
                                       style="font-family: '微软雅黑';display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-                                    >加入时间:<?php echo substr($item->createdAt,5,5)?></span>
+                                      >创建时间:<?php echo substr($item->createdAt,5,5)?></span>
                                 </div>
 
                             </div>
@@ -120,6 +120,12 @@ include_once('commerHeader.php');
                                 <div class="col-xs-12 col-sm-12"
                                      style="visibility: hidden">
                                     <a class="pull-left">占位</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12"
+                                     style="">
+                                    <a class="pull-left" href="javascript::void(0)" onclick="deletecirclr('<?php echo site_url("user/deletecircle")?>' , '<?php echo $item->groupId?>')">删除</a>
                                 </div>
                             </div>
                         </div>

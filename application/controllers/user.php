@@ -116,8 +116,19 @@ class user extends CI_Controller
     }
 
     public function interestCircle(){
-        $this->load->view("user/interestCircle");
+        $this->load->model("User_model");
+        $userId =$_SESSION['userId'];
+        $circels=$this->User_model->getjoingroup($userId);
+        $this->load->view("user/interestCircle",array('circles'=>$circels));
     }
+
+    public function publishedCircle(){
+        $this->load->model("User_model");
+        $userId =$_SESSION['userId'];
+        $circels=$this->User_model->getpublishcircle($userId);
+        $this->load->view("user/publishCircle",array('circles'=>$circels));
+    }
+
 
     public function logout(){
         session_unset();
@@ -136,10 +147,11 @@ class user extends CI_Controller
         $this->load->model("Topic_model");
         $userId =$_SESSION['userId'];
         $userinfo =$this->User_model->getUserByUserId($userId);
+        $circles =$this->User_model->gethotcircle();
         $alltopic =$this->Topic_model->getalltopic();
         $mytopic =$this->Topic_model->getmytopic($userId);
         $potentialfriends =$this->User_model->getpotentialfriends($userId);
-        $this->load->view("user/index", array('user' => $userinfo,'pfriends'=>$potentialfriends,'alltopic'=>$alltopic,'mytopic'=>$mytopic));
+        $this->load->view("user/index", array('user' => $userinfo,'pfriends'=>$potentialfriends,'alltopic'=>$alltopic,'mytopic'=>$mytopic,'circles'=>$circles));
     }
 
     /*
@@ -292,5 +304,50 @@ class user extends CI_Controller
             'createtime' => $createtime,
         );
         $this->User_model->updatefriend($firstuserId,$seconduserId,$data);
+    }
+
+    public function creategroup(){
+        $this->load->model("User_model");
+        $userId = $_SESSION['userId'];
+        $username = $_SESSION['username'];
+        $groupintro = $this->input->post('groupintro');
+        $grouptype = $this->input->post('grouptype');
+        $groupname = $this->input->post('groupname');
+        $createtime=date("Y-m-d H:i:s");
+        $data=array(
+            'createrId'=>$userId,
+            'creatername'=>$username,
+            'createdAt'=>$createtime,
+            'groupintro'=>$groupintro,
+            'grouptype'=>$grouptype,
+            'groupname'=>$groupname,
+        );
+        $this->User_model->addgroup($data);
+    }
+
+    public function joingroup(){
+        $this->load->model("User_model");
+        $userId = $_SESSION['userId'];
+        $groupId=$this->input->post('groupId');
+        $createtime=date("Y-m-d H:i:s");
+        $data=array(
+            'partinuserId'=>$userId,
+            'partingroupId'=>$groupId,
+            'partincreatedAt'=>$createtime
+        );
+        $this->User_model->addgrouppartin($data);
+    }
+
+    public function quitgroup(){
+        $this->load->model("User_model");
+        $userId = $_SESSION['userId'];
+        $groupId=$this->input->post('groupId');
+        $this->User_model->deletegrouppartin($groupId,$userId);
+    }
+
+    public function deletecircle(){
+        $this->load->model("User_model");
+        $groupId=$this->input->post('groupId');
+        $this->User_model->removegroup($groupId);
     }
 }

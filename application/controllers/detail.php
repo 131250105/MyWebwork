@@ -30,11 +30,28 @@ class detail extends CI_Controller
     public function advice(){
         parse_str($_SERVER['QUERY_STRING'], $_GET);
         $adviceId =$_GET['adviceId'];
+
         $this->load->model("Advice_model");
         $advice =$this->Advice_model->getdetailadvice($adviceId);
         $reply=$this->Advice_model->getreplybyadvice($adviceId);
         $this->load->view("detail/advice",array('thisadvice'=>$advice,'reply'=>$reply));
 
+    }
+
+
+    public function circle(){
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        $circleId =$_GET['circleId'];
+        $userId =$_SESSION['userId'];
+        $this->load->model("User_model");
+        $circle =$this->User_model->getdetailcircle($circleId);
+        $circlemem =$this->User_model->getpartinmem($circleId);
+        $join =$this->User_model->judgejoin($circleId,$userId);
+        $judgejoin =0;
+        if(count($join)!=0){
+            $judgejoin=1;
+        }
+        $this->load->view("detail/circle",array('thiscircle'=>$circle,'circlemem'=>$circlemem,'judgejoin'=>$judgejoin));
     }
 
 }

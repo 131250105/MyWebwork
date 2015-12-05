@@ -17,7 +17,7 @@ include_once('commerHeader.php');
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
-    <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/group.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -71,7 +71,8 @@ background-size: 200%;">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="<?php echo site_url("user/createCircle")?>">创建圈子</a></li>
-                        <li><a href="<?php echo site_url("user/interestCircle")?>">我的圈子</a></li>
+                        <li><a href="<?php echo site_url("user/interestCircle")?>">我加入的圈子</a></li>
+                        <li><a href="<?php echo site_url("user/publishedCircle")?>">我创建的圈子</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>
@@ -121,7 +122,7 @@ background-size: 200%;">
                     <div class="row">
                         <div class="col-xs-11 col-sm-11"
                              style="">
-                            <button type="button" class="btn btn-primary pull-right" id="save" onclick=""  style="padding-left:30px;padding-right:30px">确定</button>
+                            <button type="button" class="btn btn-primary pull-right" id="save" onclick="creategroup('<?php echo site_url("user/creategroup")?>')"  style="padding-left:30px;padding-right:30px">确定</button>
                             <span style="visibility: hidden" class="pull-right">位调</span>
                             <button type="reset" class="btn btn-default pull-right" id="reset" style="padding-left:30px;padding-right:30px">重置</button>
                         </div>
