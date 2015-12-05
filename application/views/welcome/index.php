@@ -18,9 +18,10 @@
 
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
 </head>
-<body>
+<body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
+background-size: 400%;">
 <?php include_once ('commerHeader.php');?>
-<img src="<?php echo base_url('images/main.png');?>" class="img-responsive" width="100%" style="">
+<img src="<?php echo base_url('images/main_2.png');?>" class="img-responsive" width="100%" style="">
 
 <div class="container">
     <div class="row">
@@ -28,6 +29,9 @@
     </div>
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
+            <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+            </div>
             <div class="row" >
                 <div class="col-xs-12 col-sm-12">
                     <p style="text-align:center;vertical-align: middle;
@@ -59,6 +63,9 @@
                 </div>
             <?php } ?>
             </div>
+            <div class="row">
+                <p style="visibility: hidden">位置调整</p>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -72,6 +79,9 @@
         <div class="col-xs-12 col-sm-12">
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+                    </div>
                     <div class="row" >
                         <div class="col-xs-12 col-sm-12">
                             <p style="text-align:center;vertical-align: middle;
@@ -99,6 +109,9 @@
                             </div>
                         <?php } ?>
                     </div>
+                    <div class="row">
+                        <p style="visibility: hidden">位置调整</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,6 +126,9 @@
         <div class="col-xs-12 col-sm-12">
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
+                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+                    </div>
                     <div class="row" >
                         <div class="col-xs-12 col-sm-12">
                             <p style="text-align:center;vertical-align: middle;
@@ -145,6 +161,9 @@
                                 </div>
                             </div>
                         <?php } ?>
+                    </div>
+                    <div class="row">
+                        <p style="visibility: hidden">位置调整</p>
                     </div>
                 </div>
             </div>

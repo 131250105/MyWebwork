@@ -69,7 +69,6 @@ include_once("bean/userbean.php");
 <body  style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
-<?php var_dump($reply)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-12 col-sm-12" style="

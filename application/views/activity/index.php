@@ -45,7 +45,8 @@ include_once('commerHeader.php');
     </style>
 
 </head>
-<body style="background-color:#f3f3f3">
+<body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
+background-size: 200%;">
 
 
 <div class="container">
@@ -82,7 +83,10 @@ include_once('commerHeader.php');
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
-             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
+             style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;"">
+        <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+        </div>
         <table class="table table-hover">
             <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">活动一览</caption>
             <thead style="text-align:center">

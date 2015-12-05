@@ -34,7 +34,8 @@ include_once('commerHeader.php');
     </style>
 
 </head>
-<body style="background-color:#f3f3f3">
+<body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
+background-size: 400%;">
 
 <div class="container">
     <div class="row" >

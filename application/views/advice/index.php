@@ -45,7 +45,6 @@ include_once("bean/userbean.php");
     </style>
 
 </head>
-<?php var_dump($lasthelpadvice)?>
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 200%;">
 <?php include_once ('commerHeader.php');?>
@@ -57,12 +56,6 @@ background-size: 200%;">
                 <?php
                 include_once('leftColumn.php');
                 ?>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
-                </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
