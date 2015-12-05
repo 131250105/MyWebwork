@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <height>180cm</height>
+  <weight>90kg</weight>
+  <pastsickness>经常感冒，咳嗽，头疼</pastsickness>
+  <exercisetime>
+    <emon>1</emon>
+    <etue>0</etue>
+    <ewed>0</ewed>
+    <ethr>1</ethr>
+    <efri>0</efri>
+    <esat>0</esat>
+    <esun>0</esun>
+  </exercisetime>
+  <sleeptime>
+    <smon>5</smon>
+    <stue>4</stue>
+    <swed>5</swed>
+    <sthr>6</sthr>
+    <sfri>7</sfri>
+    <ssat>4</ssat>
+    <ssun>5</ssun>
+  </sleeptime>
+  <BMI>27.78</BMI>
+  <ecomplete>10%</ecomplete>
+  <hsleep>50%</hsleep>
+</user>

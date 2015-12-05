@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <height>168cm</height>
+  <weight>55kg</weight>
+  <pastsickness>无以往病史</pastsickness>
+  <exercisetime>
+    <emon>3</emon>
+    <etue>2</etue>
+    <ewed>3</ewed>
+    <ethr>4</ethr>
+    <efri>1</efri>
+    <esat>2</esat>
+    <esun>2</esun>
+  </exercisetime>
+  <sleeptime>
+    <smon>8</smon>
+    <stue>5</stue>
+    <swed>8</swed>
+    <sthr>7</sthr>
+    <sfri>6</sfri>
+    <ssat>8</ssat>
+    <ssun>5</ssun>
+  </sleeptime>
+  <BMI>19.49</BMI>
+  <ecomplete>70%</ecomplete>
+  <hsleep>80%</hsleep>
+</user>
