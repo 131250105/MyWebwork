@@ -148,4 +148,20 @@ class advice extends CI_Controller
         echo "success";
     }
 
+
+    public function analysisdata($filename){
+        $xml = "";
+        $f = fopen( $filename, 'r' );
+        while( $data = fread($f, 4096)) {
+            $xml .= $data;
+        }
+        fclose($f);
+        preg_match_all( "/\<advice\>(.*?)\<\/advice\>/s",$xml,$adviceblock);
+        foreach($adviceblock as $item) {
+            preg_match_all("/\<content\>(.*?)\<\/content\>/", $item, $content);
+            preg_match_all("/\<createdAt\>(.*?)\<\/createdAt\>/", $item, $createdAt);
+            preg_match_all("/\<advicetitle\>(.*?)\<\/advicetitle\>/", $item, $advicetitle);
+            preg_match_all("/\<advicetitle\>(.*?)\<\/advicetitle\>/", $item, $advicetitle);
+        }
+    }
 }

@@ -69,14 +69,39 @@ class sport extends CI_Controller
     }
 
 
-    public function adddata(){
-        $simple = "<para><note>simple note</note></para>";
-        $p = xml_parser_create();
-        xml_parse_into_struct($p, $simple, $vals, $index);
-        xml_parser_free($p);
-        echo "Index array\n";
-        print_r($index);
-        echo "\nVals array\n";
-        print_r($vals);
+    public function analysisdata($filename)
+    {
+        $userId =$_SESSION['userId'];
+        $xml = "";
+        $f = fopen( $filename, 'r' );
+        while( $data = fread($f, 4096)) {
+            $xml .= $data;
+        }
+        fclose($f);
+        preg_match_all( "/\<user\>(.*?)\<\/user\>/s",$xml,$userblocks);
+        foreach($userblocks as $item) {
+            foreach ($item as $block) {
+                preg_match_all("/\<height\>(.*?)\<\/height\>/", $block, $height);
+                preg_match_all("/\<weight\>(.*?)\<\/weight\>/", $block, $weight);
+                preg_match_all("/\<pastsickness\>(.*?)\<\/pastsickness\>/", $block, $pastsickness);
+                preg_match_all("/\<exercisetime\>(.*?)\<\/exercisetime\>/s", $block, $userblocks);
+                preg_match_all("/\<sleeptime\>(.*?)\<\/sleeptime\>/s", $block, $sleeptime);
+                preg_match_all("/\<BMI\>(.*?)\<\/BMI\>/s", $block, $BMI);
+                preg_match_all("/\<ecomplete\>(.*?)\<\/ecomplete\>/s", $block, $ecomplete);
+                preg_match_all("/\<hsleep\>(.*?)\<\/hsleep\>/s", $block, $hsleep);
+                $data=array(
+                    'userId' => $userId,
+                    'height' => $height,
+                    'weight' => $weight,
+                    'BMI' => $BMI,
+                    'healthsleep' => $hsleep,
+                    'usefulexercise' => $ecomplete,
+                    'sleeptime' => $sleeptime,
+                    'exercisetime' => $ecomplete,
+                );
+        }
+            $this->Sport_model->inserthealth($data);
+        }
+
     }
 }
