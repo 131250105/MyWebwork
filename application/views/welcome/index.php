@@ -16,7 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- [endif]-->
 
-    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
+    <!-- <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>-->
 </head>
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 400%;">
@@ -96,7 +96,7 @@ background-size: 400%;">
                     </div>
                     <div class="row" >
                         <?php foreach($topic as $item){?>
-                            <div class="col-xs-12 col-sm-12">
+                            <div class="col-xs-12 col-sm-12" style="padding: 30px;">
                                 <div class="row" >
                                     <div class="col-xs-2 col-sm-2">
                                         <img src="<?php echo base_url('images/topic.jpg');?>" class="img-responsive" width="100%" align="center">
@@ -145,7 +145,7 @@ background-size: 400%;">
                     </div>
                     <div class="row" >
                         <?php foreach($advice as $item){?>
-                            <div class="col-xs-12 col-sm-12">
+                            <div class="col-xs-12 col-sm-12" style="padding: 30px;">
                                 <div class="row" >
                                     <div class="col-xs-12 col-sm-12" style="vertical-align: middle;font-size: large;font-family: '黑体';line-height:3">
                                         <span style="text-align:left;vertical-align: middle;font-size: medium;font-family: '华文中宋';"><?php echo $item->advicetitle?></span>
