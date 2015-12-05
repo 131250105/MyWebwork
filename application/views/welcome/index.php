@@ -28,12 +28,14 @@ background-size: 400%;">
         <p style="visibility: hidden">位置调整</p>
     </div>
     <div class="row" >
-        <div class="col-xs-12 col-sm-12">
-            <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+        <div class="col-xs-12 col-sm-12"
+             style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+        <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
             </div>
             <div class="row" >
                 <div class="col-xs-12 col-sm-12">
+                    <p style="visibility: hidden">位置调整</p>
                     <p style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
                 line-height: 3;color: #434343;">活动推荐</p>
@@ -78,12 +80,14 @@ background-size: 400%;">
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
             <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                <div class="col-xs-12 col-sm-12"
+                     style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+                <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
                     </div>
                     <div class="row" >
                         <div class="col-xs-12 col-sm-12">
+                            <p style="visibility: hidden">位置调整</p>
                             <p style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
                 line-height: 3;color: #434343;">热门话题</p>
@@ -125,12 +129,14 @@ background-size: 400%;">
     <div class="row" >
         <div class="col-xs-12 col-sm-12">
             <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                <div class="col-xs-12 col-sm-12"
+                     style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+                <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
                     </div>
                     <div class="row" >
                         <div class="col-xs-12 col-sm-12">
+                            <p style="visibility: hidden">位置调整</p>
                             <p style="text-align:center;vertical-align: middle;
                 font-family: '微软雅黑 light';font-weight: 600;font-size: large;
                 line-height: 3;color: #434343;">建议推荐</p>

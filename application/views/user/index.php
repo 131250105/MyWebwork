@@ -53,15 +53,16 @@ background-size: 400%;">
                         </button></a>
                 </div>
             </div>
+            <p style="visibility: hidden">位置调整</p>
             <div class="row" >
-                <div class="col-xs-12 col-sm-12"
-                     style="">
-                    <p style="visibility: hidden">位置调整</p>
+                <div class="col-xs-12 col-sm-12">
+
                     <div class="row">
                         <div class="col-xs-12 col-sm-12"
                              style="">
                             <p style="padding-top: 20px;padding-left: 20px;padding-bottom:20px;font-family: '华文中宋';font-size: medium;
                     line-height: 1;color: #777;text-align: left;">推荐好友</p>
+                            <hr/>
                         </div>
                     </div>
                     <?php
@@ -98,6 +99,7 @@ background-size: 400%;">
                              style="">
                             <p style="padding-top: 60px;padding-left: 20px;padding-bottom:20px;font-family: '华文中宋';font-size: medium;
                     line-height: 1;color: #777;text-align: left;">推荐兴趣组</p>
+                            <hr/>
                         </div>
                     </div>
                     <?php

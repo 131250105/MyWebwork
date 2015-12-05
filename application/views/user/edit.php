@@ -40,7 +40,7 @@ background-size: 400%;">
 <div class="container">
     <div class="row" >
         <div class="col-xs-3 col-sm-3"
-             style="background-color:#f3f3f3;padding-right: 50px;">
+             style="padding-right: 50px;">
             <div class="row" >
                 <div class="col-xs-12 col-sm-12"
                      style="">
@@ -61,14 +61,17 @@ background-size: 400%;">
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
-             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+             style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+            <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+            </div>
             <p style="visibility: hidden">位置调整</p>
             <ul class="nav nav-tabs" style="padding-left: 20px;">
                 <li class="active" id="data"><a href="javascript:void (0);">&nbsp;&nbsp;个人资料&nbsp;&nbsp;</a></li>
                 <li id="avatar"><a href="javascript:void (0);">&nbsp;&nbsp;头像设置&nbsp;&nbsp;</a></li>
             </ul>
             <form>
-            <table class="table table-striped" id="dataTab">
+            <table class="table table-default" id="dataTab">
                 <caption style="visibility: hidden">编辑资料</caption>
 
                 <tbody>

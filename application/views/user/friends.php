@@ -48,8 +48,6 @@ include_once('commerHeader.php');
 <body style="background: #fff url('http://127.0.0.1/mywebwork/images/green (6).jpg') no-repeat left top;
 background-size: 400%;">
 
-<?php var_dump($leftfriends)?>
-<?php var_dump($rightfriends)?>
 <div class="container">
     <div class="row" >
         <div class="col-xs-6 col-sm-3">
@@ -83,7 +81,10 @@ background-size: 400%;">
             </div>
         </div>
         <div class="col-xs-9 col-sm-9"
-             style="background-color:white;box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+             style="box-shadow: inset 1px -1px 1px rgba(73, 70, 70, 0.31), inset -1px 1px 1px rgba(73, 70, 70, 0.31);border-radius: 15px;">
+            <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
+                    top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12"
                      style="">
