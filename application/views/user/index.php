@@ -16,7 +16,7 @@ include_once('commerHeader.php');
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('css/normalize.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('css/countToNum.css');?>" rel="stylesheet">
-    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
+    <!-- <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>-->
     <!-- [endif]-->
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>

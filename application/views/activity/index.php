@@ -73,7 +73,6 @@ background-size: 200%;">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
-                        <li><a href="<?php echo site_url("activity/search")?>">活动搜索</a></li>
                         <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
                         <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
                         <li><a href="<?php echo site_url("activity/collected")?>">我收藏的活动</a></li>

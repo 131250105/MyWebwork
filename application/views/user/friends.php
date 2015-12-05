@@ -71,10 +71,6 @@ background-size: 400%;">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="<?php echo site_url("user/friends")?>">好友列表</a></li>
-                        <li><a href="<?php echo site_url("user/search")?>">新鲜事</a></li>
-                        <li><a href="<?php echo site_url("user/joined")?>">好友参与的活动</a></li>
-                        <li><a href="<?php echo site_url("user/published")?>">好友发布的活动</a></li>
-                        <li><a href="<?php echo site_url("user/collected")?>">好友收藏的活动</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>
@@ -179,7 +175,7 @@ background-size: 400%;">
 </div>
 </div>
 
-<div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+<div style="position:absolute;bottom:0px;width:100%;text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
 

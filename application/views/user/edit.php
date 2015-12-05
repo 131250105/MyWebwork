@@ -52,10 +52,6 @@ background-size: 400%;">
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active" style="line-height: 2;padding-left: 10px;">
                         <a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;基本信息</a></li>
-                    <li style="line-height: 2;padding-left: 10px;">
-                        <a href="#"><span class="glyphicon glyphicon-headphones"></span>&nbsp;&nbsp;&nbsp;我的配件</a></li>
-                    <li style="line-height: 2;padding-left: 10px;">
-                        <a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;账户安全</a></li>
                 </ul>
                 <p style="visibility: hidden">位置调整</p>
             </div>
@@ -180,7 +176,7 @@ background-size: 400%;">
             </form>
             <form action="<?php echo site_url('user/changephoto')?>" method="post"
                   enctype="multipart/form-data">
-            <table class="table table-striped" id="avatarTab" style="display:none">
+            <table class="table table-default" id="avatarTab" style="display:none">
                 <caption style="visibility: hidden;">编辑资料2</caption>
                 <tbody>
                 <tr>
