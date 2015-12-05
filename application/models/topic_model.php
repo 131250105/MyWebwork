@@ -14,7 +14,9 @@ class topic_model extends CI_Model
         return $this->db->insert("topic",$data);
     }
 
-
+    public function delete($topicId){
+        $this->db->from('topic')->where('topicId',$topicId)->delete();
+    }
 
 
     public function getalltopic(){
@@ -40,5 +42,42 @@ class topic_model extends CI_Model
 
     public function update($data,$topicId){
         $this->db->where('topicId',$topicId)->update('topic', $data);
+    }
+
+    public function detailtopic($topicId){
+        $res=$this->db
+            ->from('topic')
+            ->where('topicId',$topicId)
+            ->get();
+        return $res->result();
+    }
+
+
+    public function getcommentbyId($topicId){
+        $res=$this->db
+            ->from('commenttopic')
+            ->where('commenttopicId',$topicId)
+            ->get();
+        return $res->result();
+    }
+
+    public function addcomment($data){
+        return $this->db->insert("commenttopic",$data);
+    }
+
+    public function deletecomment($topicId,$userId){
+            $this->db->from('commenttopic')
+                ->where('commentuserId',$userId)
+                ->where('commenttopicId',$topicId)
+                ->delete();
+    }
+
+    public function judgepublisher($topicId,$userId){
+        $res=$this->db
+            ->from('topic')
+            ->where('topicId',$topicId)
+            ->where('publisherId',$userId)
+            ->get();
+        return $res->result();
     }
 }

@@ -243,7 +243,7 @@ include_once('commerHeader.php');
                                     <p><?php echo $item->username?></p>
                                 </div>
                                 <div class="row">
-                                    <p><?php echo $item->context?></p>
+                                    <a href="<?php echo site_url("detail/topic?topicId=".$item->topicId) ?>" target="_blank"><p><?php echo $item->context?></p></a>
                                 </div>
                                 <div class="row">
                                     <p><?php echo $item->createdtime?><a style="float:right" onclick="praise('<?php echo site_url("topic/praise")?>' ,  '<?php echo $item->topicId?>')">赞(<span><?php echo $item->praisenum?></span>)</a></p>
@@ -265,7 +265,7 @@ include_once('commerHeader.php');
                                     <p><?php echo $item->username?></p>
                                 </div>
                                 <div class="row">
-                                    <p><?php echo $item->context?></p>
+                                    <a href="<?php echo site_url("detail/topic?topicId=".$item->topicId) ?>" target="_blank"><p><?php echo $item->context?></p></a>
                                 </div>
                                 <div class="row">
                                     <p><?php echo $item->createdtime?><a id="praise" style="float:right" onclick="praise('<?php echo site_url("topic/praise")?>' ,  '<?php echo $item->topicId?>')">赞(<span><?php echo $item->praisenum?></span>)</a></p>

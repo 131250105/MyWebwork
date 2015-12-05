@@ -45,4 +45,36 @@ class topic extends CI_Controller
         $this->Topic_model->update($data,$topicId);
         echo "success";
     }
+
+
+    public function comment(){
+        $this->load->model("Topic_model");
+        $topicId = $this->input->post('topicId');
+        $userId =$_SESSION['userId'];
+        $username =$_SESSION['username'];
+        $context = $this->input->post('context');
+        $time=date("Y-m-d H:i:s");
+        $data =array(
+            'commentcontent' => $context,
+            'commentuserId'  => $userId,
+            'commentusername'=> $username,
+            'commenttopicId' => $topicId,
+            'createAt'=>$time,
+        );
+        $this->Topic_model->addcomment($data);
+    }
+
+    public function cancelcomment(){
+        $this->load->model("Topic_model");
+        $topicId = $this->input->post('topicId');
+        $userId =$_SESSION['userId'];
+        $this->Topic_model()->deletecomment($topicId,$userId);
+    }
+
+    public function deletetopic(){
+        $this->load->model("Topic_model");
+        $topicId = $this->input->post('topicId');
+        $this->Topic_model->delete($topicId);
+
+    }
 }

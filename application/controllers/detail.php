@@ -30,7 +30,6 @@ class detail extends CI_Controller
     public function advice(){
         parse_str($_SERVER['QUERY_STRING'], $_GET);
         $adviceId =$_GET['adviceId'];
-
         $this->load->model("Advice_model");
         $advice =$this->Advice_model->getdetailadvice($adviceId);
         $reply=$this->Advice_model->getreplybyadvice($adviceId);
@@ -53,5 +52,22 @@ class detail extends CI_Controller
         }
         $this->load->view("detail/circle",array('thiscircle'=>$circle,'circlemem'=>$circlemem,'judgejoin'=>$judgejoin));
     }
+
+    public function topic(){
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        $userId =$_SESSION['userId'];
+        $topicId =$_GET['topicId'];
+        $this->load->model("Topic_model");
+        $topic =$this->Topic_model->detailtopic($topicId);
+        $comment =$this->Topic_model->getcommentbyId($topicId);
+        $judgeauthor=$this->Topic_model->judgepublisher($topicId,$userId);
+        $judge= 0;
+        if(count($judgeauthor)!=0){
+            $judge= 1;
+        }
+        $this->load->view("detail/topic",array('thistopic'=>$topic,'comment'=>$comment,'judgeauthor'=>$judge));
+
+    }
+
 
 }
