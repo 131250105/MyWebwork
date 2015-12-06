@@ -79,7 +79,7 @@ background-size: 200%;">
             </div>
             <table class="table">
                 <caption style="padding-left:5px;padding-top:20px;font-family: '华文中宋';">
-                    <button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;">发帖</button>
+                    <a href="<?php echo site_url("advice/post");?>"><button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;">发帖</button></a>
                     <button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;"
                             data-toggle="modal" data-target="#replyModal"
                             data-backdrop="static" style="font-size: 16px;color:black" href="javascript::void(0)">回复</button>
@@ -117,7 +117,7 @@ background-size: 200%;">
                     </tr>
                     <tr>
                         <td colspan="2" rowspan="2" style="">
-                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-rounded"
+                            <img src="<?php echo $item->photo?>" class="img-rounded"
                                  width="140px" >
                         </td>
                         <td colspan="7" rowspan="5" style="background-color: rgba(255, 255, 255, 0.42);;">
@@ -175,7 +175,7 @@ background-size: 200%;">
                     </tr>
                     <tr>
                         <td colspan="2" rowspan="2" style="">
-                            <img src="<?php echo base_url('images/user_defaultHead_female.jpg');?>" class="img-rounded"
+                            <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
                                  width="140px" >
                         </td>
                         <td colspan="7" rowspan="5" style="background-color: rgba(255, 255, 255, 0.42);;">

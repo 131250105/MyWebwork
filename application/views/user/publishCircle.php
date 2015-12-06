@@ -92,7 +92,7 @@ background-size: 400%;">
             <div class="row" style="padding: 20px;">
                 <?php foreach($circles as $item){  ?>
                     <div class="col-xs-6 col-sm-6"
-                         style="">
+                         style="padding-top:20px">
                         <div class="col-xs-6 col-sm-6"
                              style="">
                             <img src="<?php echo base_url('images/activity.jpg')?>" class="img-responsive" width="100%" align="center">

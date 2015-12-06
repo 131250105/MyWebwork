@@ -69,9 +69,11 @@ class sport extends CI_Controller
     }
 
 
-    public function analysisdata($filename)
+    public function analysisdata()
     {
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
         $userId =$_SESSION['userId'];
+        $filename =$_GET['file'];
         $xml = "";
         $f = fopen( $filename, 'r' );
         while( $data = fread($f, 4096)) {
