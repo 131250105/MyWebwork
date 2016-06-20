@@ -32,7 +32,7 @@ include_once('commerHeader.php');
             src: url('<?php echo base_url('fonts/glyphicons-halflings-regular.eot');?>');
             src: url('<?php echo base_url('fonts/glyphicons-halflings-regular.eot?#iefix');?>') format('embedded-opentype'),
             url('<?php echo base_url('fonts/glyphicons-halflings-regular.woff');?>') format('woff'),
-            url('<?php echo base_url('fonts/glyphicons-halflings-regular.ttf');?>') format('truetype'),
+            url('<?php echo base_url('fonts/glyphicons-halflings-regular.ttf');?>') format('truetype'), 
             url('<?php echo base_url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular');?>') format('svg');
         }
 
@@ -106,7 +106,7 @@ background-size: 400%;">
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6">
-                            <div id="diagram"></div>
+                            <div id="diagram" style="height: 450px;"></div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12">
@@ -217,19 +217,19 @@ background-size: 400%;">
             <?php $c=0;
             foreach($userlist as $item){
                 $c++;?>
-                <div class="row">
+                <div class="row" style="height: 50px; ">
                     <div class="col-xs-1 col-sm-1"
                          style="">
-                        <span style="line-height: 6;vertical-align: middle;"><?php echo $c ?></span>
+                        <span style="font-size: 27px;line-height: 60px;vertical-align: middle;"><?php echo $c ?></span>
                     </div>
-                    <div class="col-xs-2 col-sm-2"
+                    <div class="col-xs-1 col-sm-1"
                          style="">
                         <img src="<?php echo $item->photo?>"
-                             class="img-rounded" width="100%"  style="vertical-align: middle">
+                             class="img-rounded" width="140%"  style="vertical-align: top">
                     </div>
                     <div class="col-xs-9 col-sm-9"
                          style="">
-                        <span style="line-height: 6;vertical-align: middle"><?php echo $item->username?></span>
+                        <span style="font-size: 23px;line-height: 60px;vertical-align: middle"><?php echo $item->username?></span>
                     </div>
                 </div>
                 <hr/>
