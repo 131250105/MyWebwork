@@ -53,7 +53,7 @@
                        href="<?php echo site_url("sport/userindex")?>"
                        style="font-size: 16px;color:black">运动管理</a></li>
                 <li><a onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
-                       href="<?php echo site_url("activity/userindex")?>"
+                       href="<?php echo site_url("activity/userindex?page=1")?>"
                        style="font-size: 16px;color:black">活动专区</a></li>
                 <li><a onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
                        href="<?php echo site_url("advice/userindex")?>"
