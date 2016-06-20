@@ -26,8 +26,9 @@ function publishactivity(url){
                 return false;
             },
             success: function(data,status) {
-                alert("活动发布成功");
-                window.location ="/mywebwork/activity/published?page=1";
+                //alert("发布活动成功");
+                swal("Good job!", "Release activity success!", "success");
+                setTimeout("window.location ='/mywebwork/activity/published?page=1';", 2000 );
             }
         });
     }
@@ -47,8 +48,9 @@ function join(url,id){
             return false;
         },
         success: function(data,status) {
-            alert("报名成功");
-            window.location ="/mywebwork/activity/joined?page=1";
+            //alert("报名成功");
+            swal("Good job!", "Sign up success!", "success");
+            setTimeout("window.location ='/mywebwork/activity/joined?page=1';", 2000 );
         }
     });
 }
@@ -67,8 +69,9 @@ function collect(url,id){
             return false;
         },
         success: function(data,status) {
-            alert("收藏成功");
-            window.location ="/mywebwork/activity/collected?page=1";
+            //alert("收藏成功");
+            swal("Good job!", "Collect success!", "success");
+            setTimeout("window.location ='/mywebwork/activity/collected?page=1';", 2000 );
         }
     });
 }
@@ -87,8 +90,9 @@ function canceljoin(url,id){
             return false;
         },
         success: function(data,status) {
-            alert("取消报名成功");
-            window.location ="/mywebwork/activity/joined?page=1";
+           // alert("取消报名成功");
+            swal("Good job!", "You clicked the button!", "success");
+            setTimeout("window.location ='/mywebwork/activity/joined?page=1';", 2000);
         }
     });
 }
@@ -107,8 +111,9 @@ function cancelcollect(url,id){
             return false;
         },
         success: function(data,status) {
-            alert("取消收藏成功");
-            window.location ="/mywebwork/activity/collected?page=1";
+            //alert("取消收藏成功");
+            swal("Good job!", "Cancel collection success!", "success");
+            setTimeout("window.location ='/mywebwork/activity/collected?page=1';", 2000 );
         }
     });
 }
@@ -119,3 +124,4 @@ function pageJump(a,p){
     else if(a==3)window.location ="/mywebwork/activity/published?page="+p;
     else if(a==4)window.location ="/mywebwork/activity/collected?page="+p;
 }
+

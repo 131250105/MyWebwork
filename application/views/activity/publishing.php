@@ -21,6 +21,12 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/bootstrap-datetimepicker.js');?>"></script>
     <script src=" <?php echo base_url('js/bootstrap-datetimepicker.fr.js');?>"></script>
     <script src=" <?php echo base_url('js/activity.js');?>"></script>
+
+
+    <link href="<?php echo base_url('css/sweetalert.css');?>" rel="stylesheet">
+
+    <script src=" <?php echo base_url('js/sweetalert.min.js');?>"></script>
+
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -97,13 +103,13 @@ background-size: 200%;">
                     活动名
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="1">
-                    <input  type="text" class="form-control" placeholder="活动名" id="name" name="name"/>
+                    <input data-toggle="tooltip" title="请在此填写活动名" type="text" class="form-control" placeholder="活动名" id="name" name="name"/>
                 </td>
                 <td style="padding-left: 30px;">
                     运动类型
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="1">
-                    <input  type="text" class="form-control" placeholder="运动类型" id="type" name="type"/>
+                    <input data-toggle="tooltip" title="请在此填写活动类型" type="text" class="form-control" placeholder="运动类型" id="type" name="type"/>
                 </td>
             </tr>
             <tr>
@@ -112,7 +118,7 @@ background-size: 200%;">
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" style="resize: none;" id="intro" name="intro"></textarea>
+                        <textarea  data-toggle="tooltip" title="请在此填写活动介绍" class="form-control" rows="3" style="resize: none;" id="intro" name="intro"></textarea>
                     </div>
                 </td>
             </tr>
@@ -121,7 +127,7 @@ background-size: 200%;">
                     时间
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input size="16" type="text" value="" readonly class="form_datetime" id="starttime"  name="starttime"
+                    <input data-toggle="tooltip" title="请选择活动报名开始时间" size="16" type="text" value="" readonly class="form_datetime" id="starttime"  name="starttime"
                            style="display: block;width: 100%;height: 34px;padding: 6px 12px;
                            font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
                            background-image: none;border: 1px solid #ccc;border-radius: 4px;">
@@ -130,7 +136,7 @@ background-size: 200%;">
                     至
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input size="16" type="text" value="" readonly class="form_datetime" id="endtime" name="endtime"
+                    <input data-toggle="tooltip" title="请选择活动报名截止时间" size="16" type="text" value="" readonly class="form_datetime" id="endtime" name="endtime"
                            style="display: block;width: 100%;height: 34px;padding: 6px 12px;
                            font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
                            background-image: none;border: 1px solid #ccc;border-radius: 4px;">
@@ -141,7 +147,7 @@ background-size: 200%;">
                     地点
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
-                    <input  type="text" class="form-control" placeholder="地点" id="location" name="location">
+                    <input data-toggle="tooltip" title="请在此填写活动地点" type="text" class="form-control" placeholder="地点" id="location" name="location">
                 </td>
             </tr>
             <tr>
@@ -150,7 +156,7 @@ background-size: 200%;">
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" style="resize: none;" id="beizhu" name="beizhu"></textarea>
+                        <textarea data-toggle="tooltip" title="请在此填写其他注意事项" class="form-control" rows="3" style="resize: none;" id="beizhu" name="beizhu"></textarea>
                     </div>
                 </td>
             </tr>

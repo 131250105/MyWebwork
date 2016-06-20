@@ -19,6 +19,11 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
     <script src=" <?php echo base_url('js/activity.js');?>"></script>
+
+
+    <link href="<?php echo base_url('css/sweetalert.css');?>" rel="stylesheet">
+
+    <script src=" <?php echo base_url('js/sweetalert.min.js');?>"></script>
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -45,6 +50,27 @@ include_once('commerHeader.php');
             font-family: '微软雅黑';
         }
 
+        .actionButton{
+            border: 0px;
+            background-image: -webkit-linear-gradient(top,#a6dea7,#272dfb);
+        }
+        .actionButton:hover{
+            background-image: -webkit-linear-gradient(top,#a6dea7,#686cfd);
+        }
+        .actionButton:active{
+            background-image: -webkit-linear-gradient(top,#a6dea7,#686cfd);
+        }
+
+        .actionButton2{
+            border: 0px;
+            background-image: -webkit-linear-gradient(top,#a6dea7,red);
+        }
+        .actionButton2:hover{
+            background-image: -webkit-linear-gradient(top,#a6dea7,#fb6161);
+        }
+        .actionButton2:active{
+            background-image: -webkit-linear-gradient(top,#a6dea7,#fb6161);
+        }
     </style>
 
 </head>
@@ -74,9 +100,9 @@ background-size: 400%;">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="<?php echo site_url("activity/userindex?page=1")?>">活动一览</a></li>
-                        <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
-                        <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
-                        <li><a href="<?php echo site_url("activity/collected")?>">我收藏的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/joined?page=1")?>">我参与的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/published?page=1")?>">我发布的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/collected?page=1")?>">我收藏的活动</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>
@@ -90,42 +116,42 @@ background-size: 400%;">
         <table class="table">
             <tbody>
             <tr>
-                <th style="vertical-align:middle;padding: 20px;" colspan="8">
+                <th style="vertical-align:middle;padding: 20px;font-size: x-large;" colspan="8">
                     <?php echo $mydata[0]->Activitytype?>
                 </th>
             </tr>
             <tr>
-                <td style="vertical-align:middle">
+                <td style="padding-left: 5%;vertical-align:middle">
                     <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
                          width="100px" >
                 </td>
-                <td style="vertical-align:middle" colspan="6">
+                <td style="vertical-align:middle;" colspan="6" width="400px">
                     <?php echo $mydata[0]->ActivityName?>
                 </td>
-                <td style="vertical-align:middle;text-align: center">
+                <td style="width: 5%;vertical-align:middle;text-align: center">
                     <?php if($judgejoin ==0){ ?>
-                    <button type="button" class="btn btn-primary" onclick="join('<?php echo site_url('activity/joinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                    <button type="button" class="btn btn-primary actionButton" onclick="join('<?php echo site_url('activity/joinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                             我要加入
                     </button>
                     <?php if($judgecollect ==0){ ?>
-                            <button type="button" class="btn btn-primary" onclick="collect('<?php echo site_url('activity/collacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                            <button type="button" class="btn btn-primary actionButton" onclick="collect('<?php echo site_url('activity/collacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                                 我要收藏
                             </button>
                         <?php }else{?>
-                            <button type="button" class="btn btn-primary" onclick="cancelcollect('<?php echo site_url('activity/cancelcollacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                            <button type="button" class="btn btn-primary actionButton2" onclick="cancelcollect('<?php echo site_url('activity/cancelcollacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                                 取消收藏
                             </button>
                         <?php }?>
                     <?php }else {?>
-                        <button type="button" class="btn btn-primary" onclick="canceljoin('<?php echo site_url('activity/canceljoinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                        <button type="button" class="btn btn-primary actionButton2" onclick="canceljoin('<?php echo site_url('activity/canceljoinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                             取消报名
                         </button>
                         <?php if($judgecollect ==0){ ?>
-                            <button type="button" class="btn btn-primary" onclick="collect('<?php echo site_url('activity/collacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                            <button type="button" class="btn btn-primary actionButton" onclick="collect('<?php echo site_url('activity/collacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                                 我要收藏
                             </button>
                         <?php }else{?>
-                            <button type="button" class="btn btn-primary" onclick="cancelcollect('<?php echo site_url('activity/cancelcollacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
+                            <button type="button" class="btn btn-primary actionButton2" onclick="cancelcollect('<?php echo site_url('activity/cancelcollacteactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                                 取消收藏
                             </button>
                         <?php }?>
@@ -138,7 +164,7 @@ background-size: 400%;">
                 </th>
             </tr>
             <tr>
-                <td style="vertical-align:middle;font-size: medium;" colspan="8">
+                <td style="padding-left: 5%;vertical-align:middle;font-size: medium;" colspan="8">
                     <p>地点：<?php echo $mydata[0]->Activitylocation?></p>
                     <p>时间：<?php echo $mydata[0]->Activitystarttime?> 至 <?php echo $mydata[0]->ActivityEndtime?></p>
                     <p>备注：<?php echo $mydata[0]->Activitybeizhu?></p>
@@ -150,7 +176,7 @@ background-size: 400%;">
                 </th>
             </tr>
             <tr>
-                <td style="vertical-align:middle;font-size: medium;" colspan="8">
+                <td style="padding-left: 5%;vertical-align:middle;font-size: medium;" colspan="8">
                     <p><?php echo $mydata[0]->ActivityIntro?></p>
                 </td>
             </tr>
@@ -161,11 +187,11 @@ background-size: 400%;">
             </tr>
             <tr>
                 <?php foreach($joindata as $item){?>
-                <td style="vertical-align:middle" width="12.5%">
+                <td style="padding-left: 5%;vertical-align:middle" width="1%">
                     <a style="cursor: pointer;" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><img src="<?php echo $item->photo?>" class="img-rounded"
                          width="60px" ></a>
                 </td>
-                <td style="vertical-align:middle" width="12.5%">
+                <td style="vertical-align:middle" width="10%">
                    <a style="cursor: pointer;" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><p><?php echo $item->username?></p></a>
                     <p><?php echo $item->usertype?></p>
                 </td>
@@ -179,7 +205,7 @@ background-size: 400%;">
                 </th>
             </tr>
             <tr>
-                <td style="border:0px" colspan="8">
+                <td style="padding-left: 5%;border:0px" colspan="8">
                     <div class="form-group" style="padding-left: 15px;">
                         <label for="declaration" style="font-family: '微软雅黑 light';
                             font-size: small;font-weight: 600;">你的回应：</label>
@@ -188,8 +214,8 @@ background-size: 400%;">
                 </td>
             </tr>
             <tr>
-                <td style="vertical-align:middle;padding-left: 25px;" colspan="8">
-                    <button type="button" class="btn btn-primary">
+                <td style="vertical-align:middle;" colspan="8">
+                    <button type="button" class="btn btn-primary" style="float:right">
                         加上去
                     </button>
                 </td>
