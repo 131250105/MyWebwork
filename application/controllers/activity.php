@@ -73,9 +73,11 @@ class activity extends CI_Controller
     }
 
     public function userindex(){
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        if($_GET['page'])$page =$_GET['page'];
         $this->load->model("Activity_model");
         $mydata = $this->Activity_model->getallactivity(0);
-        $this->load->view("activity/index",array('mydata' => $mydata));
+        $this->load->view("activity/index",array('mydata' => $mydata,'page' => $page));
     }
 
     public function search(){
@@ -83,24 +85,30 @@ class activity extends CI_Controller
     }
 
     public function joined(){
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        if($_GET['page'])$page =$_GET['page'];
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $mydata = $this->Activity_model->getjoinactivity($userId,0);
-        $this->load->view("activity/joined",array('mydata' => $mydata));
+        $this->load->view("activity/joined",array('mydata' => $mydata,'page' => $page));
     }
 
     public function published(){
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        if($_GET['page'])$page =$_GET['page'];
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $mydata = $this->Activity_model->getpublishactivity($userId,0);
-        $this->load->view("activity/published",array('mydata' => $mydata));
+        $this->load->view("activity/published",array('mydata' => $mydata,'page' => $page));
     }
 
     public function collected(){
+        parse_str($_SERVER['QUERY_STRING'], $_GET);
+        if($_GET['page'])$page =$_GET['page'];
         $this->load->model("Activity_model");
         $userId =$_SESSION['userId'];
         $mydata = $this->Activity_model->getcollacteactivity($userId,0);
-        $this->load->view("activity/collected",array('mydata' => $mydata));
+        $this->load->view("activity/collected",array('mydata' => $mydata,'page' => $page));
     }
 
     public function publishing(){

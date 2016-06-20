@@ -27,7 +27,7 @@ function publishactivity(url){
             },
             success: function(data,status) {
                 alert("活动发布成功");
-                window.location ="/mywebwork/activity/published";
+                window.location ="/mywebwork/activity/published?page=1";
             }
         });
     }
@@ -48,7 +48,7 @@ function join(url,id){
         },
         success: function(data,status) {
             alert("报名成功");
-            window.location ="/mywebwork/activity/joined";
+            window.location ="/mywebwork/activity/joined?page=1";
         }
     });
 }
@@ -68,7 +68,7 @@ function collect(url,id){
         },
         success: function(data,status) {
             alert("收藏成功");
-            window.location ="/mywebwork/activity/collected";
+            window.location ="/mywebwork/activity/collected?page=1";
         }
     });
 }
@@ -88,7 +88,7 @@ function canceljoin(url,id){
         },
         success: function(data,status) {
             alert("取消报名成功");
-            window.location ="/mywebwork/activity/joined";
+            window.location ="/mywebwork/activity/joined?page=1";
         }
     });
 }
@@ -108,7 +108,14 @@ function cancelcollect(url,id){
         },
         success: function(data,status) {
             alert("取消收藏成功");
-            window.location ="/mywebwork/activity/collected";
+            window.location ="/mywebwork/activity/collected?page=1";
         }
     });
+}
+
+function pageJump(a,p){
+    if(a==1)window.location ="/mywebwork/activity/userindex?page="+p;
+    else if(a==2)window.location ="/mywebwork/activity/joined?page="+p;
+    else if(a==3)window.location ="/mywebwork/activity/published?page="+p;
+    else if(a==4)window.location ="/mywebwork/activity/collected?page="+p;
 }

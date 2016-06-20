@@ -73,8 +73,7 @@ background-size: 400%;">
                      style="">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
-                        <li><a href="<?php echo site_url("activity/search")?>">活动搜索</a></li>
+                        <li><a href="<?php echo site_url("activity/userindex?page=1")?>">活动一览</a></li>
                         <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
                         <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
                         <li><a href="<?php echo site_url("activity/collected")?>">我收藏的活动</a></li>
@@ -88,7 +87,7 @@ background-size: 400%;">
         <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
         </div>
-        <table class="table table-hover">
+        <table class="table">
             <tbody>
             <tr>
                 <th style="vertical-align:middle;padding: 20px;" colspan="8">
@@ -163,11 +162,11 @@ background-size: 400%;">
             <tr>
                 <?php foreach($joindata as $item){?>
                 <td style="vertical-align:middle" width="12.5%">
-                    <img src="<?php echo $item->photo?>" class="img-rounded"
-                         width="60px" >
+                    <a style="cursor: pointer;" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><img src="<?php echo $item->photo?>" class="img-rounded"
+                         width="60px" ></a>
                 </td>
                 <td style="vertical-align:middle" width="12.5%">
-                    <p><?php echo $item->username?></p>
+                   <a style="cursor: pointer;" onclick="window.open('<?php echo site_url("user/otherUserView?userId=".$item->userId); ?>')"><p><?php echo $item->username?></p></a>
                     <p><?php echo $item->usertype?></p>
                 </td>
                 <?php } ?>

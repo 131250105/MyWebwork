@@ -75,10 +75,10 @@ background-size: 200%;">
                      style="">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
-                        <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
-                        <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
-                        <li><a href="<?php echo site_url("activity/collected")?>">我收藏的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/userindex?page=1")?>">活动一览</a></li>
+                        <li><a href="<?php echo site_url("activity/joined?page=1")?>">我参与的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/published?page=1")?>">我发布的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/collected?page=1")?>">我收藏的活动</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>
@@ -89,7 +89,7 @@ background-size: 200%;">
         <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
         </div>
-        <table class="table table-hover">
+        <table class="table">
             <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">发起活动</caption>
             <tbody>
             <tr>

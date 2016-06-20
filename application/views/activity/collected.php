@@ -18,6 +18,7 @@ include_once('commerHeader.php');
     <script src=" <?php echo base_url('js/jquery-2.1.4.min.js');?> "></script>
     <script src=" <?php echo base_url('js/bootstrap.min.js');?> "></script>
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
+    <script src=" <?php echo base_url('js/activity.js');?>"></script>
 
     <style type="text/css">
         @font-face {
@@ -42,6 +43,10 @@ include_once('commerHeader.php');
             font-family: '微软雅黑';
         }
 
+        .pagination>li>a{
+            background-color: rgba(255, 255, 255, 0.33);
+            border: 1px solid rgba(101, 174, 122, 0.49);
+        }
     </style>
 
 </head>
@@ -72,10 +77,10 @@ background-size: 200%;">
                      style="">
                     <p style="visibility: hidden">位置调整</p>
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="<?php echo site_url("activity/userindex")?>">活动一览</a></li>
-                        <li><a href="<?php echo site_url("activity/joined")?>">我参与的活动</a></li>
-                        <li><a href="<?php echo site_url("activity/published")?>">我发布的活动</a></li>
-                        <li class="active"><a href="<?php echo site_url("activity/collected")?>">我收藏的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/userindex?page=1")?>">活动一览</a></li>
+                        <li><a href="<?php echo site_url("activity/joined?page=1")?>">我参与的活动</a></li>
+                        <li><a href="<?php echo site_url("activity/published?page=1")?>">我发布的活动</a></li>
+                        <li class="active"><a href="<?php echo site_url("activity/collected?page=1")?>">我收藏的活动</a></li>
                     </ul>
                     <p style="visibility: hidden">位置调整</p>
                 </div>
@@ -86,7 +91,7 @@ background-size: 200%;">
         <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
         </div>
-        <table class="table table-hover">
+        <table class="table">
             <caption style="padding:20px;font-family: '华文中宋';font-size: x-large;line-height: 2;">我收藏的活动</caption>
             <thead style="text-align:center">
             <tr>
@@ -99,7 +104,10 @@ background-size: 200%;">
             </thead>
             <tbody>
 
-            <?php foreach($mydata as $item){?>
+            <?php $count=0;
+            foreach($mydata as $item){
+                $count++;
+                if($count<=5*$page&&$count>5*$page-5){?>
                 <tr>
                     <td style="vertical-align:middle">
                         <?php echo $item->ActivityId ?>
@@ -110,21 +118,27 @@ background-size: 200%;">
                     <td style="vertical-align:middle;text-align: center"><?php echo $item->Activitystarttime?></td>
                     <td style="vertical-align:middle;text-align: center"><?php echo $item->ActivityEndtime?></td>
                 </tr>
-            <?php } ?>
+            <?php }} ?>
             </tbody>
         </table>
-
-        <div align="center">
-            <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul><br>
-        </div>
+        <?php if($count>0){?>
+            <div align="center">
+                <ul class="pagination">
+                    <li><a href="#" onclick="pageJump(4,1)">&laquo;</a></li>
+                    <?php $pageView=0;
+                    while($count>0){
+                        $pageView++;?>
+                        <li><a href="#" onclick="pageJump(4,<?php echo $pageView?>)"><?php echo $pageView?></a></li>
+                        <?php
+                        $count=$count-5;
+                    } ?>
+                    <li><a href="#" onclick="pageJump(4,<?php echo $pageView?>)">&raquo;</a></li>
+                </ul><br>
+            </div>
+        <?php }else{?>
+            <p style="line-height: 4;font-size: x-large;
+            text-align: center;font-family: '幼圆';">暂无数据</p>
+        <?php } ?>
     </div>
 </div>
 <div class="row">
