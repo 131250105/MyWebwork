@@ -121,14 +121,13 @@ background-size: 400%;">
                 </th>
             </tr>
             <tr>
-                <td style="padding-left: 5%;vertical-align:middle">
+                <td style="padding-left: 5%;vertical-align:middle" colspan="8">
                     <img src="<?php echo base_url('images/user_defaultHead_male.jpg');?>" class="img-rounded"
-                         width="100px" >
-                </td>
-                <td style="vertical-align:middle;" colspan="6" width="400px">
-                    <?php echo $mydata[0]->ActivityName?>
-                </td>
-                <td style="width: 5%;vertical-align:middle;text-align: center">
+                         width="100px" style="float:left">
+
+                    <span style="float:left;font-size: xx-large;padding: 25px;"><?php echo $mydata[0]->ActivityName?></span>
+
+                    <div style="float:right;padding:37px">
                     <?php if($judgejoin ==0){ ?>
                     <button type="button" class="btn btn-primary actionButton" onclick="join('<?php echo site_url('activity/joinactivity')?>','<?php echo $mydata[0]->ActivityId?>')">
                             我要加入
@@ -156,6 +155,7 @@ background-size: 400%;">
                             </button>
                         <?php }?>
                     <?php }?>
+                    </div>
                  </td>
             </tr>
             <tr>
