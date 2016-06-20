@@ -41,4 +41,8 @@ class Welcome extends CI_Controller {
 		}
 		$this->load->view('welcome/index',array('advice'=>$advice,'activity'=>$activity,'topic'=>$topic));
 	}
+
+	public function help(){
+		$this->load->view('welcome/help');
+	}
 }

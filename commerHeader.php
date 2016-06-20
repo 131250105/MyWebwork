@@ -257,8 +257,8 @@
         以上是未读效果
         -->
         <li class="li_h" onclick="toUserIndex()"><i class="fa fa-home fa-lg"></i> 个人中心</li>
-        <li class="li_h" onclick="window.open('<?php echo site_url("user/friends"); ?>')"><i class="fa fa-envelope fa-lg"></i> 好友 </li>
-        <li class="li_h" onclick="window.open('<?php echo site_url("user/interestCircle"); ?>')"><i class="fa fa-envelope fa-lg"></i> 圈子 </li>
+        <li class="li_h" onclick="window.location.href='<?php echo site_url("user/friends"); ?>'"<i class="fa fa-envelope fa-lg"></i> 好友 </li>
+        <li class="li_h" onclick="window.location.href='<?php echo site_url("user/interestCircle"); ?>'"><i class="fa fa-envelope fa-lg"></i> 圈子 </li>
         <li class="li_h" onclick="window.location.href='<?php echo site_url("user/logout"); ?>'"><i class="fa fa-user fa-lg"></i> 注销</li>
     </ul>
 </div>
@@ -271,7 +271,7 @@
 function toUserIndex()
 {
     $('#dropDownMenu').collapse('toggle');
-    window.open('<?php echo site_url("user/index"); ?>');
+    window.location.href='<?php echo site_url("user/index"); ?>';
 }
     function toFriends()
     {
@@ -288,6 +288,7 @@ function checkId()
     var str=document.getElementById( "registeremail" ).value;
     var   sReg   =   /[_a-zA-Z\d\-\.]+@[_a-zA-Z\d\-]+(\.[_a-zA-Z\d\-]+)+$/;
     if   (!sReg.test(str)){
+        alert("请输入正确邮箱格式哦!");
         document.getElementById( "registeremailForm" ).className = "form-group has-error has-feedback";
         document.getElementById( "registeremailIconT" ).style.display = "none";
         document.getElementById( "registeremailIconF" ).style.display = "block";
@@ -301,11 +302,21 @@ function checkId()
 function checkPassword()
 {
     var str=document.getElementById( "registerpassword" ).value;
-    if(str.length<6||str.length>15){
+
+    if(str.length<6){
+        alert("您的密码长度过短!");
         document.getElementById( "registerpasswordForm" ).className = "form-group has-error has-feedback";
         document.getElementById( "registerpasswordIconT" ).style.display = "none";
         document.getElementById( "registerpasswordIconF" ).style.display = "block";
     }
+
+    else if(str.length>15){
+        alert("您的密码长度过长!");
+        document.getElementById( "registerpasswordForm" ).className = "form-group has-error has-feedback";
+        document.getElementById( "registerpasswordIconT" ).style.display = "none";
+        document.getElementById( "registerpasswordIconF" ).style.display = "block";
+    }
+
     else {
         document.getElementById( "registerpasswordForm" ).className = "form-group has-success has-feedback";
         document.getElementById( "registerpasswordIconF" ).style.display = "none";

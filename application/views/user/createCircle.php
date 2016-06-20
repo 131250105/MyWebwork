@@ -100,7 +100,7 @@ background-size: 200%;">
                              style="font-family: '幼圆';line-height: 2;">名称</div>
                         <div class="col-xs-9 col-sm-9"
                              style="">
-                            <textarea class="form-control" rows="1" style="resize: none;" id="nickname"></textarea>
+                            <input type="text" class="form-control" maxlength="10" style="resize: none;width: 130px" id="nickname"/>
                         </div>
                     </div>
                     <div class="row"><p style="visibility: hidden">位置调整</p></div>
@@ -109,7 +109,7 @@ background-size: 200%;">
                              style="font-family: '幼圆';line-height: 2;">类型</div>
                         <div class="col-xs-9 col-sm-9"
                              style="">
-                            <textarea class="form-control" rows="1" style="resize: none;" id="hobby"></textarea>
+                            <input class="form-control" rows="1" maxlength="20" style="resize: none;width: 260px" id="hobby">
                         </div>
                     </div>
                     <div class="row"><p style="visibility: hidden">位置调整</p></div>

@@ -151,7 +151,33 @@ class user extends CI_Controller
         $alltopic =$this->Topic_model->getalltopic();
         $mytopic =$this->Topic_model->getmytopic($userId);
         $potentialfriends =$this->User_model->getpotentialfriends($userId);
-        $this->load->view("user/index", array('user' => $userinfo,'pfriends'=>$potentialfriends,'alltopic'=>$alltopic,'mytopic'=>$mytopic,'circles'=>$circles));
+        $size = count($potentialfriends);
+        $size1 = count($circles);
+        $truefrineds =array();
+        $truecircles =array();
+        if($size < 4){
+            for($i=0;$i<$size;++$i){
+                $truefrineds[] = $potentialfriends[$i];
+            }
+        }
+        else{
+            for($i=0;$i<4;++$i){
+                $truefrineds[] = $potentialfriends[$i];
+            }
+        }
+
+        if($size1 < 4){
+            for($i=0;$i<$size1;++$i){
+                $truecircles[] =  $circles[$i];
+            }
+        }
+        else{
+            for($i=0;$i<4;++$i){
+                $truecircles[] =  $circles[$i];
+            }
+        }
+
+            $this->load->view("user/index", array('user' => $userinfo,'pfriends'=> $truefrineds,'alltopic'=>$alltopic,'mytopic'=>$mytopic,'circles'=> $truecircles));
     }
 
     /*
