@@ -68,7 +68,7 @@ background-size: 400%;">
         <div style="border-radius: 15px;background-image: url('http://127.0.0.1/mywebwork/images/green (6).jpg');width: 100%;height: 100%;left: 0;
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
         </div>
-        <table class="table table-hover">
+        <table id="tables" class="table table-hover">
             <tbody>
             <tr>
                 <td style="vertical-align:middle;text-align:left">
@@ -114,6 +114,7 @@ background-size: 400%;">
                         <?php echo $item->commentcontent?>
                     </td>
                 </tr>
+
             <?php } ?>
             <tr>
                 <td style="border:0px" colspan="8">
@@ -126,7 +127,7 @@ background-size: 400%;">
             </tr>
             <tr>
                 <td style="vertical-align:middle;padding-left: 25px;" colspan="8">
-                    <button type="button" class="btn btn-primary" onclick="comment('<?php echo site_url('topic/comment')?>','<?php echo $thistopic[0]->topicId?>')">
+                    <button type="button" class="btn btn-primary" onclick="comment('<?php echo site_url('topic/comment')?>','<?php echo $thistopic[0]->topicId?>','<?php echo $_SESSION["username"]?>')">
                         发表评论
                     </button>
                 </td>
