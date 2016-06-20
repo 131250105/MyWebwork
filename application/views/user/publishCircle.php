@@ -141,7 +141,7 @@ background-size: 400%;">
                 <br/><br/>
                 <div class="col-xs-12 col-sm-12"
                      style="">
-                    <button type="button" class="btn btn-primary btn-block">加载更多</button>
+                    <!--<button type="button" class="btn btn-primary btn-block">加载更多</button>-->
                 </div>
                 <br/><br/><br/>
             </div>
