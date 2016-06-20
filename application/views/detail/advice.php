@@ -10,7 +10,7 @@ include_once("bean/userbean.php");
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>MyHealth</title>
     <!-- Bootstrap -->
     <link href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('css/header.css');?>" media="screen" type="text/css" />
@@ -78,24 +78,24 @@ background-size: 200%;">
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
             </div>
             <table class="table">
-                <caption style="padding-left:5px;padding-top:20px;font-family: '华文中宋';">
-                    <a href="<?php echo site_url("advice/post");?>"><button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;">发帖</button></a>
-                    <button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;"
-                            data-toggle="modal" data-target="#replyModal"
-                            data-backdrop="static" style="font-size: 16px;color:black" href="javascript::void(0)">回复</button>
-                </caption>
+               
                 <tbody>
                 <?php $c=0;?>
                 <?php foreach($thisadvice as $item){?>
                     <tr>
                         <td style="" width="7%">
-                            查看:12
+                            <div style="margin-top: 15px">查看:12</div>
                         </td>
                         <td style="" width="7%">
-                            回复：1
+                            <div style="margin-top: 15px">回复：1</div>
                         </td>
-                        <td colspan="7" style="background-color: rgba(255, 255, 255, 0.42);;font-family:'黑体';font-size:large">
+                        <td colspan="7" style="background-color: rgba(255, 255, 255, 0.42);;font-family:'黑体';font-size:30px">
                             <?php echo $item->advicetitle?>
+                            <caption style="padding-left:5px;padding-top:20px;font-family: '华文中宋';">
+                                <a href="<?php echo site_url("advice/post");?>"><button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;">发帖</button></a>
+                                <button type="button" class="btn btn-primary" style="padding-left: 40px;padding-right: 40px;"
+                                        data-toggle="modal" data-target="#replyModal"
+                                        data-backdrop="static" style="font-size: 16px;color:black" href="javascript::void(0)">回复</button>
                         </td>
                     </tr>
                     <tr>
@@ -218,6 +218,7 @@ background-size: 200%;">
 
 
                 </tbody>
+
             </table>
         </div>
     </div>
@@ -251,10 +252,15 @@ background-size: 200%;">
     <!-- /.modal -->
 </div>
 
-<div style="text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+<?php if($c==1){ ?>
+    <div style="position:absolute;width: 100%;bottom:0;text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
+        MyHealth————您的健康管理专家
+    </div>
+<?php }else{?>
+<div style="bottom:0;text-align: right;background-color: #222222;color: grey;font-family: '微软雅黑 light';padding: 30px 30px 20px 30px;">
     MyHealth————您的健康管理专家
 </div>
-
+<?php }?>
 </body>
 
 </html>

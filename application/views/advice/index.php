@@ -20,7 +20,7 @@ include_once("bean/userbean.php");
     <script src=" <?php echo base_url('js/loginAndregister.js');?>"></script>
     <script src=" <?php echo base_url('js/md5.js');?>"></script>
     <script src="<?php echo base_url('js/header.js');?>"></script>
-
+    <script src="<?php echo base_url('js/advice.js');?>"></script>
     <style type="text/css">
         @font-face {
             font-family: 'Glyphicons Halflings';
@@ -104,7 +104,7 @@ background-size: 200%;">
                             <td style="vertical-align:middle">
                                 <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
                                      width="60px" >
-                                <a href="<?php echo site_url("advice/forHelp")?>" style="padding-left:15px">求助版块</a>
+                                <a href="<?php echo site_url("advice/forHelp?page=1")?>" style="padding-left:15px">求助版块</a>
                             </td>
                             <td style="vertical-align:middle;text-align: center">
                                 <span data-toggle="tooltip" title="<?php echo $lasthelpadvice[0]->advicetitle?>"
@@ -127,7 +127,7 @@ background-size: 200%;">
                             <td style="vertical-align:middle">
                                 <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
                                      width="60px" >
-                                <a href="<?php echo site_url("advice/doctor")?>" style="padding-left:15px">医生来了</a>
+                                <a href="<?php echo site_url("advice/doctor?page=1")?>" style="padding-left:15px">医生来了</a>
                             </td>
                             <td style="vertical-align:middle;text-align: center">
                                 <span data-toggle="tooltip" title="<?php echo $lastdoctoradvice[0]->advicetitle?>"
@@ -150,7 +150,7 @@ background-size: 200%;">
                             <td style="vertical-align:middle;width:70%">
                                 <img src="<?php echo base_url('images/main.png');?>" class="img-rounded"
                                      width="60px" >
-                                <a href="<?php echo site_url("advice/coach")?>" style="padding-left:15px">教练，我想...</a>
+                                <a href="<?php echo site_url("advice/coach?page=1")?>" style="padding-left:15px">教练，我想...</a>
                             </td>
                             <td style="vertical-align:middle;text-align: center">
                                 <span data-toggle="tooltip" title="<?php echo $lastcoachadvice[0]->advicetitle?>"
@@ -194,7 +194,11 @@ background-size: 200%;">
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($hotadvice as $item){?>
+                        <?php
+                        $count=0;
+                        foreach($hotadvice as $item){
+                            $count++;
+                            if($count<=5*$page&&$count>5*$page-5){?>
                         <tr>
                             <td style="vertical-align:middle">
                                 <a style="font-size:medium" href="<?php echo site_url("detail/advice?adviceId=".$item->adviceId)?>"><?php echo $item->advicetitle?></a>
@@ -208,20 +212,27 @@ background-size: 200%;">
                                 </p>
                             </td>
                         </tr>
-                        <?php } ?>
+                        <?php }} ?>
                         </tbody>
                     </table>
-                    <div align="center">
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul><br>
-                    </div>
+                    <?php if($count>0){?>
+                        <div align="center">
+                            <ul class="pagination">
+                                <li><a href="#" onclick="pageJump(1,1)">&laquo;</a></li>
+                                <?php $pageView=0;
+                                while($count>0){
+                                    $pageView++;?>
+                                    <li><a href="#" onclick="pageJump(1,<?php echo $pageView?>)"><?php echo $pageView?></a></li>
+                                    <?php
+                                    $count=$count-5;
+                                } ?>
+                                <li><a href="#" onclick="pageJump(1,<?php echo $pageView?>)">&raquo;</a></li>
+                            </ul><br>
+                        </div>
+                    <?php }else{?>
+                        <p style="line-height: 4;font-size: x-large;
+            text-align: center;font-family: '幼圆';">暂无数据</p>
+                    <?php } ?>
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@
         var editor;
         KindEditor.ready(function(K) {
             editor = K.create('textarea[name="content"]', {
-                resizeType : 1,
+                resizeType : 0,
                 allowPreviewEmoticons : false,
                 allowImageUpload : false,
                 items : [
@@ -66,11 +66,13 @@ background-size: 200%;">
                         <div class="form-group">
                             <label for="postPlace" class="col-sm-1 control-label" style="text-align: left;">版块：</label>
                             <div class="col-sm-5">
+
                                 <select class="form-control" id="postPlace">
                                     <option>求助板块</option>
                                     <option>医生板块</option>
                                     <option>教练板块</option>
                                 </select>
+
                             </div>
                         </div>
                         <div class="form-group">

@@ -56,7 +56,7 @@
                        href="<?php echo site_url("activity/userindex?page=1")?>"
                        style="font-size: 16px;color:black">活动专区</a></li>
                 <li><a onmouseout="this.style.color='black'" onmouseover="this.style.color='white'"
-                       href="<?php echo site_url("advice/userindex")?>"
+                       href="<?php echo site_url("advice/userindex?page=1")?>"
                        style="font-size: 16px;color:black">建议专区</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>

@@ -98,7 +98,12 @@ background-size: 200%;">
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($advice as $item){?>
+                        <?php
+                        $count=0;
+                        foreach($advice as $item){
+                            $count++;
+                        if($count<=5*$page&&$count>5*$page-5){
+                            ?>
                             <tr>
                                 <td style="vertical-align:middle">
                                     <a style="font-size:medium" href="<?php echo site_url("detail/advice?adviceId=".$item->adviceId)?>"><?php echo $item->advicetitle?></a>
@@ -112,20 +117,27 @@ background-size: 200%;">
                                     </p>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php }} ?>
                         </tbody>
                     </table>
-                    <div align="center">
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul><br>
-                    </div>
+                    <?php if($count>0){?>
+                        <div align="center">
+                            <ul class="pagination">
+                                <li><a href="#" onclick="pageJump(3,1)">&laquo;</a></li>
+                                <?php $pageView=0;
+                                while($count>0){
+                                    $pageView++;?>
+                                    <li><a href="#" onclick="pageJump(3,<?php echo $pageView?>)"><?php echo $pageView?></a></li>
+                                    <?php
+                                    $count=$count-5;
+                                } ?>
+                                <li><a href="#" onclick="pageJump(3,<?php echo $pageView?>)">&raquo;</a></li>
+                            </ul><br>
+                        </div>
+                    <?php }else{?>
+                        <p style="line-height: 4;font-size: x-large;
+            text-align: center;font-family: '幼圆';">暂无数据</p>
+                    <?php } ?>
                 </div>
             </div>
         </div>

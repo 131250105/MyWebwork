@@ -71,10 +71,10 @@ background-size: 200%;">
                     top: 0;filter: alpha(opacity=50);opacity: 0.2;position: absolute;-webkit-filter: blur(1px);z-index: -1;">
                     </div>
                     <div style="padding-top:20px;text-align: center;vertical-align: middle;font-size: x-large;font-family:'华文中宋'">
-                        版块公告
+                        求助版块公告
                     </div>
                     <div style="padding:30px;vertical-align: middle;font-family:'微软雅黑'">
-                        你看见了最新的版块公告
+                        欢迎您访问求助版块！
                     </div>
                 </div>
             </div>
@@ -98,7 +98,11 @@ background-size: 200%;">
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($advice as $item){?>
+                        <?php
+                        $count=0;
+                        foreach($advice as $item){
+                            $count++;
+                        if($count<=5*$page&&$count>5*$page-5){?>
                             <tr>
                                 <td style="vertical-align:middle">
                                     <a style="font-size:medium" href="<?php echo site_url("detail/advice?adviceId=".$item->adviceId)?>"><?php echo $item->advicetitle?></a>
@@ -112,20 +116,27 @@ background-size: 200%;">
                                     </p>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php } }?>
                         </tbody>
                     </table>
-                    <div align="center">
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul><br>
-                    </div>
+                    <?php if($count>0){?>
+                        <div align="center">
+                            <ul class="pagination">
+                                <li><a href="#" onclick="pageJump(2,1)">&laquo;</a></li>
+                                <?php $pageView=0;
+                                while($count>0){
+                                    $pageView++;?>
+                                    <li><a href="#" onclick="pageJump(2,<?php echo $pageView?>)"><?php echo $pageView?></a></li>
+                                    <?php
+                                    $count=$count-5;
+                                } ?>
+                                <li><a href="#" onclick="pageJump(2,<?php echo $pageView?>)">&raquo;</a></li>
+                            </ul><br>
+                        </div>
+                    <?php }else{?>
+                        <p style="line-height: 4;font-size: x-large;
+            text-align: center;font-family: '幼圆';">暂无数据</p>
+                    <?php } ?>
                 </div>
             </div>
         </div>

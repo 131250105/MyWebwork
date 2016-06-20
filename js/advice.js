@@ -49,3 +49,10 @@ function reply(url,adviceId){
         }
     });
 }
+
+function pageJump(a,p){
+    if(a==1)window.location ="/mywebwork/advice/userindex?page="+p;
+    if(a==2)window.location ="/mywebwork/advice/forHelp?page="+p;
+    if(a==3)window.location ="/mywebwork/advice/coach?page="+p;
+    if(a==4)window.location ="/mywebwork/advice/doctor?page="+p;
+}
