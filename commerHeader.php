@@ -61,6 +61,7 @@
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li>
+
                     <form class="navbar-form navbar-left" role="search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search">
@@ -288,7 +289,7 @@ function checkId()
     var str=document.getElementById( "registeremail" ).value;
     var   sReg   =   /[_a-zA-Z\d\-\.]+@[_a-zA-Z\d\-]+(\.[_a-zA-Z\d\-]+)+$/;
     if   (!sReg.test(str)){
-        alert("请输入正确邮箱格式哦!");
+
         document.getElementById( "registeremailForm" ).className = "form-group has-error has-feedback";
         document.getElementById( "registeremailIconT" ).style.display = "none";
         document.getElementById( "registeremailIconF" ).style.display = "block";
@@ -304,14 +305,14 @@ function checkPassword()
     var str=document.getElementById( "registerpassword" ).value;
 
     if(str.length<6){
-        alert("您的密码长度过短!");
+
         document.getElementById( "registerpasswordForm" ).className = "form-group has-error has-feedback";
         document.getElementById( "registerpasswordIconT" ).style.display = "none";
         document.getElementById( "registerpasswordIconF" ).style.display = "block";
     }
 
     else if(str.length>15){
-        alert("您的密码长度过长!");
+
         document.getElementById( "registerpasswordForm" ).className = "form-group has-error has-feedback";
         document.getElementById( "registerpasswordIconT" ).style.display = "none";
         document.getElementById( "registerpasswordIconF" ).style.display = "block";

@@ -232,7 +232,7 @@ background-size: 400%;">
                         <span style="font-size: 23px;line-height: 60px;vertical-align: middle"><?php echo $item->username?></span>
                     </div>
                 </div>
-                <hr/>
+                <hr/><br><p><div class="color:red"></div></p>
             <?php } ?>
         </div>
 
