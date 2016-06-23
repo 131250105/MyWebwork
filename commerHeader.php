@@ -60,19 +60,10 @@
                        style="font-size: 16px;color:black">建议专区</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
                 <li style="visibility: hidden;"><a>位置调整</a></li>
-                <li>
-
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            Go!
-                        </button>
-                    </span>
-                        </div>
-                    </form>
-                </li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
+                <li style="visibility: hidden;"><a>位置调整</a></li>
                 <!--  href="#demo2"  data-toggle="collapse" data-parent="#accordion" href="#demo2"-->
 
                     <?php
@@ -122,19 +113,19 @@
             <div class="form-group">
                 <div class="col-sm-12">
                     <input type="text" class="form-control" id="email"
-                           placeholder="邮箱">
+                           placeholder="邮箱" onkeypress="enterkey()">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
                     <input type="password" class="form-control" id="loginpassword"
-                           placeholder="密码">
+                           placeholder="密码" onkeypress="enterkey()">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
                     <label for="email">用户类型</label>
-                    <select class="form-control" id =logintype>
+                    <select class="form-control" id =logintype onkeypress="enterkey()">
                          <option>普通用户</option>
                          <option>健康教练</option>
                          <option>医生</option>
@@ -144,7 +135,7 @@
             <div class="form-group">
                 <div class="col-sm-12">
                     <div class="checkbox">
-                        <label> <input type="checkbox" id="remember"> 记住我
+                        <label> <input type="checkbox" id="remember" onkeypress="enterkey()"> 记住我
                         </label>
                     </div>
                 </div>
@@ -354,7 +345,13 @@ function checkUsername()
     }
 }
 </script>
-
+<script type="text/javascript">
+    function enterkey() {
+        if (event.keyCode == 13){
+            login();
+        }
+    }
+</script>
 
 </body>
 </html>
