@@ -22,7 +22,7 @@ function post(url){
             }
             else {
                 alert("发布成功");
-                window.location ="/mywebwork/advice/userindex";
+                window.location ="/mywebwork/advice/userindex?page=1";
             }
         }
     });

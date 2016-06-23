@@ -11,7 +11,7 @@ function publishactivity(url){
     var type =document.getElementById("type").value;
     if(name==""||intro==""||starttime==""
         ||endtime==""||location==""||beizhu==""||type==""){
-                alert("您有信息未填写");
+        swal("您有信息未填写", "请填写完整", "error");
     }
     else{
         $.ajax({
