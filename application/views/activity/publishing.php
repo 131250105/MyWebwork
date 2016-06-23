@@ -103,13 +103,25 @@ background-size: 200%;">
                     活动名
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="1">
-                    <input data-toggle="tooltip" title="请在此填写活动名" type="text" class="form-control" placeholder="活动名" id="name" name="name"/>
+                    <input data-toggle="tooltip" title="请在此填写活动名" type="text" class="form-control" placeholder="活动名"
+                           id="name" name="name" onchange="if(document.getElementById(this.id).value==''){$('#warningName').show(500)}else{$('#warningName').hide(500)}"/>
                 </td>
                 <td style="padding-left: 30px;">
                     运动类型
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="1">
-                    <input data-toggle="tooltip" title="请在此填写活动类型" type="text" class="form-control" placeholder="运动类型" id="type" name="type"/>
+                    <input data-toggle="tooltip" title="请在此填写活动类型" type="text" class="form-control" placeholder="运动类型"
+                           id="type" name="type" onchange="if(document.getElementById(this.id).value==''){$('#warningType').show(500)}else{$('#warningType').hide(500)}"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="warningName" style="display:none">
+                    <div class="alert alert-danger" style="margin-bottom: 0px;">错误！活动名未填写。</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="warningType" style="display:none">
+                    <div class="alert alert-danger" style="margin-bottom: 0px;">错误！活动类型未填写。</div>
                 </td>
             </tr>
             <tr>
@@ -118,8 +130,14 @@ background-size: 200%;">
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
                     <div class="form-group">
-                        <textarea  data-toggle="tooltip" title="请在此填写活动介绍" class="form-control" rows="3" style="resize: none;" id="intro" name="intro"></textarea>
+                        <textarea  data-toggle="tooltip" title="请在此填写活动介绍" class="form-control" rows="3" style="resize: none;"
+                                   id="intro" name="intro"  onchange="if(document.getElementById(this.id).value==''){$('#warningIntro').show(500)}else{$('#warningIntro').hide(500)}"></textarea>
                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="warningIntro" style="display:none">
+                    <div class="alert alert-danger" style="margin-bottom: 0px;">错误！活动类型未填写。</div>
                 </td>
             </tr>
             <tr>
@@ -127,7 +145,8 @@ background-size: 200%;">
                     时间
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input data-toggle="tooltip" title="请选择活动报名开始时间" size="16" type="text" value="" readonly class="form_datetime" id="starttime"  name="starttime"
+                    <input data-toggle="tooltip" title="请选择活动报名开始时间" size="16" type="text" value="" readonly class="form_datetime"
+                           id="starttime"  name="starttime"  onchange="if(document.getElementById(this.id).value==''){$('#warningTime1').show(500)}else{$('#warningTime1').hide(500)}"
                            style="display: block;width: 100%;height: 34px;padding: 6px 12px;
                            font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
                            background-image: none;border: 1px solid #ccc;border-radius: 4px;">
@@ -136,10 +155,21 @@ background-size: 200%;">
                     至
                 </td>
                 <td style="vertical-align:middle;text-align: center">
-                    <input data-toggle="tooltip" title="请选择活动报名截止时间" size="16" type="text" value="" readonly class="form_datetime" id="endtime" name="endtime"
+                    <input data-toggle="tooltip" title="请选择活动报名截止时间" size="16" type="text" value="" readonly class="form_datetime"
+                           id="endtime" name="endtime"  onchange="if(document.getElementById(this.id).value==''){$('#warningTime2').show(500)}else{$('#warningTime2').hide(500)}"
                            style="display: block;width: 100%;height: 34px;padding: 6px 12px;
                            font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;
                            background-image: none;border: 1px solid #ccc;border-radius: 4px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="warningTime1" style="display:none">
+                    <div class="alert alert-danger" style="margin-bottom: 0px;">错误！活动开始时间未填写。</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="warningTime2" style="display:none">
+                    <div class="alert alert-danger" style="margin-bottom: 0px;">错误！活动类报名截止时间未填写。</div>
                 </td>
             </tr>
             <tr>
@@ -147,7 +177,13 @@ background-size: 200%;">
                     地点
                 </td>
                 <td style="vertical-align:middle;text-align: center" colspan="5">
-                    <input data-toggle="tooltip" title="请在此填写活动地点" type="text" class="form-control" placeholder="地点" id="location" name="location">
+                    <input data-toggle="tooltip" title="请在此填写活动地点" type="text" class="form-control" placeholder="地点"
+                           id="location" name="location"  onchange="if(document.getElementById(this.id).value==''){$('#warningLocation').show(500)}else{$('#warningLocation').hide(500)}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="warningLocation" style="display:none">
+                    <div class="alert alert-danger" style="margin-bottom: 0px;">错误！活动地点未填写。</div>
                 </td>
             </tr>
             <tr>

@@ -10,8 +10,11 @@ function publishactivity(url){
     var beizhu =document.getElementById("beizhu").value;
     var type =document.getElementById("type").value;
     if(name==""||intro==""||starttime==""
-        ||endtime==""||location==""||beizhu==""||type==""){
+        ||endtime==""||location==""||type==""){
         swal("您有信息未填写", "请填写完整", "error");
+    }
+    else if(beizhu==""){
+        beizhu="暂无";
     }
     else{
         $.ajax({
